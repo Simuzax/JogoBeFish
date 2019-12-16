@@ -54,20 +54,68 @@ public class Ghost : MonoBehaviour
         Vector2 inipos = Player_.transform.position;
         Vector2 Position = inipos;
 
-        
-        
 
-       if(Time.time>=spawnFantasmaInicial1+spawnFantasmaFinal1 && carregar==0 && Input.GetKey(KeyCode.Space))
-       {
-         
-            Position.x += 0.5f;
-            Position.y += 0;
+       
+
+        if (Time.time>=spawnFantasmaInicial1+spawnFantasmaFinal1 && Input.GetKey(KeyCode.Space))
+        {
+            if (Input.GetKey(KeyCode.RightArrow) && carregar == 0)
+            {
+                PosicoesDosFantasmas1();
+            }
+
+            /*if (Input.GetKey(KeyCode.RightArrow))
+            {
+                Position.x += 0.5f;
+                Position.y += 0;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                Position.x += -0.5f;
+                Position.y += 0;
+
+            }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                Position.x += 0;
+                Position.y += 0.5f;
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                Position.x += 0;
+                Position.y += -0.5f;
+            }
+            if(Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
+            {
+                Position.x += 0.5f;
+                Position.y += 0.5f;
+            }
+            if(Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.UpArrow))
+            {
+                Position.x += -0.5f;
+                Position.y += 0.5f;
+            }
+            if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.DownArrow))
+            {
+                Position.x += 0.5f;
+                Position.y += -0.5f;
+            }
+            if(Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.DownArrow))
+            {
+                Position.x += -0.5f;
+                Position.y += -0.5f;
+            }*/
+
+
             spawnFantasmaInicial1 = Time.time;
             carregar++;
             GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
-       }
+        }
        if(Time.time>=spawnFantasmaInicial2+spawnFantasmaFinal2 && carregar == 1)
        {
+
+            //PosicoesDosFantasmas();
+           
             Position.x += 1.4f;
             Position.y += 0;
             spawnFantasmaInicial2 = Time.time;
@@ -76,6 +124,8 @@ public class Ghost : MonoBehaviour
        }
        if(Time.time>=spawnFantasmaInicial3+ spawnFantasmaFinal3 && carregar == 2)
        {
+            //PosicoesDosFantasmas();
+            
             Position.x += 1.5f;
             Position.y += 0;
             spawnFantasmaInicial3 = Time.time;
@@ -84,8 +134,11 @@ public class Ghost : MonoBehaviour
        }
        if (Time.time >= spawnFantasmaInicial4 + spawnFantasmaFinal4 && carregar == 3)
        {
+
+            //PosicoesDosFantasmas();
             Position.x += 2;
             Position.y += 0;
+          
             spawnFantasmaInicial4 = Time.time;
             carregar = 0;
             GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
@@ -93,17 +146,114 @@ public class Ghost : MonoBehaviour
 
 
     }
-   /* public void PosicoesDosFantasmas()
+    public void PosicoesDosFantasmas1()
     {
-        Vector2 inipos = Player_.transform.position;
-        Vector2 Position = inipos;
+       
+            if(carregar==0)
+            {
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += 0.5f;
+                Position.y += 0;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            }
+            if (carregar == 1)
+            {
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += 1.4f;
+                Position.y += 0;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            }
+            if (carregar == 2)
+            {
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += 1.5f;
+                Position.y += 0;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            }
+            if (carregar == 3)
+            {
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += 2;
+                Position.y += 0;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            }
+            
+            
+        
+        
+        
+           /* if (carregar == 0)
+            {
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += -0.5f;
+                Position.y += 0;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
+            }
+            if (carregar == 1)
+            {
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += -1.4f;
+                Position.y += 0;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            }
+            if (carregar == 2)
+            {
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += -1.5f;
+                Position.y += 0;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            }
+            if (carregar == 3)
+            {
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += -2;
+                Position.y += 0;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            }
+        
+        
+        
             if (carregar == 0)
             {
-                Position.x = -5
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += 0;
+                Position.y += 0.5f;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
             }
-        }
-    }*/
+            if (carregar == 1)
+            {
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += 0;
+                Position.y += 1.4f;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            }
+            if (carregar == 2)
+            {
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += 0;
+                Position.y += 1.5f;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            }
+            if (carregar == 3)
+            {
+                Vector2 inipos = Player_.transform.position;
+                Vector2 Position = inipos;
+                Position.x += 0;
+                Position.y += 2;
+                GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            }*/
+    }
 }
+

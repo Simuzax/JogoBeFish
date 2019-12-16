@@ -3029,7 +3029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620764ad6a885cc4295bacde5c23af3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 200
+  dashSpeed: 180
   maxDashes: 2
   dashes: 0
   timer: 0
