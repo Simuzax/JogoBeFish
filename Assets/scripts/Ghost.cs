@@ -52,56 +52,54 @@ public class Ghost : MonoBehaviour
        
 
         Vector2 inipos = Player_.transform.position;
-        Vector2 Position = inipos;
+        Vector2 PositionInitial = inipos;
 
 
        
        if (Time.time >= spawnFantasmaInicial1 + spawnFantasmaFinal1 && Input.GetKey(KeyCode.Space) && carregar==0)
        {
            
-            clickDirecao(Position);
+            clickDirecao(PositionInitial);
 
             spawnFantasmaInicial1 = Time.time;
             carregar++;
-            GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            GameObject currentGhost = Instantiate(ghost, PositionInitial, Quaternion.identity);
        }
        if(Time.time>=spawnFantasmaInicial2+spawnFantasmaFinal2 && carregar == 1)
        {
 
-            ProximasPossicoes(Position);
+            ProximasPossicoes(PositionInitial);
 
 
             spawnFantasmaInicial2 = Time.time;
             carregar++;
-            GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            GameObject currentGhost = Instantiate(ghost, PositionInitial, Quaternion.identity);
        }
        if(Time.time>=spawnFantasmaInicial3+ spawnFantasmaFinal3 && carregar == 2)
        {
-            ProximasPossicoes2(Position);
+            ProximasPossicoes2(PositionInitial);
 
 
-            //Position.x += 1.5f;
-            //Position.y += 0;
+            
             spawnFantasmaInicial3 = Time.time;
             carregar++;
-            GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            GameObject currentGhost = Instantiate(ghost, PositionInitial, Quaternion.identity);
        }
        if (Time.time >= spawnFantasmaInicial4 + spawnFantasmaFinal4 && carregar == 3)
        {
-            ProximasPossicoes3(Position);
+            ProximasPossicoes3(PositionInitial);
 
             spawnFantasmaInicial4 = Time.time;
             carregar = 0;
-            GameObject currentGhost = Instantiate(ghost, Position, Quaternion.identity);
+            GameObject currentGhost = Instantiate(ghost, PositionInitial, Quaternion.identity);
        }
 
 
     }
     
-    public void clickDirecao(Vector2 inipos)
+    public void clickDirecao(Vector2 Position)
     {
-        inipos = Player_.transform.position;
-        Vector2 Position = inipos;
+        
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         { 
@@ -145,10 +143,9 @@ public class Ghost : MonoBehaviour
             Position.y += -0.5f;
         }
     }
-    public void ProximasPossicoes(Vector2 inipos)
+    public void ProximasPossicoes(Vector2 Position)
     {
-        inipos = Player_.transform.position;
-        Vector2 Position = inipos;
+        
 
         if (Position.x == 0.5f && Position.y==0)
         {
@@ -156,40 +153,40 @@ public class Ghost : MonoBehaviour
             Position.y += 0;
 
         }
-        else if (Position.x == -0.5f && Position.y==0)
+        if (Position.x == -0.5f && Position.y==0)
         {
             Position.x += -1.4f;
             Position.y += 0;
 
         }
-        else if(Position.x==0 && Position.y == 0.5f)
+        if(Position.x==0 && Position.y == 0.5f)
         {
             Position.x += 0;
             Position.y += 1.4f;
         }
-        else if(Position.x==0 && Position.y == -0.5f)
+        if(Position.x==0 && Position.y == -0.5f)
         {
             Position.x += 0;
             Position.y += -1.4f;
         }
-        else if (Position.x == 0.5f && Position.y == 0.5f)
+        if (Position.x == 0.5f && Position.y == 0.5f)
         {
             Position.x += 1.4f;
             Position.y += 1.4f;
 
         }
-        else if (Position.x == 0.5f && Position.y == -0.5f)
+        if (Position.x == 0.5f && Position.y == -0.5f)
         {
             Position.x +=  1.4f;
             Position.y += -1.4f;
 
         }
-        else if (Position.x == -0.5f && Position.y == 0.5f)
+        if (Position.x == -0.5f && Position.y == 0.5f)
         {
             Position.x += -1.4f;
             Position.y += 1.4f;
         }
-        else if (Position.x == -0.5f && Position.y == -0.5f)
+        if (Position.x == -0.5f && Position.y == -0.5f)
         {
             Position.x += -1.4f;
             Position.y += -1.4f;
@@ -197,10 +194,9 @@ public class Ghost : MonoBehaviour
 
 
     }
-    public void ProximasPossicoes2(Vector2 inipos)
+    public void ProximasPossicoes2(Vector2 Position)
     {
-        inipos = Player_.transform.position;
-        Vector2 Position = inipos;
+       
 
         if (Position.x == 1.4f && Position.y == 0)
         {
@@ -208,40 +204,40 @@ public class Ghost : MonoBehaviour
             Position.y += 0;
 
         }
-        else if (Position.x == -1.4f && Position.y == 0)
+        if (Position.x == -1.4f && Position.y == 0)
         {
             Position.x += -1.5f;
             Position.y += 0;
 
         }
-        else if (Position.x == 0 && Position.y == 1.4f)
+        if (Position.x == 0 && Position.y == 1.4f)
         {
             Position.x += 0;
             Position.y += 1.5f;
         }
-        else if (Position.x == 0 && Position.y == -1.4f)
+        if (Position.x == 0 && Position.y == -1.4f)
         {
             Position.x += 0;
             Position.y += -1.5f;
         }
-        else if (Position.x == 1.4f && Position.y == 1.4f)
+        if (Position.x == 1.4f && Position.y == 1.4f)
         {
             Position.x += 1.5f;
             Position.y += 1.5f;
 
         }
-        else if (Position.x == 1.4f && Position.y == -1.4f)
+        if (Position.x == 1.4f && Position.y == -1.4f)
         {
             Position.x += 1.5f;
             Position.y += -1.5f;
 
         }
-        else if (Position.x == -1.4f && Position.y == 1.4f)
+        if (Position.x == -1.4f && Position.y == 1.4f)
         {
             Position.x += -1.5f;
             Position.y += 1.5f;
         }
-        else if (Position.x == -1.4f && Position.y == -1.4f)
+        if (Position.x == -1.4f && Position.y == -1.4f)
         {
             Position.x += -1.5f;
             Position.y += -1.5f;
@@ -249,10 +245,9 @@ public class Ghost : MonoBehaviour
 
 
     }
-    public void ProximasPossicoes3(Vector2 inipos)
+    public void ProximasPossicoes3(Vector2 Position)
     {
-        inipos = Player_.transform.position;
-        Vector2 Position = inipos;
+        
 
         if (Position.x == 1.5f && Position.y == 0)
         {
@@ -260,40 +255,40 @@ public class Ghost : MonoBehaviour
             Position.y += 0;
 
         }
-        else if (Position.x == -1.5f && Position.y == 0)
+        if (Position.x == -1.5f && Position.y == 0)
         {
             Position.x += -2;
             Position.y += 0;
 
         }
-        else if (Position.x == 0 && Position.y == 1.5f)
+        if (Position.x == 0 && Position.y == 1.5f)
         {
             Position.x += 0;
             Position.y += 2;
         }
-        else if (Position.x == 0 && Position.y == -1.5f)
+        if (Position.x == 0 && Position.y == -1.5f)
         {
             Position.x += 0;
             Position.y += 2;
         }
-        else if (Position.x == 1.5f && Position.y == 1.5f)
+        if (Position.x == 1.5f && Position.y == 1.5f)
         {
             Position.x += 2;
             Position.y += 2;
 
         }
-        else if (Position.x == 1.5f && Position.y == -1.5f)
+        if (Position.x == 1.5f && Position.y == -1.5f)
         {
             Position.x += 2;
             Position.y += -2;
 
         }
-        else if (Position.x == -1.5f && Position.y == 1.5f)
+        if (Position.x == -1.5f && Position.y == 1.5f)
         {
             Position.x += -2;
             Position.y += 2;
         }
-        else if (Position.x == -1.5f && Position.y == -1.5f)
+        if (Position.x == -1.5f && Position.y == -1.5f)
         {
             Position.x += -2;
             Position.y += 2;
