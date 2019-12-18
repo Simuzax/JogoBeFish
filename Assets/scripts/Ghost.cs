@@ -10,7 +10,7 @@ public class Ghost : MonoBehaviour
 
     public Transform Player_;
 
-  
+    public int distanceFantasmaPlayer;
 
     public float ghostDelay;
     public float ghostDelaySeconds;
@@ -53,18 +53,21 @@ public class Ghost : MonoBehaviour
 
         Vector2 inipos = Player_.transform.position;
         Vector2 PositionInitial = inipos;
+        PositionInitial.x += distanceFantasmaPlayer;
+        
+          
 
 
-       
-       if (Time.time >= spawnFantasmaInicial1 + spawnFantasmaFinal1 && Input.GetKey(KeyCode.Space) && carregar==0)
-       {
+
+        if (Time.time >= spawnFantasmaInicial1 + spawnFantasmaFinal1 && Input.GetKey(KeyCode.Space) && carregar==0)
+        {
            
             clickDirecao(PositionInitial);
 
             spawnFantasmaInicial1 = Time.time;
             carregar++;
             GameObject currentGhost = Instantiate(ghost, PositionInitial, Quaternion.identity);
-       }
+        }
        if(Time.time>=spawnFantasmaInicial2+spawnFantasmaFinal2 && carregar == 1)
        {
 
@@ -101,43 +104,43 @@ public class Ghost : MonoBehaviour
     {
         
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         { 
             Position.x += 0.5f;
             Position.y += 0;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             Position.x += -0.5f;
             Position.y += 0;
 
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             Position.x += 0;
             Position.y += 0.5f;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             Position.x += 0;
             Position.y += -0.5f;
         }
-        if(Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
         {
             Position.x += 0.5f;
             Position.y += 0.5f;
         }
-        if(Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.UpArrow))
         {
             Position.x += -0.5f;
             Position.y += 0.5f;
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.DownArrow))
         {
             Position.x += 0.5f;
             Position.y += -0.5f;
         }
-        if(Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.DownArrow))
+        if(Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.DownArrow))
         {
             Position.x += -0.5f;
             Position.y += -0.5f;
