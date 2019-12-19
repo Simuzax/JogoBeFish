@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-   
+
 
 
 
@@ -38,28 +38,38 @@ public class Ghost : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
+
     }
 
     void Start()
     {
-        ghostDelaySeconds = ghostDelay;  
+        ghostDelaySeconds = ghostDelay;
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    void Update()
     {
-       
-
-        Vector2 inipos = Player_.transform.position;
-        Vector2 PositionInitial = inipos;
-        PositionInitial.x += distanceFantasmaPlayer;
         
-          
+        
+            if (ghostDelaySeconds > 0)
+            {
+                ghostDelaySeconds -= Time.deltaTime;
+            }
+            else
+            {
+                GameObject currentGhost = Instantiate(ghost, transform.position, transform.rotation);
+                ghostDelaySeconds = ghostDelay;
+            }
+         
+        
 
 
 
-        if (Time.time >= spawnFantasmaInicial1 + spawnFantasmaFinal1 && Input.GetKey(KeyCode.Space) && carregar==0)
+
+
+
+
+        /*if (Time.time >= spawnFantasmaInicial1 + spawnFantasmaFinal1 && Input.GetKey(KeyCode.Space) && carregar==0)
         {
            
             clickDirecao(PositionInitial);
@@ -98,206 +108,55 @@ public class Ghost : MonoBehaviour
        }
 
 
+    */
     }
-    
     public void clickDirecao(Vector2 Position)
     {
+
+
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                Position.x += 0.5f;
+                Position.y += 0;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                Position.x += -0.5f;
+                Position.y += 0;
+
+            }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                Position.x += 0;
+                Position.y += 0.5f;
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                Position.x += 0;
+                Position.y += -0.5f;
+            }
+            if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
+            {
+                Position.x += 0.5f;
+                Position.y += 0.5f;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.UpArrow))
+            {
+                Position.x += -0.5f;
+                Position.y += 0.5f;
+            }
+            if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.DownArrow))
+            {
+                Position.x += 0.5f;
+                Position.y += -0.5f;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.DownArrow))
+            {
+                Position.x += -0.5f;
+                Position.y += -0.5f;
+            }
         
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        { 
-            Position.x += 0.5f;
-            Position.y += 0;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            Position.x += -0.5f;
-            Position.y += 0;
-
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            Position.x += 0;
-            Position.y += 0.5f;
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            Position.x += 0;
-            Position.y += -0.5f;
-        }
-        if(Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
-        {
-            Position.x += 0.5f;
-            Position.y += 0.5f;
-        }
-        if(Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.UpArrow))
-        {
-            Position.x += -0.5f;
-            Position.y += 0.5f;
-        }
-        if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.DownArrow))
-        {
-            Position.x += 0.5f;
-            Position.y += -0.5f;
-        }
-        if(Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.DownArrow))
-        {
-            Position.x += -0.5f;
-            Position.y += -0.5f;
-        }
     }
-    public void ProximasPossicoes(Vector2 Position)
-    {
-        
-
-        if (Position.x == 0.5f && Position.y==0)
-        {
-            Position.x += 1.4f;
-            Position.y += 0;
-
-        }
-        if (Position.x == -0.5f && Position.y==0)
-        {
-            Position.x += -1.4f;
-            Position.y += 0;
-
-        }
-        if(Position.x==0 && Position.y == 0.5f)
-        {
-            Position.x += 0;
-            Position.y += 1.4f;
-        }
-        if(Position.x==0 && Position.y == -0.5f)
-        {
-            Position.x += 0;
-            Position.y += -1.4f;
-        }
-        if (Position.x == 0.5f && Position.y == 0.5f)
-        {
-            Position.x += 1.4f;
-            Position.y += 1.4f;
-
-        }
-        if (Position.x == 0.5f && Position.y == -0.5f)
-        {
-            Position.x +=  1.4f;
-            Position.y += -1.4f;
-
-        }
-        if (Position.x == -0.5f && Position.y == 0.5f)
-        {
-            Position.x += -1.4f;
-            Position.y += 1.4f;
-        }
-        if (Position.x == -0.5f && Position.y == -0.5f)
-        {
-            Position.x += -1.4f;
-            Position.y += -1.4f;
-        }
-
-
-    }
-    public void ProximasPossicoes2(Vector2 Position)
-    {
-       
-
-        if (Position.x == 1.4f && Position.y == 0)
-        {
-            Position.x += 1.5f;
-            Position.y += 0;
-
-        }
-        if (Position.x == -1.4f && Position.y == 0)
-        {
-            Position.x += -1.5f;
-            Position.y += 0;
-
-        }
-        if (Position.x == 0 && Position.y == 1.4f)
-        {
-            Position.x += 0;
-            Position.y += 1.5f;
-        }
-        if (Position.x == 0 && Position.y == -1.4f)
-        {
-            Position.x += 0;
-            Position.y += -1.5f;
-        }
-        if (Position.x == 1.4f && Position.y == 1.4f)
-        {
-            Position.x += 1.5f;
-            Position.y += 1.5f;
-
-        }
-        if (Position.x == 1.4f && Position.y == -1.4f)
-        {
-            Position.x += 1.5f;
-            Position.y += -1.5f;
-
-        }
-        if (Position.x == -1.4f && Position.y == 1.4f)
-        {
-            Position.x += -1.5f;
-            Position.y += 1.5f;
-        }
-        if (Position.x == -1.4f && Position.y == -1.4f)
-        {
-            Position.x += -1.5f;
-            Position.y += -1.5f;
-        }
-
-
-    }
-    public void ProximasPossicoes3(Vector2 Position)
-    {
-        
-
-        if (Position.x == 1.5f && Position.y == 0)
-        {
-            Position.x += 2;
-            Position.y += 0;
-
-        }
-        if (Position.x == -1.5f && Position.y == 0)
-        {
-            Position.x += -2;
-            Position.y += 0;
-
-        }
-        if (Position.x == 0 && Position.y == 1.5f)
-        {
-            Position.x += 0;
-            Position.y += 2;
-        }
-        if (Position.x == 0 && Position.y == -1.5f)
-        {
-            Position.x += 0;
-            Position.y += 2;
-        }
-        if (Position.x == 1.5f && Position.y == 1.5f)
-        {
-            Position.x += 2;
-            Position.y += 2;
-
-        }
-        if (Position.x == 1.5f && Position.y == -1.5f)
-        {
-            Position.x += 2;
-            Position.y += -2;
-
-        }
-        if (Position.x == -1.5f && Position.y == 1.5f)
-        {
-            Position.x += -2;
-            Position.y += 2;
-        }
-        if (Position.x == -1.5f && Position.y == -1.5f)
-        {
-            Position.x += -2;
-            Position.y += 2;
-        }
-
-
-    }
-}
+}    
 

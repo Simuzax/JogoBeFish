@@ -724,7 +724,6 @@ GameObject:
   - component: {fileID: 274100605}
   - component: {fileID: 274100609}
   - component: {fileID: 274100610}
-  - component: {fileID: 274100613}
   m_Layer: 0
   m_Name: Game
   m_TagString: Game
@@ -864,28 +863,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Contagem: 10
   displayContagem: {fileID: 876514932}
---- !u!114 &274100613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274100604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 837cc96cc923d274097e9c1696c1c74c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player_: {fileID: 263779886}
-  distanceFantasmaPlayer: -4
-  ghostDelay: 0.5
-  ghostDelaySeconds: -1
-  ghost: {fileID: 781315467}
-  spawnFantasmaFinal1: 1.3
-  spawnFantasmaFinal2: 1.5
-  spawnFantasmaFinal3: 1.7
-  spawnFantasmaFinal4: 1.9
-  carregar: 0
 --- !u!114 &274100614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3133,6 +3110,28 @@ MonoBehaviour:
   dashCooldown: 2
   dashDelay: 0
   dashEnabled: 1
+--- !u!114 &1236094324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236094313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837cc96cc923d274097e9c1696c1c74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_: {fileID: 263779886}
+  distanceFantasmaPlayer: 0
+  ghostDelay: 0.1
+  ghostDelaySeconds: 0
+  ghost: {fileID: 781315467}
+  spawnFantasmaFinal1: 0
+  spawnFantasmaFinal2: 0
+  spawnFantasmaFinal3: 0
+  spawnFantasmaFinal4: 0
+  carregar: 0
 --- !u!1 &1241074309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1942662091802212758, guid: 14a22b836ae5e6e4d8e526b3403c8126,

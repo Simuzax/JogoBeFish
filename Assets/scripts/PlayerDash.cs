@@ -57,7 +57,7 @@ public class PlayerDash : MonoBehaviour
             {
                 Dash(x, y);
 
-                if (ghost.ghostDelaySeconds > 0)
+                /*if (ghost.ghostDelaySeconds > 0)
                 {
                     ghost.ghostDelaySeconds -= Time.deltaTime;
                 }
@@ -66,7 +66,7 @@ public class PlayerDash : MonoBehaviour
                     GameObject currentGhost = Instantiate(ghost.ghost, transform.position, transform.rotation);
                     ghost.ghostDelaySeconds = ghost.ghostDelay;
 
-                }
+                }*/
             }
         }
 
