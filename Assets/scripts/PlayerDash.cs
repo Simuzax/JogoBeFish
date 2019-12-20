@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDash : MonoBehaviour
 {
 
-    Ghost ghost;
+    
     
 
     SpawnarBolhas spawnarBolha;
@@ -33,7 +33,7 @@ public class PlayerDash : MonoBehaviour
         spawnarBolha = GetComponent<SpawnarBolhas>();
         righ = GetComponent<Rigidbody2D>();
         efeitoCorridaPlayer = GetComponent<EfeitoCorridaPlayer>();
-        ghost = GetComponent<Ghost>();
+        
 
     }
 
@@ -51,7 +51,7 @@ public class PlayerDash : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (dashes > 0 && dashEnabled)
             {
