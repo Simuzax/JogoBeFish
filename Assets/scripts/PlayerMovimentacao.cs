@@ -11,12 +11,16 @@ public class PlayerMovimentacao : MonoBehaviour
     public Rigidbody2D rigidbody2D_;
     public float speed;
     public Animator animator;
+    public Ghost ghost;
+
     // Start is called before the first frame update
 
-    private void Awake()
+    void Awake()
     {
         animator = GetComponent<Animator>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
+        ghost = GetComponent<Ghost>();
+
     }
     void Start()
     {
@@ -32,6 +36,17 @@ public class PlayerMovimentacao : MonoBehaviour
     {
         Vector2 Position = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         rigidbody2D_.velocity = Position * speed;
+
+       if(Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.LeftArrow)) || (Input.GetKey(KeyCode.UpArrow)) || (Input.GetKey(KeyCode.DownArrow)))
+       {
+            ghost.makeGhost = true;
+       }
+       else
+       {
+            ghost.makeGhost = false;
+       }
+
+        
 
        if(Position.x > 0 || Position.x < 0 || Position.y > 0 || Position.y < 0)
        {

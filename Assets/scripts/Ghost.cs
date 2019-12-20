@@ -10,11 +10,14 @@ public class Ghost : MonoBehaviour
 
     public Transform Player_;
 
-    public int distanceFantasmaPlayer;
+   
 
     public float ghostDelay;
     public float ghostDelaySeconds;
     public GameObject ghost;
+    public bool makeGhost=false;
+
+    public int quantidadeDeFantasmas;
 
     private float spawnFantasmaInicial1;
     [SerializeField]
@@ -49,8 +52,8 @@ public class Ghost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+        if (makeGhost)
+        {
             if (ghostDelaySeconds > 0)
             {
                 ghostDelaySeconds -= Time.deltaTime;
@@ -60,7 +63,10 @@ public class Ghost : MonoBehaviour
                 GameObject currentGhost = Instantiate(ghost, transform.position, transform.rotation);
                 ghostDelaySeconds = ghostDelay;
             }
-         
+
+        }
+
+        Vector2 PositionInitial = Player_.transform.position;
         
 
 
@@ -69,20 +75,19 @@ public class Ghost : MonoBehaviour
 
 
 
-        /*if (Time.time >= spawnFantasmaInicial1 + spawnFantasmaFinal1 && Input.GetKey(KeyCode.Space) && carregar==0)
-        {
+       if (Time.time >= spawnFantasmaInicial1 + spawnFantasmaFinal1 && Input.GetKey(KeyCode.Space) && carregar==0)
+       {
            
             clickDirecao(PositionInitial);
 
             spawnFantasmaInicial1 = Time.time;
             carregar++;
             GameObject currentGhost = Instantiate(ghost, PositionInitial, Quaternion.identity);
-        }
+       }
        if(Time.time>=spawnFantasmaInicial2+spawnFantasmaFinal2 && carregar == 1)
        {
 
-            ProximasPossicoes(PositionInitial);
-
+            
 
             spawnFantasmaInicial2 = Time.time;
             carregar++;
@@ -90,7 +95,7 @@ public class Ghost : MonoBehaviour
        }
        if(Time.time>=spawnFantasmaInicial3+ spawnFantasmaFinal3 && carregar == 2)
        {
-            ProximasPossicoes2(PositionInitial);
+            
 
 
             
@@ -100,7 +105,7 @@ public class Ghost : MonoBehaviour
        }
        if (Time.time >= spawnFantasmaInicial4 + spawnFantasmaFinal4 && carregar == 3)
        {
-            ProximasPossicoes3(PositionInitial);
+           
 
             spawnFantasmaInicial4 = Time.time;
             carregar = 0;
@@ -108,7 +113,7 @@ public class Ghost : MonoBehaviour
        }
 
 
-    */
+    
     }
     public void clickDirecao(Vector2 Position)
     {
@@ -116,8 +121,13 @@ public class Ghost : MonoBehaviour
 
             if (Input.GetKey(KeyCode.RightArrow))
             {
+              
+              
                 Position.x += 0.5f;
                 Position.y += 0;
+
+                
+               
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
@@ -157,6 +167,17 @@ public class Ghost : MonoBehaviour
             }
         
 
+    }
+    public void ProximaPosicao(Vector2 )
+    {
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+
+        if ( x > y)
+        {
+            Position.x += 0.5f;
+            Position.y += 0;
+        }
     }
 }    
 
