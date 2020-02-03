@@ -16,7 +16,7 @@ public class Interface : MonoBehaviour
     private int HPMax;
 
     [SerializeField]
-    private int hp;// no inspector o h fica maiusculo?sim
+    private int hp;  // no inspector o h fica maiusculo?sim
 
     public int HP
     {

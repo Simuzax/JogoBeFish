@@ -9,9 +9,10 @@ public class PlayerMovimentacao : MonoBehaviour
   
 
     public Rigidbody2D rigidbody2D_;
-    public float speed;
+    public int speed;
     public Animator animator;
-    public Ghost ghost;
+    public SpawnarGhost spawnarGhost_ref;
+
 
     // Start is called before the first frame update
 
@@ -19,7 +20,7 @@ public class PlayerMovimentacao : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
-        ghost = GetComponent<Ghost>();
+        spawnarGhost_ref = GetComponent<SpawnarGhost>();
 
     }
     void Start()
@@ -31,21 +32,38 @@ public class PlayerMovimentacao : MonoBehaviour
     
     private void FixedUpdate()
     {
+        
+
         Vector2 Position = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         rigidbody2D_.velocity = Position * speed;
 
-       if(Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.LeftArrow)) || (Input.GetKey(KeyCode.UpArrow)) || (Input.GetKey(KeyCode.DownArrow)))
+
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            speed = 10;
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            speed = 6;
+        }
+
+
+
+
+
+       /*if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.LeftArrow)) || (Input.GetKey(KeyCode.UpArrow)) || (Input.GetKey(KeyCode.DownArrow)))
        {
-            ghost.makeGhost = true;
+            spawnarGhost_ref.makeGhost = true;
        }
        else
        {
-            ghost.makeGhost = false;
-       }
+            spawnarGhost_ref.makeGhost = false;
+       }*/
 
-        
 
-       if(Position.x > 0 || Position.x < 0 || Position.y > 0 || Position.y < 0)
+
+       if (Position.x > 0 || Position.x < 0 || Position.y > 0 || Position.y < 0)
        {
             animator.SetBool("Walking",true);
        }
@@ -114,5 +132,6 @@ public class PlayerMovimentacao : MonoBehaviour
         }
 
     }*/
+
     
 }

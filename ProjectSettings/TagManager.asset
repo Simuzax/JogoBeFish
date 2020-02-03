@@ -19,6 +19,9 @@ TagManager:
   - ColisorDeTras
   - primeiroColisorDetraz
   - ColisorDaFrente
+  - Tesouro
+  - SpawnTesouroCima
+  - SpawnTesouro
   layers:
   - Default
   - TransparentFX
@@ -133,4 +136,7 @@ TagManager:
     locked: 0
   - name: GhostPiranha
     uniqueID: 4183995909
+    locked: 0
+  - name: Tesouro
+    uniqueID: 264197233
     locked: 0

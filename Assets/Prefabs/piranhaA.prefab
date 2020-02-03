@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822688687558241043}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 22.81, y: 3.99, z: 0}
+  m_LocalPosition: {x: 22.81, y: 2.67, z: 0}
   m_LocalScale: {x: 0.88750184, y: 0.22500046, z: 1}
   m_Children: []
   m_Father: {fileID: 822688687111050687}
@@ -441,13 +441,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837cc96cc923d274097e9c1696c1c74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ghostPrefab: {fileID: 7504508095493451062, guid: 5f6541fa9f20ec54a8137058f7b67cab,
+    type: 3}
+  spectre: {fileID: 0}
   Player_: {fileID: 822688687111050687}
-  ghostDelay: 0.1
-  ghostDelaySeconds: 0
-  ghost: {fileID: 0}
-  makeGhost: 0
   spawnFantasmaFinal1: 1.3
   spawnFantasmaFinal2: 1.6
   spawnFantasmaFinal3: 1.9
   spawnFantasmaFinal4: 2.2
+  destruirFantasmaFinal: 1
   carregar: 0
+  ghostDelay: 2.3
+  ghostDelaySeconds: 13
+  makeGhost: 0
