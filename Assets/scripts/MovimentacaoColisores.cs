@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovimentacaoColisores : MonoBehaviour
 {
-    [SerializeField]
+    
     CameraComLimites cameraComLimites_ref;
 
     
@@ -18,6 +18,10 @@ public class MovimentacaoColisores : MonoBehaviour
         if (!body || body == null)  
             body = GetComponent<Rigidbody2D>();
 
+    }
+    void Awake()
+    {
+        cameraComLimites_ref = GameObject.Find("MainCamera").GetComponent<CameraComLimites>(); 
     }
 
     // Update is called once per frame

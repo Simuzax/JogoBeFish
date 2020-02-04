@@ -9,10 +9,10 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     AudioClip somCausarDano;
     AudioClip somTomarDano;
 
-    // [SerializeField]
+    
 
-    // [SerializeField]
-    HabilidadesGeraisPlayer habilidadesGeraisPlayer;
+   
+    HabilidadesGeraisPlayer habilidadesGeraisPlayer_ref;
     
      
      
@@ -32,7 +32,7 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        habilidadesGeraisPlayer = GameObject.Find("Traira").GetComponent<HabilidadesGeraisPlayer>(); 
+        habilidadesGeraisPlayer_ref = GameObject.Find("Cascudo").GetComponent<HabilidadesGeraisPlayer>(); 
         //DefinirAlvo();
         
     }
@@ -50,32 +50,10 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
 
     
 
-    /*internal void CausarDano(Cascudo cascudo)
-    {
-        throw new NotImplementedException();
-    }
-
-    internal void CausarDano(CascudoArmadura cascudoArmadura)
-    {
-        throw new NotImplementedException();
-    }*/
-
-    /*public void DefinirAlvo()
-    {
-        if(!target || target == null)
-        {
-            //target = GameObject.FindGameObjectWithTag("Cascudo").transform;
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-
-            
-        }
-        direction = target.position - transform.position; //pq o direction tem q ir fora do if?
-        direction = direction.normalized;
-    }*/
 
     public void CausarDano(Player alvo)
     {
-        habilidadesGeraisPlayer.TomarDano((int)strength);
+        habilidadesGeraisPlayer_ref.TomarDano(strength);
 
 
     }

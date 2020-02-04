@@ -10,7 +10,7 @@ public class CascudoArmadura : MonoBehaviour
     public bool armadura = true;
 
     
-
+    [SerializeField]
     private float reativarArmaduraInicial;
 
     [SerializeField]
@@ -19,6 +19,7 @@ public class CascudoArmadura : MonoBehaviour
     
     public bool intervaloDeColisao=false;
 
+    [SerializeField]
     private float reativarArmaduraInicialsegunda;
 
     [SerializeField]
@@ -33,25 +34,31 @@ public class CascudoArmadura : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //if (Time.time >= reativarArmaduraInicial + reativarArmaduraMax && armadura == true && intervaloDeColisao==true)
+        //{
+        //reativarArmaduraInicial = Time.time;
 
-
-        if (Time.time >= reativarArmaduraInicial + reativarArmaduraMax && armadura == true && intervaloDeColisao==true)
+        reativarArmaduraInicial += Time.deltaTime;
+        if (reativarArmaduraInicial >= reativarArmaduraMax && armadura==true && intervaloDeColisao==true)
         {
-
-
-            reativarArmaduraInicial = Time.time;
-            intervaloDeColisao = false;
-            armadura = false;
-
-
-        }
-        if(Time.time>= reativarArmaduraInicialsegunda + reativarArmaduraMaxsegunda && armadura == false && intervaloDeColisao==false)
-        {
+            reativarArmaduraInicial = 0;
             
-            reativarArmaduraInicialsegunda = Time.time;
+            armadura = false;
+        }
+
+
+        //if(Time.time>= reativarArmaduraInicialsegunda + reativarArmaduraMaxsegunda && armadura == false && intervaloDeColisao==false)
+        //{
+        //reativarArmaduraInicialsegunda = Time.time;
+        reativarArmaduraInicialsegunda += Time.deltaTime;
+        if(reativarArmaduraInicialsegunda>=reativarArmaduraMaxsegunda && armadura==false && intervaloDeColisao == false)
+        {
+            reativarArmaduraInicialsegunda = 0;
             armadura = true;
         }
+
+        
+        
     }
    
    

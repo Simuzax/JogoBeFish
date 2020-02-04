@@ -7,8 +7,8 @@ public class AtacandoPeixes : MonoBehaviour
     
     HabilidadesGeraisInimigo habilidadesGeraisInimigo;
 
-    [SerializeField]
-    HabilidadesGeraisPlayer HGP_ref;
+    
+    HabilidadesGeraisPlayer habilidadesGeraisPlayer_ref;
 
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class AtacandoPeixes : MonoBehaviour
     {
         habilidadesGeraisInimigo = GetComponent<HabilidadesGeraisInimigo>();
 
-        HGP_ref = GameObject.Find("piranhaA").GetComponent<HabilidadesGeraisPlayer>();
+        habilidadesGeraisPlayer_ref = GameObject.Find("piranhaA").GetComponent<HabilidadesGeraisPlayer>();          
     }
 
     // Update is called once per frame
@@ -31,17 +31,9 @@ public class AtacandoPeixes : MonoBehaviour
 
             Debug.Log("acertou");
 
-            HGP_ref.Damage(habilidadesGeraisInimigo.strength);
+            habilidadesGeraisPlayer_ref.Damage(habilidadesGeraisInimigo.strength);
 
-            //habilidadesGeraisInimigo.CausarDano(collision.GetComponent<Player>());
-
-            /*var Player = collision.gameObject.GetComponent<Player>();
-
-            if(Player != null)
-            {
-                Debug.Log("acertou");
-                habilidadesGeraisInimigo_ref.CausarDano();
-            }*/
+           
         }
     }
 }

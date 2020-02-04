@@ -6,7 +6,7 @@ public class AtacandoCascudo : MonoBehaviour
 {
     
 
-    [SerializeField]
+    
     CascudoArmadura cascudoArmadura_ref;
 
     
@@ -18,6 +18,7 @@ public class AtacandoCascudo : MonoBehaviour
     private void Awake()
     {
         habilidadesGeraisInimigo_ref = GetComponent<HabilidadesGeraisInimigo>();
+        cascudoArmadura_ref = GameObject.Find("Cascudo").GetComponent<CascudoArmadura>();
     }
     void Start()
     {
@@ -41,11 +42,12 @@ public class AtacandoCascudo : MonoBehaviour
 
 
             }
-            if (cascudoArmadura_ref.armadura == false && cascudoArmadura_ref.intervaloDeColisao==false)                       
+            if (cascudoArmadura_ref.armadura == false && cascudoArmadura_ref.intervaloDeColisao==true)                       
             {
                 
                 habilidadesGeraisInimigo_ref.CausarDano(collision.GetComponent<Player>());
                 Debug.Log("acertou");
+                cascudoArmadura_ref.intervaloDeColisao = false;
                 
             }
             
