@@ -43,8 +43,5 @@ public class HabilidadesGeraisPlayer : MonoBehaviour
         audioSource.Play();
     }
 
-    public void Damage(int dano)
-    {
-        interface_ref.HP -= dano;
-    }
+    
 }

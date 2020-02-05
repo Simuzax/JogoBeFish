@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Isca : HabilidadesGeraisInimigo
+public class Isca : MonoBehaviour
 {
     [SerializeField]
     Isca IscaDoPeixe;
 
-    [SerializeField]
+    
     SpawnInimigo spawnInimigo;
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class Isca : HabilidadesGeraisInimigo
     {
         
         spawnInimigo = GameObject.Find("Game").GetComponent<SpawnInimigo>();
-        //habilidadesGeraisPlayer = GameObject.Find("Traira").GetComponent<HabilidadesGeraisPlayer>();
+        
     }
 
     // Update is called once per frame

@@ -13,7 +13,7 @@ public class RedePesca : MonoBehaviour
     [SerializeField]
     RedePesca Rede;
 
-    [SerializeField]
+   
     SpawnInimigo spawnInimigo_ref;
 
     
@@ -44,7 +44,7 @@ public class RedePesca : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
-            //Destroy(gameObject);
+           
             spawnInimigo_ref.adicionarOuDestruir(Rede.gameObject);
         }
     }

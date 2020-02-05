@@ -5,18 +5,18 @@ using UnityEngine;
 public class AtacandoPeixes : MonoBehaviour
 {
     
-    HabilidadesGeraisInimigo habilidadesGeraisInimigo;
-
+    HabilidadesGeraisInimigo habilidadesGeraisInimigo_ref;
+ 
     
-    HabilidadesGeraisPlayer habilidadesGeraisPlayer_ref;
+    
 
 
     // Start is called before the first frame update
     void Awake()
     {
-        habilidadesGeraisInimigo = GetComponent<HabilidadesGeraisInimigo>();
+        habilidadesGeraisInimigo_ref = GetComponent<HabilidadesGeraisInimigo>();
 
-        habilidadesGeraisPlayer_ref = GameObject.Find("piranhaA").GetComponent<HabilidadesGeraisPlayer>();          
+                  
     }
 
     // Update is called once per frame
@@ -29,9 +29,9 @@ public class AtacandoPeixes : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
 
-            Debug.Log("acertou");
 
-            habilidadesGeraisPlayer_ref.Damage(habilidadesGeraisInimigo.strength);
+            Debug.Log("mordida");
+            habilidadesGeraisInimigo_ref.CausarDano(collision.GetComponent<Player>());
 
            
         }

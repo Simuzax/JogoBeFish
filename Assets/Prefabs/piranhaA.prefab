@@ -428,7 +428,7 @@ MonoBehaviour:
   rigidbody2D_: {fileID: 822688688606798681}
   speed: 6
   animator: {fileID: 822688688606798685}
-  ghost: {fileID: 1236094324}
+  spawnarGhost_ref: {fileID: 0}
 --- !u!114 &1236094324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +449,7 @@ MonoBehaviour:
   spawnFantasmaFinal2: 1.6
   spawnFantasmaFinal3: 1.9
   spawnFantasmaFinal4: 2.2
+  destruirFantasmaInicial: 0
   destruirFantasmaFinal: 1
   carregar: 0
   ghostDelay: 2.3
