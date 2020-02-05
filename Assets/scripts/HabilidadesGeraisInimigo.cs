@@ -34,7 +34,7 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     {
 
         habilidadesGeraisPlayer_ref = GameObject.Find("Cascudo").GetComponent<HabilidadesGeraisPlayer>();
-        interface_ref = GameObject.Find("piranhaA").GetComponent<Interface>(); 
+        interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>(); 
         
     }
 

@@ -23,7 +23,8 @@ public class MovimentacaoColisores : MonoBehaviour
     void Awake()
     {
         cameraComLimites_ref = GameObject.Find("MainCamera").GetComponent<CameraComLimites>();
-        interface_ref = GameObject.Find("piranhaA").GetComponent<Interface>();
+        interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>();
+        
     }
 
     // Update is called once per frame
@@ -34,7 +35,7 @@ public class MovimentacaoColisores : MonoBehaviour
 
     public void movimento()
     {
-        if (interface_ref.estaVivo == true)
+        if(interface_ref.estaVivo == true)
         {
             Vector2 Input = new Vector2(1, 0);
             Vector2 Direction = Input.normalized;

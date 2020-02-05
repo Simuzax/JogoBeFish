@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5341233894203701364}
   - component: {fileID: 5341233894203701363}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1647d5b29f279b147b9ff79847e7074c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
 --- !u!61 &5341233894203701362
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -156,6 +155,7 @@ MonoBehaviour:
   smoothing: 0.6
   maxPosition: {x: 100, y: 100}
   minPosition: {x: -10.35, y: -2}
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!50 &5341233894203701363
 Rigidbody2D:
   serializedVersion: 4
