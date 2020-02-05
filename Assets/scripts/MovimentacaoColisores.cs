@@ -9,6 +9,7 @@ public class MovimentacaoColisores : MonoBehaviour
 
     
     Rigidbody2D body;
+    Interface interface_ref;
 
     
 
@@ -21,7 +22,8 @@ public class MovimentacaoColisores : MonoBehaviour
     }
     void Awake()
     {
-        cameraComLimites_ref = GameObject.Find("MainCamera").GetComponent<CameraComLimites>(); 
+        cameraComLimites_ref = GameObject.Find("MainCamera").GetComponent<CameraComLimites>();
+        interface_ref = GameObject.Find("piranhaA").GetComponent<Interface>();
     }
 
     // Update is called once per frame
@@ -32,11 +34,16 @@ public class MovimentacaoColisores : MonoBehaviour
 
     public void movimento()
     {
-        Vector2 Input = new Vector2(1, 0);
-        Vector2 Direction = Input.normalized;
-        Vector2 Velocity = cameraComLimites_ref.speed * Direction;
-        Velocity.y = body.velocity.y;
-        body.velocity = Velocity;
+        if (interface_ref.estaVivo == true)
+        {
+            Vector2 Input = new Vector2(1, 0);
+            Vector2 Direction = Input.normalized;
+            Vector2 Velocity = cameraComLimites_ref.speed * Direction;
+            Velocity.y = body.velocity.y;
+            body.velocity = Velocity;
+        }
+
+        
 
     }
 

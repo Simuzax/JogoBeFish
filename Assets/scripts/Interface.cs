@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class Interface : MonoBehaviour
 {
-   
-    
+
+    public bool estaVivo=true;
     public Slider sliderHp;
 
-    //[SerializeField]
-    //private int HpInicial;
 
     [SerializeField]
     private int HPMax;
@@ -31,6 +29,7 @@ public class Interface : MonoBehaviour
             if (hp <= 0)
             {
                 hp = 0;
+                estaVivo = false;
 
                 if (sliderHp && sliderHp != null)// aqui garante q não tem referencias?
                 {

@@ -9,7 +9,7 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     AudioClip somCausarDano;
     AudioClip somTomarDano;
 
-    
+    Interface interface_ref;
 
    
     HabilidadesGeraisPlayer habilidadesGeraisPlayer_ref;
@@ -34,6 +34,7 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     {
 
         habilidadesGeraisPlayer_ref = GameObject.Find("Cascudo").GetComponent<HabilidadesGeraisPlayer>();
+        interface_ref = GameObject.Find("piranhaA").GetComponent<Interface>(); 
         
     }
 
@@ -44,8 +45,12 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     }
     public void Mover()
     {
+        if (interface_ref.estaVivo == true)
+        {
+            transform.Translate(speed * direction * Time.deltaTime);
+        }
        
-        transform.Translate(speed* direction* Time.deltaTime);
+        
     }
 
     

@@ -12,6 +12,7 @@ public class PlayerMovimentacao : MonoBehaviour
     public int speed;
     public Animator animator;
     public SpawnarGhost spawnarGhost_ref;
+    Interface interface_ref;
 
 
     // Start is called before the first frame update
@@ -21,6 +22,8 @@ public class PlayerMovimentacao : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         spawnarGhost_ref = GetComponent<SpawnarGhost>();
+        interface_ref = GetComponent<Interface>();
+
 
     }
     void Start()
@@ -32,45 +35,48 @@ public class PlayerMovimentacao : MonoBehaviour
     
     private void FixedUpdate()
     {
+
+        if (interface_ref.estaVivo == true)
+        {
+            Vector2 Position = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            rigidbody2D_.velocity = Position * speed;
+
+
+
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                speed = 10;
+            }
+            if (Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                speed = 6;
+            }
+
+
+
+
+
+            /*if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.LeftArrow)) || (Input.GetKey(KeyCode.UpArrow)) || (Input.GetKey(KeyCode.DownArrow)))
+            {
+                 spawnarGhost_ref.makeGhost = true;
+            }
+            else
+            {
+                 spawnarGhost_ref.makeGhost = false;
+            }*/
+
+
+
+            if (Position.x > 0 || Position.x < 0 || Position.y > 0 || Position.y < 0)
+            {
+                animator.SetBool("Walking", true);
+            }
+            else
+            {
+                animator.SetBool("Walking", false);
+            }
+        } 
         
-
-        Vector2 Position = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        rigidbody2D_.velocity = Position * speed;
-
-
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            speed = 10;
-        }
-        if (Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            speed = 6;
-        }
-
-
-
-
-
-       /*if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.LeftArrow)) || (Input.GetKey(KeyCode.UpArrow)) || (Input.GetKey(KeyCode.DownArrow)))
-       {
-            spawnarGhost_ref.makeGhost = true;
-       }
-       else
-       {
-            spawnarGhost_ref.makeGhost = false;
-       }*/
-
-
-
-       if (Position.x > 0 || Position.x < 0 || Position.y > 0 || Position.y < 0)
-       {
-            animator.SetBool("Walking",true);
-       }
-       else
-       {
-            animator.SetBool("Walking", false);
-       }
     }
     //void get_Input()
     /*{
