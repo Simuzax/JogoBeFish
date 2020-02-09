@@ -140,3 +140,6 @@ TagManager:
   - name: Tesouro
     uniqueID: 264197233
     locked: 0
+  - name: GameOver
+    uniqueID: 1978546311
+    locked: 0

@@ -6,15 +6,15 @@ using UnityEngine.UI;
 public class Interface : MonoBehaviour
 {
 
-    public bool estaVivo=true;
+   
     public Slider sliderHp;
 
 
     [SerializeField]
     private int HPMax;
 
-    [SerializeField]
-    private int hp;  // no inspector o h fica maiusculo?sim
+    
+    public int hp;  // no inspector o h fica maiusculo?sim
 
     public int HP
     {
@@ -29,7 +29,7 @@ public class Interface : MonoBehaviour
             if (hp <= 0)
             {
                 hp = 0;
-                estaVivo = false;
+                
 
                 if (sliderHp && sliderHp != null)// aqui garante q não tem referencias?
                 {

@@ -12,7 +12,7 @@ public class PlayerMovimentacao : MonoBehaviour
     public int speed;
     public Animator animator;
     public SpawnarGhost spawnarGhost_ref;
-    Interface interface_ref;
+    
 
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class PlayerMovimentacao : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         spawnarGhost_ref = GetComponent<SpawnarGhost>();
-        interface_ref = GetComponent<Interface>();
+        
 
 
     }
@@ -36,8 +36,8 @@ public class PlayerMovimentacao : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (interface_ref.estaVivo == true)
-        {
+        
+        
             Vector2 Position = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             rigidbody2D_.velocity = Position * speed;
 
@@ -75,7 +75,7 @@ public class PlayerMovimentacao : MonoBehaviour
             {
                 animator.SetBool("Walking", false);
             }
-        } 
+        
         
     }
     //void get_Input()
