@@ -4147,6 +4147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1402781914}
   - component: {fileID: 1402781913}
+  - component: {fileID: 1402781915}
   m_Layer: 0
   m_Name: GameOver
   m_TagString: Untagged
@@ -4210,12 +4211,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402781912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.4, y: 12.3, z: 1.5629835}
+  m_LocalPosition: {x: -28.6, y: 10.4, z: 1.5629835}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1402781915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402781912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3543a68312148f46badcdcf8fd59135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interface_ref: {fileID: 8365788417058773347}
+  PlayerMovimentacao_ref: {fileID: 8365788417058773346}
+  CameraComLimites_ref: {fileID: 519420029}
+  SpawnInimigo_ref: {fileID: 274100605}
+  SpawnarAlga_ref: {fileID: 274100610}
 --- !u!1 &1405584935
 GameObject:
   m_ObjectHideFlags: 0
@@ -7232,6 +7250,30 @@ PrefabInstance:
       objectReference: {fileID: 274100613}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a4962b395e8754468330ec4737bec81, type: 3}
+--- !u!114 &8365788417058773346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8365788415942785426, guid: 8a4962b395e8754468330ec4737bec81,
+    type: 3}
+  m_PrefabInstance: {fileID: 8365788417058773345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2bc6f41d45da9a4481000843d31460a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8365788417058773347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8365788415942785429, guid: 8a4962b395e8754468330ec4737bec81,
+    type: 3}
+  m_PrefabInstance: {fileID: 8365788417058773345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e199b15330039d4fafd39d2d3719c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8837473359157535786
 PrefabInstance:
   m_ObjectHideFlags: 0

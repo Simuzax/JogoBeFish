@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
 public class GameOver : MonoBehaviour
 {
     
@@ -13,6 +12,8 @@ public class GameOver : MonoBehaviour
     public CameraComLimites CameraComLimites_ref;
     public SpawnInimigo SpawnInimigo_ref;
     public SpawnarAlga SpawnarAlga_ref;
+    public SpawnarGameOver spawnarGameOver_ref;
+
 
 
     void Awake()
@@ -22,6 +23,8 @@ public class GameOver : MonoBehaviour
         CameraComLimites_ref = GameObject.Find("MainCamera").GetComponent<CameraComLimites>();
         SpawnInimigo_ref = GameObject.Find("Game").GetComponent<SpawnInimigo>();
         SpawnarAlga_ref = GameObject.Find("Game").GetComponent<SpawnarAlga>();
+        spawnarGameOver_ref = GetComponent<SpawnarGameOver>(); 
+
 
         if(singleton != this && singleton != null)
         {
@@ -59,7 +62,11 @@ public abstract class State
 }
 public class Morto : State
 {
-   
+    
+
+    
+
+
     public Morto(string NovoName)
     {
         Name = NovoName;
@@ -72,6 +79,7 @@ public class Morto : State
             GameOver.singleton.CameraComLimites_ref.speed = 0;
             GameOver.singleton.SpawnInimigo_ref.enabled = false; //certo?
             GameOver.singleton.SpawnarAlga_ref.enabled = false;
+            //GameOver.singleton.spawnarGameOver_ref.SpawnGameOver();
         }
     }
     
@@ -92,8 +100,25 @@ public class Vivo : State
             GameOver.singleton.CameraComLimites_ref.speed = recuperarSpeedCameraColisores;
             GameOver.singleton.SpawnInimigo_ref.enabled = true; //certo?
             GameOver.singleton.SpawnarAlga_ref.enabled = true;
+            
         }
     }
 
+}
+public class SpawnarGameOver
+{
+    public Transform ColisorDaFrente;
+
+    public GameObject GameOverPrefab;
+
+    public void SpawnGameOver()
+    {
+        Vector2 IniPos = ColisorDaFrente.transform.position;
+        Vector2 Position = IniPos;
+        Position.x = 5;
+        Position.y = 5;
+
+        GameObject fo = 
+    }
 }
 

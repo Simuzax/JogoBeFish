@@ -45,10 +45,10 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     }
     public void Mover()
     {
-        if (interface_ref.estaVivo == true)
-        {
-            transform.Translate(speed * direction * Time.deltaTime);
-        }
+       
+        
+          transform.Translate(speed * direction * Time.deltaTime);
+        
        
         
     }
