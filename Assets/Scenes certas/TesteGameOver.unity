@@ -5679,6 +5679,11 @@ PrefabInstance:
       propertyPath: tempoParaComer
       value: 
       objectReference: {fileID: 274100612}
+    - target: {fileID: 7993037065706545792, guid: 8a4962b395e8754468330ec4737bec81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8365788415942785424, guid: 8a4962b395e8754468330ec4737bec81,
         type: 3}
       propertyPath: m_Color.a
@@ -5715,11 +5720,6 @@ PrefabInstance:
     - target: {fileID: 149004095, guid: 8a4962b395e8754468330ec4737bec81, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7993037065706545792, guid: 8a4962b395e8754468330ec4737bec81,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8365788415942785430, guid: 8a4962b395e8754468330ec4737bec81, type: 3}
@@ -7220,16 +7220,16 @@ PrefabInstance:
       propertyPath: tempoParaComer
       value: 
       objectReference: {fileID: 274100612}
-    - target: {fileID: 8365788415942785426, guid: 8a4962b395e8754468330ec4737bec81,
-        type: 3}
-      propertyPath: spawnarGhost_ref
-      value: 
-      objectReference: {fileID: 274100613}
     - target: {fileID: 7993037065706545792, guid: 8a4962b395e8754468330ec4737bec81,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8365788415942785426, guid: 8a4962b395e8754468330ec4737bec81,
+        type: 3}
+      propertyPath: spawnarGhost_ref
+      value: 
+      objectReference: {fileID: 274100613}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a4962b395e8754468330ec4737bec81, type: 3}
 --- !u!1001 &8837473359157535786
