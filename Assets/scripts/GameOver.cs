@@ -79,7 +79,7 @@ public class Morto : State
             GameOver.singleton.CameraComLimites_ref.speed = 0;
             GameOver.singleton.SpawnInimigo_ref.enabled = false; //certo?
             GameOver.singleton.SpawnarAlga_ref.enabled = false;
-            //GameOver.singleton.spawnarGameOver_ref.SpawnGameOver();
+            GameOver.singleton.spawnarGameOver_ref.SpawnGameOver();
         }
     }
     
@@ -105,7 +105,7 @@ public class Vivo : State
     }
 
 }
-public class SpawnarGameOver
+public class SpawnarGameOver: MonoBehaviour
 {
     public Transform ColisorDaFrente;
 
@@ -115,10 +115,10 @@ public class SpawnarGameOver
     {
         Vector2 IniPos = ColisorDaFrente.transform.position;
         Vector2 Position = IniPos;
-        Position.x = 5;
-        Position.y = 5;
+        Position.x = -5;
+        Position.y =  5;
 
-        GameObject fo = 
+        GameObject fo = Instantiate(GameOverPrefab, Position, Quaternion.identity);
     }
 }
 
