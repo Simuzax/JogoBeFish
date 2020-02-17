@@ -849,7 +849,6 @@ GameObject:
   - component: {fileID: 274100610}
   - component: {fileID: 274100613}
   - component: {fileID: 274100615}
-  - component: {fileID: 274100616}
   - component: {fileID: 274100617}
   - component: {fileID: 274100618}
   - component: {fileID: 274100620}
@@ -876,6 +875,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0add8452f9efe46a1bb613b4b5df66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isca: {fileID: 0}
+  redePesca: {fileID: 0}
+  tubarao: {fileID: 0}
   LinhaDeSpawn: {fileID: 1334099207}
   tubaraoPrefab: {fileID: 7130763391869936519, guid: 35b448ffd27f06042b39d7ec9463d22e,
     type: 3}
@@ -1069,18 +1071,6 @@ MonoBehaviour:
   ListTesouros: []
   spawnarTesouroInicial: 0
   spawnarTesouroMax: 8
---- !u!114 &274100616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274100604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b40efdd890abda543b96e13cda2c9630, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &274100617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5781,6 +5771,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8365788415942785425, guid: 8a4962b395e8754468330ec4737bec81,
+        type: 3}
+      propertyPath: tempoParaComer
+      value: 
+      objectReference: {fileID: 274100612}
     - target: {fileID: 8365788415942785427, guid: 8a4962b395e8754468330ec4737bec81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5846,11 +5841,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8365788415942785425, guid: 8a4962b395e8754468330ec4737bec81,
-        type: 3}
-      propertyPath: tempoParaComer
-      value: 
-      objectReference: {fileID: 274100612}
     - target: {fileID: 7993037065706545792, guid: 8a4962b395e8754468330ec4737bec81,
         type: 3}
       propertyPath: m_IsActive
@@ -7188,6 +7178,31 @@ PrefabInstance:
       propertyPath: smoothing
       value: 7.53
       objectReference: {fileID: 0}
+    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
+        type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
+        type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
+        type: 3}
+      propertyPath: cameraMovement_ref
+      value: 
+      objectReference: {fileID: 519420030}
+    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
+        type: 3}
+      propertyPath: cameraComLimites_ref
+      value: 
+      objectReference: {fileID: 519420029}
     - target: {fileID: 5341233894203701360, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7264,31 +7279,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
-        type: 3}
-      propertyPath: body
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
-        type: 3}
-      propertyPath: speed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
-        type: 3}
-      propertyPath: cameraMovement_ref
-      value: 
-      objectReference: {fileID: 519420030}
-    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
-        type: 3}
-      propertyPath: cameraComLimites_ref
-      value: 
-      objectReference: {fileID: 519420029}
     - target: {fileID: 5341233894203701362, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
         type: 3}
       propertyPath: m_IsTrigger
@@ -7344,6 +7334,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7891198803849640158, guid: e098b276027d87a48b48440079d85972,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7891198803849640156, guid: e098b276027d87a48b48440079d85972,
         type: 3}
       propertyPath: Interface_ref
@@ -7373,7 +7368,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnarGameOver_ref
       value: 
-      objectReference: {fileID: 274100616}
+      objectReference: {fileID: 0}
     - target: {fileID: 7891198803849640156, guid: e098b276027d87a48b48440079d85972,
         type: 3}
       propertyPath: habilidadesGeraisInimigo_ref
@@ -7454,11 +7449,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.41493788
       objectReference: {fileID: 0}
-    - target: {fileID: 7891198803849640158, guid: e098b276027d87a48b48440079d85972,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e098b276027d87a48b48440079d85972, type: 3}
 --- !u!1001 &8365788417058773345
@@ -7473,6 +7463,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cascudo
       objectReference: {fileID: 0}
+    - target: {fileID: 8365788415942785425, guid: 8a4962b395e8754468330ec4737bec81,
+        type: 3}
+      propertyPath: tempoParaComer
+      value: 
+      objectReference: {fileID: 274100612}
     - target: {fileID: 8365788415942785427, guid: 8a4962b395e8754468330ec4737bec81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7543,11 +7538,6 @@ PrefabInstance:
       propertyPath: hp
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8365788415942785425, guid: 8a4962b395e8754468330ec4737bec81,
-        type: 3}
-      propertyPath: tempoParaComer
-      value: 
-      objectReference: {fileID: 274100612}
     - target: {fileID: 7993037065706545792, guid: 8a4962b395e8754468330ec4737bec81,
         type: 3}
       propertyPath: m_IsActive

@@ -9,6 +9,15 @@ using System.Linq;
 public class SpawnInimigo : MonoBehaviour
 {
     [SerializeField]
+    Isca isca;
+
+    [SerializeField]
+    RedePesca redePesca;
+
+    [SerializeField]
+    Tubarao tubarao;
+
+    [SerializeField]
     private Transform LinhaDeSpawn;
 
     public GameObject tubaraoPrefab;
@@ -78,6 +87,7 @@ public class SpawnInimigo : MonoBehaviour
 
 
     List<GameObject> ListInimigos = new List<GameObject>();
+    List<GameObject> ListInimigosVivos = new List<GameObject>();
     
     
     // Start is called before the first frame update
@@ -286,14 +296,17 @@ public class SpawnInimigo : MonoBehaviour
                 if (typeof(Y) == typeof(Isca))
                 {
                     Isca GameObject = Instantiate(iscaPrefab, position, Quaternion.identity).GetComponent<Isca>();
+                    ListInimigosVivos.Add(isca.gameObject);
                 }
                 if (typeof(Y) == typeof(Tubarao))
                 {
                     Tubarao GameObject = Instantiate(tubaraoPrefab, position, Quaternion.identity).GetComponent<Tubarao>();
+                    ListInimigosVivos.Add(tubarao.gameObject);
                 }
                 if (typeof(Y) == typeof(RedePesca))
                 {
                     RedePesca GameObject = Instantiate(redeDePescaPrefab, position, Quaternion.identity).GetComponent<RedePesca>();
+                    ListInimigosVivos.Add(redePesca.gameObject);
                 }
             }
 
