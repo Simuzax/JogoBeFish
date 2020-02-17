@@ -13,7 +13,9 @@ public class GameOver : MonoBehaviour
     public SpawnInimigo SpawnInimigo_ref;
     public SpawnarAlga SpawnarAlga_ref;
     public SpawnarGameOver spawnarGameOver_ref;
-
+    public HabilidadesGeraisInimigo habilidadesGeraisInimigo_ref;
+    public DestruirGameOver destruirGameOver_ref;
+    public SpawnarTesouro spawnarTesouro_ref;
 
 
     void Awake()
@@ -23,7 +25,11 @@ public class GameOver : MonoBehaviour
         CameraComLimites_ref = GameObject.Find("MainCamera").GetComponent<CameraComLimites>();
         SpawnInimigo_ref = GameObject.Find("Game").GetComponent<SpawnInimigo>();
         SpawnarAlga_ref = GameObject.Find("Game").GetComponent<SpawnarAlga>();
-        spawnarGameOver_ref = GetComponent<SpawnarGameOver>(); 
+        spawnarGameOver_ref = GameObject.Find("Game").GetComponent<SpawnarGameOver>();
+        habilidadesGeraisInimigo_ref = GameObject.Find("Tubarao").GetComponent<HabilidadesGeraisInimigo>();
+        spawnarTesouro_ref = GameObject.Find("Game").GetComponent<SpawnarTesouro>();
+        
+        
 
 
         if(singleton != this && singleton != null)
@@ -51,11 +57,11 @@ public class StateJogador
     }
 
 }
-public abstract class State
+public abstract class State //as variaveis das classes abstract não aparecem no inspector mesmo deixando elas como public?
 {
     public string Name;
 
-    public virtual void Mudar()
+    public virtual void Mudar()//pq não posso usar um metodo abstarct aqui?
     {
 
     }
@@ -77,8 +83,10 @@ public class Morto : State
         {
             GameOver.singleton.PlayerMovimentacao_ref.speed = 0;
             GameOver.singleton.CameraComLimites_ref.speed = 0;
+            GameOver.singleton.habilidadesGeraisInimigo_ref.speed = 0;
             GameOver.singleton.SpawnInimigo_ref.enabled = false; //certo?
             GameOver.singleton.SpawnarAlga_ref.enabled = false;
+            GameOver.singleton.spawnarTesouro_ref.enabled = false;
             GameOver.singleton.spawnarGameOver_ref.SpawnGameOver();
         }
     }
@@ -86,8 +94,12 @@ public class Morto : State
 }
 public class Vivo : State
 {
-    public int recuperarSpeedPlayer;
-    public int recuperarSpeedCameraColisores;
+    public DestruirGameOver destruirGameOver_ref;
+
+    void Awake()
+    {
+        destruirGameOver_ref = GameObject.Find("Game").GetComponent<DestruirGameOver>();
+    }
     public Vivo(string NovoNome)
     {
         Name = NovoNome;
@@ -96,29 +108,31 @@ public class Vivo : State
     {
         if (GameOver.singleton.Interface_ref.hp > 0)
         {
-            GameOver.singleton.PlayerMovimentacao_ref.speed = recuperarSpeedPlayer;
-            GameOver.singleton.CameraComLimites_ref.speed = recuperarSpeedCameraColisores;
+            GameOver.singleton.PlayerMovimentacao_ref.speed = GameOver.singleton.destruirGameOver_ref.recuperarSpeedPlayer;
+            GameOver.singleton.CameraComLimites_ref.speed = GameOver.singleton.destruirGameOver_ref.recuperarSpeedCamera; //aqui os colisores ja recuperariam sua velocidade tambem devido a eles herdarem a velocidade da câmera?
+
             GameOver.singleton.SpawnInimigo_ref.enabled = true; //certo?
             GameOver.singleton.SpawnarAlga_ref.enabled = true;
+            GameOver.singleton.spawnarTesouro_ref.enabled = true;
+
+            if (destruirGameOver_ref.tubarao.tag == "Inimigo")
+            {
+                GameOver.singleton.habilidadesGeraisInimigo_ref.speed = destruirGameOver_ref.recuperarSpeedTubarao; //não sei se esta certo?
+            }
+            if (destruirGameOver_ref.isca.tag == "Inimigo2")
+            {
+                GameOver.singleton.habilidadesGeraisInimigo_ref.speed = destruirGameOver_ref.recuperarSpeedIscaDePeixe; //não sei se esta certo?
+            }
+
             
+
+
+            destruirGameOver_ref.GuardarOuDestruirGameOver(destruirGameOver_ref.gameOver.gameObject);
+
+
         }
     }
 
 }
-public class SpawnarGameOver: MonoBehaviour
-{
-    public Transform ColisorDaFrente;
 
-    public GameObject GameOverPrefab;
-
-    public void SpawnGameOver()
-    {
-        Vector2 IniPos = ColisorDaFrente.transform.position;
-        Vector2 Position = IniPos;
-        Position.x = -5;
-        Position.y =  5;
-
-        GameObject fo = Instantiate(GameOverPrefab, Position, Quaternion.identity);
-    }
-}
 

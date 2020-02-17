@@ -10,7 +10,7 @@ public class CameraComLimites : MonoBehaviour
     public float boundX = 2.0f;
     public float boundY = 1.5f;
 
-    public float speed = 6.0f;
+    public float speed;  //6.0f;
 
     private Vector3 PosicaoDesejada;
 

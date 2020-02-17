@@ -21,8 +21,8 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
 
     
 
-    [SerializeField]
-    float speed;
+    
+    public float speed;
 
     [SerializeField]
     private Vector2 direction;
