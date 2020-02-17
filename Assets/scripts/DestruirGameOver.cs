@@ -19,7 +19,7 @@ public class DestruirGameOver : MonoBehaviour
     
 
     
-    public GameOver gameOver;
+    /*public GameOver gameOver;
     public void GuardarOuDestruirGameOver(GameObject gameObject)
     {
         if (ListGameOver.Count > 0)
@@ -30,5 +30,5 @@ public class DestruirGameOver : MonoBehaviour
         {
             Destroy(gameObject); 
         }
-    }
+    }*/
 }

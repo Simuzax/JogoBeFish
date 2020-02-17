@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnarGameOver : MonoBehaviour
 {
-    public Transform ColisorDaFrente;
+    /*public Transform ColisorDaFrente;
 
     public GameObject GameOverPrefab;
 
@@ -16,6 +16,6 @@ public class SpawnarGameOver : MonoBehaviour
         Position.y = 5;
 
         GameObject fo = Instantiate(GameOverPrefab, Position, Quaternion.identity);
-    }
+    }*/
   
 }

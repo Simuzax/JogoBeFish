@@ -5,7 +5,7 @@ using TMPro;
 public class GameOver : MonoBehaviour
 {
     
-    public static GameOver singleton;
+    /*public static GameOver singleton;
 
     public Interface Interface_ref;
     public PlayerMovimentacao PlayerMovimentacao_ref;
@@ -16,6 +16,7 @@ public class GameOver : MonoBehaviour
     public HabilidadesGeraisInimigo habilidadesGeraisInimigo_ref;
     public DestruirGameOver destruirGameOver_ref;
     public SpawnarTesouro spawnarTesouro_ref;
+    
 
 
     void Awake()
@@ -87,7 +88,7 @@ public class Morto : State
             GameOver.singleton.SpawnInimigo_ref.enabled = false; //certo?
             GameOver.singleton.SpawnarAlga_ref.enabled = false;
             GameOver.singleton.spawnarTesouro_ref.enabled = false;
-            GameOver.singleton.spawnarGameOver_ref.SpawnGameOver();
+            //GameOver.singleton.spawnarGameOver_ref.SpawnGameOver();
         }
     }
     
@@ -127,11 +128,11 @@ public class Vivo : State
             
 
 
-            destruirGameOver_ref.GuardarOuDestruirGameOver(destruirGameOver_ref.gameOver.gameObject);
+            //destruirGameOver_ref.GuardarOuDestruirGameOver(destruirGameOver_ref.gameOver.gameObject);
 
 
         }
-    }
+    }*/
 
 }
 
