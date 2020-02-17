@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Player Personagem; 
-
+    public HabilidadesGeraisPlayer Personagem;
+  
 
     public Interface interface_ref;
     public PlayerMovimentacao playerMovimentacao;
@@ -15,16 +15,6 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        /*if (playerInstance != null && playerInstance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            playerInstance = this;
-        }*/
-
-        
         
         interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>();
         playerMovimentacao = GameObject.Find("Cascudo").GetComponent<PlayerMovimentacao>();
@@ -40,7 +30,10 @@ public class PlayerController : MonoBehaviour
         if (interface_ref.hp<=0)
         {
             playerMovimentacao.enabled = false;
+            
 
         }
     }
+
+
 }
