@@ -13,7 +13,7 @@ public class ColisorController : MonoBehaviour
     private void Awake()
     {
         interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>();
-        movimentacaoColisores_ref = GameObject.Find("ColisorDetraz").GetComponent<MovimentacaoColisores>();
+        movimentacaoColisores_ref = GameObject.Find("ColisorDetras").GetComponent<MovimentacaoColisores>();
     }
 
     // Update is called once per frame

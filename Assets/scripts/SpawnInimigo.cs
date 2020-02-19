@@ -87,7 +87,7 @@ public class SpawnInimigo : MonoBehaviour
 
 
     List<GameObject> ListInimigos = new List<GameObject>();
-    List<GameObject> ListInimigosVivos = new List<GameObject>();
+    public List<GameObject> ListInimigosVivos = new List<GameObject>();
     
     
     // Start is called before the first frame update
