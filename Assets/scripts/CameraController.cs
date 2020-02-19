@@ -8,12 +8,12 @@ public class CameraController : MonoBehaviour
 
 
     public Interface interface_ref;
-    public CameraMove cameraMove_ref;
+    public cameraMove cameraMove_ref;
 
     private void Awake()
     {
         interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>();
-        cameraMove_ref = GameObject.Find("MainCamera").GetComponent<CameraMove>(); 
+        cameraMove_ref = GameObject.Find("MainCamera").GetComponent<cameraMove>(); 
     }
 
     void Update()

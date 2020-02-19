@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 145450113}
   - component: {fileID: 145450112}
   m_Layer: 0
-  m_Name: 3 Layer3
+  m_Name: 3Layer3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 249464031}
   - component: {fileID: 249464032}
   m_Layer: 0
-  m_Name: 6 Sun
+  m_Name: 6Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1193,7 +1193,7 @@ GameObject:
   - component: {fileID: 283850396}
   - component: {fileID: 283850397}
   m_Layer: 0
-  m_Name: 8 Stars
+  m_Name: 8Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1876,6 +1876,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcac9ef633bbe14fa29d640e03e47ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1647d5b29f279b147b9ff79847e7074c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &519420037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5341233894203701360, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
@@ -1894,7 +1906,7 @@ GameObject:
   - component: {fileID: 546412336}
   - component: {fileID: 546412337}
   m_Layer: 0
-  m_Name: 2 Layer2
+  m_Name: 2Layer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2001,7 +2013,7 @@ GameObject:
   - component: {fileID: 550988813}
   - component: {fileID: 550988814}
   m_Layer: 0
-  m_Name: 1 Layer1
+  m_Name: 1Layer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3122,7 +3134,7 @@ GameObject:
   - component: {fileID: 891726496}
   - component: {fileID: 891726497}
   m_Layer: 0
-  m_Name: 7 Clouds
+  m_Name: 7Clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4971,7 +4983,7 @@ GameObject:
   - component: {fileID: 1604978292}
   - component: {fileID: 1604978293}
   m_Layer: 0
-  m_Name: 4 Layer4
+  m_Name: 4Layer4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5078,6 +5090,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'RedeDePesca '
       objectReference: {fileID: 0}
+    - target: {fileID: 423874680622120534, guid: f1820dd7859c53b4a9b2d946295a9a8a,
+        type: 3}
+      propertyPath: spawnInimigo_ref
+      value: 
+      objectReference: {fileID: 274100605}
     - target: {fileID: 423874680622120531, guid: f1820dd7859c53b4a9b2d946295a9a8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5133,11 +5150,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 423874680622120534, guid: f1820dd7859c53b4a9b2d946295a9a8a,
-        type: 3}
-      propertyPath: spawnInimigo_ref
-      value: 
-      objectReference: {fileID: 274100605}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1820dd7859c53b4a9b2d946295a9a8a, type: 3}
 --- !u!212 &1690025346 stripped
@@ -5649,7 +5661,7 @@ GameObject:
   - component: {fileID: 1912855638}
   - component: {fileID: 1912855639}
   m_Layer: 0
-  m_Name: 5 Mountains
+  m_Name: 5Mountains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5873,6 +5885,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1600264638, guid: 8a4962b395e8754468330ec4737bec81, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 3f3881b8e7ecee343bb2909ec7c861bf, type: 2}
     m_RemovedComponents:
     - {fileID: 8365788415942785430, guid: 8a4962b395e8754468330ec4737bec81, type: 3}
     - {fileID: 8365788415942785431, guid: 8a4962b395e8754468330ec4737bec81, type: 3}
@@ -6163,7 +6179,7 @@ GameObject:
   - component: {fileID: 2055078420}
   - component: {fileID: 2055078421}
   m_Layer: 0
-  m_Name: 7 Clouds2
+  m_Name: 7Clouds2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7168,31 +7184,6 @@ PrefabInstance:
       propertyPath: smoothing
       value: 7.53
       objectReference: {fileID: 0}
-    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
-        type: 3}
-      propertyPath: body
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
-        type: 3}
-      propertyPath: speed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
-        type: 3}
-      propertyPath: cameraMovement_ref
-      value: 
-      objectReference: {fileID: 519420030}
-    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
-        type: 3}
-      propertyPath: cameraComLimites_ref
-      value: 
-      objectReference: {fileID: 519420029}
     - target: {fileID: 5341233894203701360, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7258,6 +7249,31 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.41
       objectReference: {fileID: 0}
+    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
+        type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
+        type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
+        type: 3}
+      propertyPath: cameraMovement_ref
+      value: 
+      objectReference: {fileID: 519420030}
+    - target: {fileID: 5341233894203701361, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
+        type: 3}
+      propertyPath: cameraComLimites_ref
+      value: 
+      objectReference: {fileID: 519420029}
     - target: {fileID: 5341233894203701390, guid: ecdc1da9969bb8f41b9b28822fb0ea2f,
         type: 3}
       propertyPath: target
@@ -7539,6 +7555,14 @@ PrefabInstance:
       propertyPath: spawnarGhost_ref
       value: 
       objectReference: {fileID: 274100613}
+    - target: {fileID: 1600264638, guid: 8a4962b395e8754468330ec4737bec81, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600264639, guid: 8a4962b395e8754468330ec4737bec81, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a4962b395e8754468330ec4737bec81, type: 3}
 --- !u!114 &8365788417058773346 stripped

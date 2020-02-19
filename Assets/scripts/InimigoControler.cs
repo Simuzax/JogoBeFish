@@ -22,17 +22,18 @@ public class InimigoControler : MonoBehaviour
     }
     public void desativarControleInimigo()
     {
-        if (interface_ref.hp <= 0)
-        {
+        if (interface_ref.hp <= 0)                                                      //pq neste caso é necessario transformar a lista em um vetor?
+        {                                                                              //vetor e array é a mesma coisa? 
             GameObject[] inimigosArray = spawnInimigo_ref.ListInimigosVivos.ToArray();
-
-            if (inimigosArray.Length > 0) // verifica se tem objetos no array
+                                                                                                   
+            if (inimigosArray.Length > 0) // verifica se tem objetos no array                      
             {
                 for(int i=0;i> inimigosArray.Length; i++)
                 {
-                    inimigosArray[i].GetComponent<HabilidadesGeraisInimigo>().enabled=false;
+                    inimigosArray[i].GetComponent<HabilidadesGeraisInimigo>().enabled=false; //aqui no caso todos os da ListInimigosVivos tem essa classe?
                 }
             }
         }
     }
+    
 }
