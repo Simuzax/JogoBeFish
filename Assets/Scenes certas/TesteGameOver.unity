@@ -888,8 +888,8 @@ MonoBehaviour:
     type: 3}
   spawnarIscaInicial: 5
   spawnarIscaMax: 5
-  spawnarTubaraoInicial: 7
-  spawnarTubaraoMax: 7
+  spawnarTubaraoInicial: 1
+  spawnarTubaraoMax: 1
   spawnarRedePescaInicial: 4
   spawnarRedePescaMax: 4
   distanceEnemyFromPlayer: 4
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interface_ref: {fileID: 8365788417058773347}
-  habilidadesGeraisInimigo_ref: {fileID: 0}
+  habilidadesGeraisInimigo_ref: {fileID: 82810284}
 --- !u!114 &274100622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interface_ref: {fileID: 8365788417058773347}
-  cameraMove_ref: {fileID: 0}
+  cameraMove_ref: {fileID: 519420036}
 --- !u!1 &283850394
 GameObject:
   m_ObjectHideFlags: 0

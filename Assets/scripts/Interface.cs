@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Interface : MonoBehaviour
 {
-
+    public event Action OnPlayerDeath;
    
     public Slider sliderHp;
 
@@ -29,7 +30,10 @@ public class Interface : MonoBehaviour
             if (hp <= 0)
             {
                 hp = 0;
-                
+                if (OnPlayerDeath != null)
+                {
+                    OnPlayerDeath();
+                }
 
                 if (sliderHp && sliderHp != null)// aqui garante q não tem referencias?
                 {
@@ -51,6 +55,7 @@ public class Interface : MonoBehaviour
             else
             {
                 
+
                    if (sliderHp && sliderHp != null)
                    {
                        sliderHp.value = (float)hp / (float)HPMax; //colocar como float para poder trabalhar com valores de vida com virgula futuramente?

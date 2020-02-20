@@ -16,24 +16,37 @@ public class InimigoControler : MonoBehaviour
         habilidadesGeraisInimigo_ref = GameObject.Find("Tubarao").GetComponent<HabilidadesGeraisInimigo>();
     }
 
-    void Update()
+    private void Start()
     {
-        desativarControleInimigo();
+        interface_ref.OnPlayerDeath += DesativarControleInimigo;
     }
-    public void desativarControleInimigo()
+    
+    //Essa função é chamada quando o evento "OnPlayerDeath()" é disparado, no Script Interface
+    public void DesativarControleInimigo()
     {
-        if (interface_ref.hp <= 0)                                                      //pq neste caso é necessario transformar a lista em um vetor?
-        {                                                                              //vetor e array é a mesma coisa? 
+        Debug.Log("Chamando função DesativarControleInimigo() em " + gameObject.name);
+
+        if (interface_ref.hp <= 0)//aqui não adianta chamar esta função no start pois iria sair dela direto                                                   //pq neste caso é necessario transformar a lista em um vetor?
+        {                                                                             //vetor e array é a mesma coisa? 
             GameObject[] inimigosArray = spawnInimigo_ref.ListInimigosVivos.ToArray();
+
+            Debug.Log("Tamanho do vetor: " + inimigosArray.Length);
                                                                                                    
             if (inimigosArray.Length > 0) // verifica se tem objetos no array                      
             {
-                for(int i=0;i> inimigosArray.Length; i++)
-                {
-                    inimigosArray[i].GetComponent<HabilidadesGeraisInimigo>().enabled=false; //aqui no caso todos os da ListInimigosVivos tem essa classe?
+                for(int i = 0; i < inimigosArray.Length; i++)  //o i é um contador?                            //aqui vai rodar cada objeto na lista
+                {                                                                             
+                    Debug.Log("Valor de i: " + i);
+
+                    inimigosArray[i].GetComponent<HabilidadesGeraisInimigo>().enabled=false; //aqui no caso todos os da ListInimigosVivos tem essa classe?// 
                 }
             }
         }
     }
-    
+
+    private void OnDisable()
+    {
+        interface_ref.OnPlayerDeath -= DesativarControleInimigo;
+    }
+
 }
