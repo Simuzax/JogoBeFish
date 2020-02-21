@@ -26,9 +26,9 @@ public class InimigoControler : MonoBehaviour
     {
         Debug.Log("Chamando função DesativarControleInimigo() em " + gameObject.name);
 
-        if (interface_ref.hp <= 0)//aqui não adianta chamar esta função no start pois iria sair dela direto                                                   //pq neste caso é necessario transformar a lista em um vetor?
+        if (interface_ref.hp <= 0)//aqui não adianta chamar esta função no start pois iria sair dela direto no começo do jogo                                                  //pq neste caso é necessario transformar a lista em um vetor?
         {                                                                             //vetor e array é a mesma coisa? 
-            GameObject[] inimigosArray = spawnInimigo_ref.ListInimigosVivos.ToArray();
+            GameObject[] inimigosArray = spawnInimigo_ref.ListInimigosVivos.ToArray();   //aqui deve-se transformar a lista em vetor pq fica mais facil trabalhar com valores?
 
             Debug.Log("Tamanho do vetor: " + inimigosArray.Length);
                                                                                                    
@@ -46,7 +46,7 @@ public class InimigoControler : MonoBehaviour
 
     private void OnDisable()
     {
-        interface_ref.OnPlayerDeath -= DesativarControleInimigo;
+        interface_ref.OnPlayerDeath -= DesativarControleInimigo; //em que parte esta função é acionada? 
     }
 
 }

@@ -888,8 +888,8 @@ MonoBehaviour:
     type: 3}
   spawnarIscaInicial: 5
   spawnarIscaMax: 5
-  spawnarTubaraoInicial: 1
-  spawnarTubaraoMax: 1
+  spawnarTubaraoInicial: 6
+  spawnarTubaraoMax: 6
   spawnarRedePescaInicial: 4
   spawnarRedePescaMax: 4
   distanceEnemyFromPlayer: 4

@@ -30,7 +30,7 @@ public class Interface : MonoBehaviour
             if (hp <= 0)
             {
                 hp = 0;
-                if (OnPlayerDeath != null)
+                if (OnPlayerDeath != null)//aqui garante que o evento não esta vazio?, mas ele só não é preenchido pela função quando entra entra neste if?
                 {
                     OnPlayerDeath();
                 }

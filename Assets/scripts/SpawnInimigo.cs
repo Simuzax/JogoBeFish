@@ -317,15 +317,15 @@ public class SpawnInimigo : MonoBehaviour
     }
     public void adicionarOuDestruir(GameObject gameObject)                                         
     {
-             
-        if (ListInimigos.Count > 0)
+        ListInimigos.Add(gameObject);
+        /*if (ListInimigos.Count > 0)
         {
             ListInimigos.Add(gameObject);
         }
         else
         {
             Destroy(gameObject);
-        }
+        }*/
     }
     
   
