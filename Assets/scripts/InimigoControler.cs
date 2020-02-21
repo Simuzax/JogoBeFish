@@ -18,7 +18,7 @@ public class InimigoControler : MonoBehaviour
 
     private void Start()
     {
-        interface_ref.OnPlayerDeath += DesativarControleInimigo;
+        interface_ref.OnPlayerDeath += DesativarControleInimigo; //aqui ja esta adicionado a função desde o começo do jogo 
     }
     
     //Essa função é chamada quando o evento "OnPlayerDeath()" é disparado, no Script Interface
@@ -26,9 +26,9 @@ public class InimigoControler : MonoBehaviour
     {
         Debug.Log("Chamando função DesativarControleInimigo() em " + gameObject.name);
 
-        if (interface_ref.hp <= 0)//aqui não adianta chamar esta função no start pois iria sair dela direto no começo do jogo                                                  //pq neste caso é necessario transformar a lista em um vetor?
+        if (interface_ref.hp <= 0)//aqui não adianta chamar esta função no start pois iria sair dela direto no começo do jogo                                                
         {                                                                             //vetor e array é a mesma coisa? 
-            GameObject[] inimigosArray = spawnInimigo_ref.ListInimigosVivos.ToArray();   //aqui deve-se transformar a lista em vetor pq fica mais facil trabalhar com valores?
+            GameObject[] inimigosArray = spawnInimigo_ref.ListInimigosVivos.ToArray();   //aqui deve-se transformar a lista pq fica mais facil de percorer o vetor
 
             Debug.Log("Tamanho do vetor: " + inimigosArray.Length);
                                                                                                    

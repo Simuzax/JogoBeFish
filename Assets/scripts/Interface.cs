@@ -30,12 +30,13 @@ public class Interface : MonoBehaviour
             if (hp <= 0)
             {
                 hp = 0;
-                if (OnPlayerDeath != null)//aqui garante que o evento não esta vazio?, mas ele só não é preenchido pela função quando entra entra neste if?
+                if (OnPlayerDeath != null)//aqui garante que tem algo dentro
                 {
+                    Debug.Log("acertou");
                     OnPlayerDeath();
                 }
 
-                if (sliderHp && sliderHp != null)// aqui garante q não tem referencias?
+                if (sliderHp && sliderHp != null
                 {
                     sliderHp.value = 0;
                 }
