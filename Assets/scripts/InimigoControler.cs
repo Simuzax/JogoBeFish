@@ -26,7 +26,7 @@ public class InimigoControler : MonoBehaviour
     {
         Debug.Log("Chamando função DesativarControleInimigo() em " + gameObject.name);
 
-        if (interface_ref.hp <= 0)//aqui não adianta chamar esta função no start pois iria sair dela direto no começo do jogo                                                
+        if (interface_ref.hp <= 0)                                             
         {                                                                             //vetor e array é a mesma coisa? 
             GameObject[] inimigosArray = spawnInimigo_ref.ListInimigosVivos.ToArray();   //aqui deve-se transformar a lista pq fica mais facil de percorer o vetor
 
@@ -34,7 +34,7 @@ public class InimigoControler : MonoBehaviour
                                                                                                    
             if (inimigosArray.Length > 0) // verifica se tem objetos no array                      
             {
-                for(int i = 0; i < inimigosArray.Length; i++)  //o i é um contador?                            //aqui vai rodar cada objeto na lista
+                for(int i = 0; i < inimigosArray.Length; i++)  //o i é um contador                          //aqui vai rodar cada objeto na lista
                 {                                                                             
                     Debug.Log("Valor de i: " + i);
 

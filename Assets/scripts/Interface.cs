@@ -36,7 +36,7 @@ public class Interface : MonoBehaviour
                     OnPlayerDeath();
                 }
 
-                if (sliderHp && sliderHp != null
+                if (sliderHp && sliderHp != null)
                 {
                     sliderHp.value = 0;
                 }
