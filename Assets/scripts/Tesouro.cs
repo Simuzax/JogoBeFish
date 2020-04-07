@@ -6,8 +6,7 @@ public class Tesouro : MonoBehaviour
 {
     public int TesouroValor = 1;
 
-    [SerializeField]
-    Tesouro tesouro;
+    
 
     
     SpawnarTesouro spawnarTesouro_ref;
@@ -35,13 +34,13 @@ public class Tesouro : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
-            spawnarTesouro_ref.adicionarOuDestruirTesouro(tesouro.gameObject);
+            spawnarTesouro_ref.adicionarOuDestruirTesouro(gameObject);
 
         }
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("ColidiuTesouro");
-            spawnarTesouro_ref.adicionarOuDestruirTesouro(tesouro.gameObject);
+            spawnarTesouro_ref.adicionarOuDestruirTesouro(gameObject);
             tesouroScore_ref.mudarScore(TesouroValor);
         }
 

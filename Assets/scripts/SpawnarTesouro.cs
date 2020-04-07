@@ -46,27 +46,28 @@ public class SpawnarTesouro : MonoBehaviour
             Vector2 Position = inipos;
 
 
-            Vector2 inipos2 = linhaSpawnTesouro.transform.position;
-            Vector2 Position2 = inipos2;
+            //Vector2 inipos2 = linhaSpawnTesouro.transform.position;
+            //Vector2 Position2 = inipos2;
 
 
 
 
-            SpawnTesouro(1, Random.Range(18, 24), Random.Range(-1, 5), Position, Position2);
+            SpawnTesouro(1, Random.Range(18, 24), Random.Range(-1, 5), Position /*Position2*/);
         }
 
             
         
 
     }
-    public void SpawnTesouro(int quantidadeTesouro, float distanciaPlayerSpawnTesouro, float alturaMax, Vector2 PlayerPos, Vector2 LinhaSpawnTesouroPos)                                                           
+    public void SpawnTesouro(int quantidadeTesouro, float distanciaPlayerSpawnTesouro, float alturaMax, Vector2 PlayerPos /*Vector2 LinhaSpawnTesouroPos*/)                                                           
     {
         Vector2 Position = PlayerPos;
         Position.x += distanciaPlayerSpawnTesouro;
+        Position.y += alturaMax;
 
 
-        Vector2 Position2 = LinhaSpawnTesouroPos;
-        Position2.y += alturaMax;
+        //Vector2 Position2 = LinhaSpawnTesouroPos;
+        //Position2.y += alturaMax;
         
        
 
@@ -90,6 +91,7 @@ public class SpawnarTesouro : MonoBehaviour
             else
             {
                 Tesouro GameObject = Instantiate(TesouroPrefab, Position, Quaternion.identity).GetComponent<Tesouro>();
+                adicionarOuDestruirTesouro(this.gameObject);
             }
         }
 

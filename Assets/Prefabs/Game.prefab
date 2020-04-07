@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8869712004098888222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8869712004098888220}
+  - component: {fileID: 8869712004098888417}
+  - component: {fileID: 8869712004098888422}
+  - component: {fileID: 8869712004098888420}
+  - component: {fileID: 8869712004098888221}
+  - component: {fileID: 8869712004098888418}
+  - component: {fileID: 8869712004098888223}
+  - component: {fileID: 8869712004098888419}
+  - component: {fileID: 8869712004098888416}
+  - component: {fileID: 8869712004098888423}
+  - component: {fileID: 8869712004098888421}
+  m_Layer: 0
+  m_Name: Game
+  m_TagString: Game
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8869712004098888220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.2910485, y: -2.8901508, z: 5.4023438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8869712004098888417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50afbac1171d57e4eb8f003380dc330c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  habilidadesGeraisPlayer: {fileID: 0}
+--- !u!114 &8869712004098888422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49da69b04144f0648a84a8763f80d8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Contagem: 10
+  displayContagem: {fileID: 0}
+--- !u!114 &8869712004098888420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2200fe54917e3b45a5fe96c64606770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanciaComidaPlayer: 2
+  player: {fileID: 0}
+  nivelDoChao: 2
+  comidaPrefab: {fileID: 0}
+  timerSpawnComidaMax: 3
+--- !u!114 &8869712004098888221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef38dc2ef561def4f8b26c4224110987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaoPrefab: {fileID: 0}
+  proximaPosicaoChao: {x: 0, y: 1.05}
+  numeroMaxPool: 2
+--- !u!114 &8869712004098888418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef24d00bc9fb1546956ddcd3cfb678d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tetoprefab: {fileID: 0}
+  proximaPosicaoTeto: {x: 0, y: 18.72}
+--- !u!114 &8869712004098888223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0add8452f9efe46a1bb613b4b5df66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isca: {fileID: 6529201835023719394, guid: 7f0f3df4788a92b409554d43020ae2ee, type: 3}
+  redePesca: {fileID: 423874680622120534, guid: f1820dd7859c53b4a9b2d946295a9a8a,
+    type: 3}
+  tubarao: {fileID: 7130763391869936523, guid: 35b448ffd27f06042b39d7ec9463d22e, type: 3}
+  LinhaDeSpawn: {fileID: 0}
+  tubaraoPrefab: {fileID: 7130763391869936519, guid: 35b448ffd27f06042b39d7ec9463d22e,
+    type: 3}
+  iscaPrefab: {fileID: 6529201835023719392, guid: 7f0f3df4788a92b409554d43020ae2ee,
+    type: 3}
+  redeDePescaPrefab: {fileID: 423874680622120533, guid: f1820dd7859c53b4a9b2d946295a9a8a,
+    type: 3}
+  spawnarIscaInicial: 5
+  spawnarIscaMax: 5
+  spawnarTubaraoInicial: 7
+  spawnarTubaraoMax: 7
+  spawnarRedePescaInicial: 4
+  spawnarRedePescaMax: 4
+  distanceEnemyFromPlayer: 4
+  player_ref: {fileID: 822688687111050687, guid: 2e055670cd892ef47846fba21a934158,
+    type: 3}
+  Camera: {fileID: 0}
+  acelerarIscaSpawninicial: 10
+  acelerarIscaSpawnMax: 10
+  desacelerarIscaSpawnInicial: 6
+  desacelerarIscaSpawnMax: 6
+  reacelerarIscaSpawnInicial: 10
+  reacelerarIscaSpawnMax: 10
+  maisIscas: 4.5
+  menosIscas: 3
+  maisIscas2: 3
+  novoValor: 1
+  antigoValor: 0
+  ListInimigosVivos: []
+--- !u!114 &8869712004098888419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee5b3107aa895a43bfeb318cbdf1631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanciaBolhaPeixe: 3
+  bolhasPrefab: {fileID: 4258262793946715497, guid: 42b008cebe389e84999c0fc7be57fccd,
+    type: 3}
+  bolhas: {fileID: 0}
+  Peixe: {fileID: 0}
+--- !u!114 &8869712004098888416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b54de1a52c73ea43a5ed6eb94edda8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanciaAlgaColisorFrente: 3
+  AlgaPrefab: {fileID: 4907969511451680819, guid: 17dcd87d14e4ce04cae55d88622d8232,
+    type: 3}
+  ColisorDaFrente_ref: {fileID: 0}
+  SpawnarAlgaFinal: 7
+--- !u!114 &8869712004098888423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837cc96cc923d274097e9c1696c1c74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostPrefab: {fileID: 7504508095493451062, guid: 5f6541fa9f20ec54a8137058f7b67cab,
+    type: 3}
+  spectre: {fileID: 0}
+  Player_: {fileID: 0}
+  spawnFantasmaFinal1: 1.3
+  spawnFantasmaFinal2: 1.6
+  spawnFantasmaFinal3: 1.9
+  spawnFantasmaFinal4: 2.2
+  destruirFantasmaInicial: 1
+  destruirFantasmaFinal: 1
+  carregar: 0
+  ghostDelay: 1.1
+  ghostDelaySeconds: 1
+  makeGhost: 0
+--- !u!114 &8869712004098888421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbefae66d3c0544290a8e10a660025b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  linhaSpawnTesouro: {fileID: 0}
+  TesouroPrefab: {fileID: 5695527276316066547, guid: f874475a84f97cc499957c911d93f089,
+    type: 3}
+  ListTesouros: []
+  spawnarTesouroInicial: 0
+  spawnarTesouroMax: 3

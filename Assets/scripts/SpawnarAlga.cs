@@ -8,7 +8,7 @@ using System.Linq;
 
 public class SpawnarAlga : MonoBehaviour
 {
-    
+
     Alga alga;
 
     [SerializeField]
@@ -26,10 +26,12 @@ public class SpawnarAlga : MonoBehaviour
     private float SpawnarAlgaFinal;
 
     // Start is called before the first frame update
-    void Awake()
+
+    private void Awake()
     {
-        alga = GameObject.Find("AlgaA").GetComponent<Alga>();   
+        alga = GameObject.Find("Alga").GetComponent<Alga>();  
     }
+
 
     void Start()
     {
@@ -39,13 +41,17 @@ public class SpawnarAlga : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= SpawnarAlgaInicial + SpawnarAlgaFinal)
+        SpawnarAlgaInicial += Time.deltaTime;
+        if (SpawnarAlgaInicial >= SpawnarAlgaFinal)
         {
-            
-            SpawnarAlgaInicial = Time.time;
             spawnarAlga();
+            SpawnarAlgaInicial = 0;
             
         }
+       
+            
+            
+        
     }
     public void spawnarAlga()
     {
@@ -66,6 +72,7 @@ public class SpawnarAlga : MonoBehaviour
         else
         {
             GameObject go = Instantiate(AlgaPrefab, position, Quaternion.identity);
+            alga.ListAlgas.Add(this.gameObject);
         }
 
         

@@ -100,23 +100,14 @@ public class SpawnInimigo : MonoBehaviour
         
 
 
-        //spawnarIscaInicial += Time.deltaTime;
-        //if(spawnarIscaInicial >= spawnarIscaMax)
-        //{
-            //spawnarIscaInicial = 0;
          if(Time.time >= spawnarIscaInicial+spawnarIscaMax)
          {
             spawnarIscaInicial = Time.time;
 
             Vector2 initialPos = player_ref.transform.position;
             Vector2 position = initialPos;
-            //position.x += distanceEnemyFromPlayer;
-
-            Vector2 initialPosLinha = LinhaDeSpawn.transform.position;
-            Vector2 position2 = initialPosLinha;
-
-
-            SpawnarInimigos<Isca>(1, 18, Random.Range(-1, 5), position, position2);
+          
+            SpawnarInimigos<Isca>(1, 18, Random.Range(-1, 5), position);
          } 
 
            
@@ -124,10 +115,7 @@ public class SpawnInimigo : MonoBehaviour
         
         
 
-        //acelerarIscaSpawninicial += Time.deltaTime;
-        //if (acelerarIscaSpawninicial >= acelerarIscaSpawnMax && novoValor == true && antigoValor == false)
-        //{
-            //acelerarIscaSpawninicial = 0;
+       
          if(Time.time>= acelerarIscaSpawninicial + acelerarIscaSpawnMax && novoValor==true && antigoValor == false)
          {
             acelerarIscaSpawninicial = Time.time;
@@ -140,10 +128,7 @@ public class SpawnInimigo : MonoBehaviour
             
 
         
-        //desacelerarIscaSpawnInicial += Time.deltaTime;
-        //if (desacelerarIscaSpawnInicial >= desacelerarIscaSpawnMax && novoValor == true && antigoValor == true)
-        //{
-            //desacelerarIscaSpawnInicial = 0;
+        
 
          if(Time.time>=desacelerarIscaSpawnInicial+desacelerarIscaSpawnMax && novoValor==true && antigoValor == true)
          {
@@ -158,10 +143,7 @@ public class SpawnInimigo : MonoBehaviour
             
 
         
-        //reacelerarIscaSpawnInicial += Time.deltaTime;
-        //if (reacelerarIscaSpawnInicial >= reacelerarIscaSpawnMax && novoValor == false && antigoValor == false)
-        //{
-            //reacelerarIscaSpawnInicial = 0;
+      
 
         if(Time.time>=reacelerarIscaSpawnInicial+reacelerarIscaSpawnMax && novoValor==false && antigoValor == true)
         {
@@ -186,13 +168,9 @@ public class SpawnInimigo : MonoBehaviour
 
             Vector2 initialPos = player_ref.transform.position;
             Vector2 position = initialPos;
-            //position.x += distanceEnemyFromPlayer;
+           
             
-            Vector2 initialPosLinha = LinhaDeSpawn.transform.position;
-            Vector2 position2 = initialPosLinha;
-            
-
-            SpawnarInimigos<Tubarao>(1, 18, Random.Range(-1, 5), position, position2);
+            SpawnarInimigos<Tubarao>(1, 18, Random.Range(-1, 5), position);
 
             
         }
@@ -205,21 +183,14 @@ public class SpawnInimigo : MonoBehaviour
 
             Vector2 initialPos = player_ref.transform.position;
             Vector2 position = initialPos;
-            //position.x += distanceEnemyFromPlayer; 
+          
             
-            Vector2 initialPosLinha = LinhaDeSpawn.transform.position;
-            Vector2 position2 = initialPosLinha;
-            
-
-
-
-
-            SpawnarInimigos<RedePesca>(1, 18, Random.Range(-1, 5), position, position2);
+            SpawnarInimigos<RedePesca>(1, 18, Random.Range(-1, 5), position);
 
             
         }
     }
-    public void SpawnarInimigos<Y>(int quantidadeIinimigos, float distanceMax, float heightMax, Vector2 initialPos, Vector2 initialPos2)
+    public void SpawnarInimigos<Y>(int quantidadeIinimigos, float distanceMax, float heightMax, Vector2 initialPos)
     {
        
 
@@ -228,10 +199,9 @@ public class SpawnInimigo : MonoBehaviour
               
                 Vector2 position = initialPos;
                 position.x += distanceMax;                                                           
+                position.y = heightMax;
 
-
-                Vector2 position2 = initialPos2;
-                position2.y += heightMax;                                               //Random.Range(-1,5);
+                                                         
 
         for (int i = 0; i < quantidadeIinimigos; i++)
         {
@@ -296,17 +266,17 @@ public class SpawnInimigo : MonoBehaviour
                 if (typeof(Y) == typeof(Isca))
                 {
                     Isca GameObject = Instantiate(iscaPrefab, position, Quaternion.identity).GetComponent<Isca>();
-                    ListInimigosVivos.Add(isca.gameObject);
+                    adicionarOuDestruir(this.gameObject);
                 }
                 if (typeof(Y) == typeof(Tubarao))
                 {
                     Tubarao GameObject = Instantiate(tubaraoPrefab, position, Quaternion.identity).GetComponent<Tubarao>();
-                    ListInimigosVivos.Add(tubarao.gameObject);
+                    adicionarOuDestruir(this.gameObject);
                 }
                 if (typeof(Y) == typeof(RedePesca))
                 {
                     RedePesca GameObject = Instantiate(redeDePescaPrefab, position, Quaternion.identity).GetComponent<RedePesca>();
-                    ListInimigosVivos.Add(redePesca.gameObject);
+                    adicionarOuDestruir(this.gameObject);
                 }
             }
 
@@ -317,15 +287,15 @@ public class SpawnInimigo : MonoBehaviour
     }
     public void adicionarOuDestruir(GameObject gameObject)                                         
     {
-        ListInimigos.Add(gameObject);
-        /*if (ListInimigos.Count > 0)
+       //ListInimigos.Add(gameObject);
+        if (ListInimigos.Count > 0)
         {
             ListInimigos.Add(gameObject);
         }
         else
         {
             Destroy(gameObject);
-        }*/
+        }
     }
     
   

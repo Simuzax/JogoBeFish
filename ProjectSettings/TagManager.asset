@@ -23,6 +23,8 @@ TagManager:
   - SpawnTesouroCima
   - SpawnTesouro
   - Inimigo2
+  - LinhaDeSpawnTesouro
+  - LinhaDeSpawnInimigo
   layers:
   - Default
   - TransparentFX
@@ -143,4 +145,7 @@ TagManager:
     locked: 0
   - name: GameOver
     uniqueID: 1978546311
+    locked: 0
+  - name: SpawnTesouro
+    uniqueID: 3274162667
     locked: 0

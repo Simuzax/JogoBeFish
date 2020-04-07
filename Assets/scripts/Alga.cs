@@ -10,8 +10,7 @@ public class Alga : MonoBehaviour
 {
     
     
-    [SerializeField]
-    Alga alga;
+   
 
     public List<GameObject> ListAlgas = new List<GameObject>();
 
@@ -28,7 +27,7 @@ public class Alga : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
-            GuardarOuDestruir(alga.gameObject);
+            GuardarOuDestruir(gameObject);
         }
     }
     public void GuardarOuDestruir(GameObject gameObject)

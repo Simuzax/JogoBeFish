@@ -218,7 +218,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rede: {fileID: 423874680622120534}
-  spawnInimigo_ref: {fileID: 0}
 --- !u!114 &423874680622120535
 MonoBehaviour:
   m_ObjectHideFlags: 0

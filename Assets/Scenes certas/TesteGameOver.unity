@@ -1138,7 +1138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interface_ref: {fileID: 8365788417058773347}
-  habilidadesGeraisInimigo_ref: {fileID: 82810284}
 --- !u!114 &274100622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5771,7 +5770,7 @@ PrefabInstance:
     - target: {fileID: 8365788415942785422, guid: 8a4962b395e8754468330ec4737bec81,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8365788415942785425, guid: 8a4962b395e8754468330ec4737bec81,
         type: 3}
@@ -7139,7 +7138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26d3b6283befd44785fc7d795d37b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alga: {fileID: 4907969511451680820}
   ListAlgas: []
 --- !u!1001 &5341233893707874544
 PrefabInstance:
