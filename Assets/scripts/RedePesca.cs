@@ -1,52 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using System.Linq;
+﻿using UnityEngine;
 
-public class RedePesca : MonoBehaviour
+public class RedePesca : Obstaculo
 {
-   
+	private void Awake()
+	{
+		spawnInimigo = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnInimigo>();
 
-    [SerializeField]
-    RedePesca Rede;
-
-   
-    SpawnInimigo spawnInimigo_ref;
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-
-        spawnInimigo_ref = GameObject.Find("Game").GetComponent<SpawnInimigo>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
-    
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("ColisorDeTras"))
-        {
-           
-            spawnInimigo_ref.adicionarOuDestruir(Rede.gameObject);
-        }
-    }
-
+		tipo = TipoObstaculo.ISCA;
+	}
 }

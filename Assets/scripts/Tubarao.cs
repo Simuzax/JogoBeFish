@@ -2,38 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tubarao : MonoBehaviour
+public class Tubarao : Obstaculo
 {
-    [SerializeField]
-    Tubarao Shark;
+	private void Awake()
+	{
+		spawnInimigo = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnInimigo>();
 
-    
-    SpawnInimigo spawnInimigo_ref;
-
-    void Awake()
-    {
-        spawnInimigo_ref = GameObject.Find("Game").GetComponent<SpawnInimigo>();
-
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("ColisorDeTras"))
-        {
-            spawnInimigo_ref.adicionarOuDestruir(Shark.gameObject);
-        }
-    }
-
-
+		tipo = TipoObstaculo.TUBARAO;
+	}
 }
-
-
-
-
-

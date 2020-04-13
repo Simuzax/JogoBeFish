@@ -5224,16 +5224,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: piranhaA
       objectReference: {fileID: 0}
-    - target: {fileID: 822688687111050680, guid: 2e055670cd892ef47846fba21a934158,
-        type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 1340118626260223351}
-    - target: {fileID: 822688687111050680, guid: 2e055670cd892ef47846fba21a934158,
-        type: 3}
-      propertyPath: tempoParaComer
-      value: 
-      objectReference: {fileID: 274100612}
     - target: {fileID: 822688687111050687, guid: 2e055670cd892ef47846fba21a934158,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5289,6 +5279,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 822688687111050680, guid: 2e055670cd892ef47846fba21a934158,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1340118626260223351}
+    - target: {fileID: 822688687111050680, guid: 2e055670cd892ef47846fba21a934158,
+        type: 3}
+      propertyPath: tempoParaComer
+      value: 
+      objectReference: {fileID: 274100612}
     - target: {fileID: 822688688606798680, guid: 2e055670cd892ef47846fba21a934158,
         type: 3}
       propertyPath: sliderHp
@@ -5298,16 +5298,6 @@ PrefabInstance:
       propertyPath: spawnarGhost_ref
       value: 
       objectReference: {fileID: 274100613}
-    - target: {fileID: 8836040619736986877, guid: 2e055670cd892ef47846fba21a934158,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 16.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 8836040619736986877, guid: 2e055670cd892ef47846fba21a934158,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.88
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e055670cd892ef47846fba21a934158, type: 3}
 --- !u!1001 &1306128074542387220
@@ -6101,11 +6091,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8365788415942785425, guid: 8a4962b395e8754468330ec4737bec81,
-        type: 3}
-      propertyPath: tempoParaComer
-      value: 
-      objectReference: {fileID: 274100612}
     - target: {fileID: 8365788415942785427, guid: 8a4962b395e8754468330ec4737bec81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6161,6 +6146,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8365788415942785425, guid: 8a4962b395e8754468330ec4737bec81,
+        type: 3}
+      propertyPath: tempoParaComer
+      value: 
+      objectReference: {fileID: 274100612}
     - target: {fileID: 8365788415942785429, guid: 8a4962b395e8754468330ec4737bec81,
         type: 3}
       propertyPath: sliderHp
@@ -6265,6 +6255,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game
       objectReference: {fileID: 0}
+    - target: {fileID: 8869712004098888221, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: chaoPrefab
+      value: 
+      objectReference: {fileID: 1561763404}
+    - target: {fileID: 8869712004098888418, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: Tetoprefab
+      value: 
+      objectReference: {fileID: 1796592553}
+    - target: {fileID: 8869712004098888422, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: displayContagem
+      value: 
+      objectReference: {fileID: 876514932}
+    - target: {fileID: 8869712004098888423, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: spectre
+      value: 
+      objectReference: {fileID: 179116854}
+    - target: {fileID: 8869712004098888423, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: Player_
+      value: 
+      objectReference: {fileID: 263779886}
     - target: {fileID: 8869712004098888220, guid: 9fa33022dea8129479f30880e48ef33e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6325,11 +6340,6 @@ PrefabInstance:
       propertyPath: habilidadesGeraisPlayer
       value: 
       objectReference: {fileID: 1286013352}
-    - target: {fileID: 8869712004098888422, guid: 9fa33022dea8129479f30880e48ef33e,
-        type: 3}
-      propertyPath: displayContagem
-      value: 
-      objectReference: {fileID: 876514932}
     - target: {fileID: 8869712004098888420, guid: 9fa33022dea8129479f30880e48ef33e,
         type: 3}
       propertyPath: player
@@ -6340,16 +6350,6 @@ PrefabInstance:
       propertyPath: comidaPrefab
       value: 
       objectReference: {fileID: 466411530}
-    - target: {fileID: 8869712004098888221, guid: 9fa33022dea8129479f30880e48ef33e,
-        type: 3}
-      propertyPath: chaoPrefab
-      value: 
-      objectReference: {fileID: 1561763404}
-    - target: {fileID: 8869712004098888418, guid: 9fa33022dea8129479f30880e48ef33e,
-        type: 3}
-      propertyPath: Tetoprefab
-      value: 
-      objectReference: {fileID: 1796592553}
     - target: {fileID: 8869712004098888223, guid: 9fa33022dea8129479f30880e48ef33e,
         type: 3}
       propertyPath: LinhaDeSpawn
@@ -6375,21 +6375,6 @@ PrefabInstance:
       propertyPath: ColisorDaFrente_ref
       value: 
       objectReference: {fileID: 1942662091228958168}
-    - target: {fileID: 8869712004098888423, guid: 9fa33022dea8129479f30880e48ef33e,
-        type: 3}
-      propertyPath: spectre
-      value: 
-      objectReference: {fileID: 179116854}
-    - target: {fileID: 8869712004098888423, guid: 9fa33022dea8129479f30880e48ef33e,
-        type: 3}
-      propertyPath: Player_
-      value: 
-      objectReference: {fileID: 263779886}
-    - target: {fileID: 8869712004098888421, guid: 9fa33022dea8129479f30880e48ef33e,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 263779886}
     - target: {fileID: 8869712004098888421, guid: 9fa33022dea8129479f30880e48ef33e,
         type: 3}
       propertyPath: linhaSpawnTesouro

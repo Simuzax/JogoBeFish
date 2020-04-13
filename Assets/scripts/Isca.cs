@@ -3,33 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Isca : MonoBehaviour
+public class Isca : Obstaculo
 {
-    [SerializeField]
-    Isca IscaDoPeixe;
+	private void Awake()
+	{
+		spawnInimigo = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnInimigo>();
 
-    
-    SpawnInimigo spawnInimigo;
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-        
-        spawnInimigo = GameObject.Find("Game").GetComponent<SpawnInimigo>();
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("ColisorDeTras"))
-        {
-            spawnInimigo.adicionarOuDestruir(IscaDoPeixe.gameObject);
-        }
-    }
-
+		tipo = TipoObstaculo.ISCA;
+	}
 }

@@ -8,17 +8,8 @@ using System.Linq;
 
 public class SpawnInimigo : MonoBehaviour
 {
-    [SerializeField]
-    Isca isca;
-
-    [SerializeField]
-    RedePesca redePesca;
-
-    [SerializeField]
-    Tubarao tubarao;
-
-    [SerializeField]
-    private Transform LinhaDeSpawn;
+    
+    public Transform LinhaDeSpawn;
 
     public GameObject tubaraoPrefab;
     public GameObject iscaPrefab;
@@ -44,10 +35,6 @@ public class SpawnInimigo : MonoBehaviour
 
     [SerializeField]
     float distanceEnemyFromPlayer;
-
-    
-    [SerializeField]
-    private Transform player_ref;
 
     [SerializeField]
     private Transform Camera;
@@ -86,11 +73,8 @@ public class SpawnInimigo : MonoBehaviour
     
 
 
-    List<GameObject> ListInimigos = new List<GameObject>();
+    public List<Obstaculo> ListInimigos = new List<Obstaculo>();
     public List<GameObject> ListInimigosVivos = new List<GameObject>();
-    
-    
-    // Start is called before the first frame update
    
 
     // Update is called once per frame
@@ -100,15 +84,7 @@ public class SpawnInimigo : MonoBehaviour
         
 
 
-         if(Time.time >= spawnarIscaInicial+spawnarIscaMax)
-         {
-            spawnarIscaInicial = Time.time;
-
-            Vector2 initialPos = player_ref.transform.position;
-            Vector2 position = initialPos;
-          
-            SpawnarInimigos<Isca>(1, 18, Random.Range(-1, 5), position);
-         } 
+         
 
            
             
@@ -155,8 +131,18 @@ public class SpawnInimigo : MonoBehaviour
             novoValor = true;
             antigoValor = true;
         }
-            
-        
+
+
+        spawnarIscaInicial += Time.deltaTime;
+        if (spawnarIscaInicial>=spawnarIscaMax)
+        {
+            spawnarIscaInicial = 0;
+
+            Vector2 position = LinhaDeSpawn.transform.position;
+
+
+            SpawnarInimigos<Isca>(1, Random.Range(-1, 5), position);
+        }
 
 
 
@@ -166,11 +152,9 @@ public class SpawnInimigo : MonoBehaviour
         {
             spawnarTubaraoInicial = 0;
 
-            Vector2 initialPos = player_ref.transform.position;
-            Vector2 position = initialPos;
-           
+            Vector2 position = LinhaDeSpawn.transform.position;
             
-            SpawnarInimigos<Tubarao>(1, 18, Random.Range(-1, 5), position);
+            SpawnarInimigos<Tubarao>(1, Random.Range(-1, 5), position);
 
             
         }
@@ -181,49 +165,65 @@ public class SpawnInimigo : MonoBehaviour
         {
             spawnarRedePescaInicial = 0;
 
-            Vector2 initialPos = player_ref.transform.position;
-            Vector2 position = initialPos;
+            Vector2 position = LinhaDeSpawn.transform.position;
+            
           
             
-            SpawnarInimigos<RedePesca>(1, 18, Random.Range(-1, 5), position);
+            SpawnarInimigos<RedePesca>(1, Random.Range(-1, 5), position);
 
             
         }
     }
-    public void SpawnarInimigos<Y>(int quantidadeIinimigos, float distanceMax, float heightMax, Vector2 initialPos)
+    public void SpawnarInimigos<Y>(int quantidadeIinimigos, float heightMax, Vector2 Position)
     {
        
+                                                                          
+        Position.y = heightMax;
 
-            
-            
-              
-                Vector2 position = initialPos;
-                position.x += distanceMax;                                                           
-                position.y = heightMax;
+        Obstaculo[] inimigosArray = ListInimigos.ToArray();                                                
 
-                                                         
-
-        for (int i = 0; i < quantidadeIinimigos; i++)
+        for (int i = 0; i < inimigosArray.Length; i++)
         {
+            if (typeof(Y) == typeof(Isca))
+            {
+                GameObject isca = Instantiate(iscaPrefab, Position, Quaternion.identity);
+                var script = isca.GetComponent<Isca>();
 
-            if (ListInimigos.Count > 0)
+                ListInimigos.Add(script);
+                //AdicionarOuDestruir(script);
+            }
+            if (typeof(Y) == typeof(Tubarao))
+            {
+                Tubarao tubarao = Instantiate(tubaraoPrefab, Position, Quaternion.identity).GetComponent<Tubarao>();
+                var script = tubarao.GetComponent<Tubarao>();
+
+                ListInimigos.Add(script);
+                //AdicionarOuDestruir(tubarao);
+            }
+            if (typeof(Y) == typeof(RedePesca))
+            {
+                RedePesca rede = Instantiate(redeDePescaPrefab, Position, Quaternion.identity).GetComponent<RedePesca>();
+                var script = rede.GetComponent<RedePesca>();
+
+                ListInimigos.Add(script);
+                //AdicionarOuDestruir(rede);
+            }
+
+            /*if (ListInimigos.Count > 0)
             {
                 if (typeof(Y) == typeof(Isca))
                 {
                     if (ListInimigos.OfType<Isca>().Any())
                     {
-                        int possicao = ListInimigos.FindLastIndex(x => x.GetType() == typeof(Isca));
+                        int posicao = ListInimigos.FindLastIndex(x => x.GetType() == typeof(Isca));
 
-                        GameObject Isca = ListInimigos[possicao];
-                        ListInimigos.RemoveAt(possicao);
+                        Obstaculo Isca = ListInimigos[posicao];
 
-
-
+                        ListInimigos.RemoveAt(posicao);
 
                         Isca.transform.position = position;
-                        Isca.SetActive(true);
 
-
+						Isca.gameObject.SetActive(true);
                     }
                 }
                 else if (typeof(Y) == typeof(RedePesca))
@@ -232,16 +232,13 @@ public class SpawnInimigo : MonoBehaviour
                     {
                         int possicao = ListInimigos.FindLastIndex(x => x.GetType() == typeof(RedePesca));
 
-                        GameObject RedePesca = ListInimigos[possicao];
+                        Obstaculo RedePesca = ListInimigos[possicao];
 
                         ListInimigos.RemoveAt(possicao);
 
-
-
                         RedePesca.transform.position = position;
-                        RedePesca.SetActive(true);
 
-
+						RedePesca.gameObject.SetActive(true);
                     }
                 }
                 else if (typeof(Y) == typeof(Tubarao))
@@ -250,57 +247,32 @@ public class SpawnInimigo : MonoBehaviour
                     {
                         int possicao = ListInimigos.FindLastIndex(x => x.GetType() == typeof(Tubarao));
 
-                        GameObject tubarao = ListInimigos[possicao];
+                        Obstaculo tubarao = ListInimigos[possicao];
+
                         ListInimigos.RemoveAt(possicao);
 
-
-
                         tubarao.transform.position = position;
-                        tubarao.SetActive(true);
 
+						tubarao.gameObject.SetActive(true);
                     }
                 }
-            }
-            else
-            {
-                if (typeof(Y) == typeof(Isca))
-                {
-                    Isca GameObject = Instantiate(iscaPrefab, position, Quaternion.identity).GetComponent<Isca>();
-                    adicionarOuDestruir(this.gameObject);
-                }
-                if (typeof(Y) == typeof(Tubarao))
-                {
-                    Tubarao GameObject = Instantiate(tubaraoPrefab, position, Quaternion.identity).GetComponent<Tubarao>();
-                    adicionarOuDestruir(this.gameObject);
-                }
-                if (typeof(Y) == typeof(RedePesca))
-                {
-                    RedePesca GameObject = Instantiate(redeDePescaPrefab, position, Quaternion.identity).GetComponent<RedePesca>();
-                    adicionarOuDestruir(this.gameObject);
-                }
-            }
+            }*/
+            //else
+            //{
 
-        }
-                
-            
-        
+            //}
+        }            
     }
-    public void adicionarOuDestruir(GameObject gameObject)                                         
-    {
-       //ListInimigos.Add(gameObject);
+
+    public void AdicionarOuDestruir(Obstaculo obstaculo)                                         
+    {       
         if (ListInimigos.Count > 0)
         {
-            ListInimigos.Add(gameObject);
+            ListInimigos.Add(obstaculo);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(obstaculo);
         }
     }
-    
-  
-   
-
-
-
 }

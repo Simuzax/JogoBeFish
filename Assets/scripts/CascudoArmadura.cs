@@ -34,12 +34,10 @@ public class CascudoArmadura : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Time.time >= reativarArmaduraInicial + reativarArmaduraMax && armadura == true && intervaloDeColisao==true)
-        //{
-        //reativarArmaduraInicial = Time.time;
+       
 
         reativarArmaduraInicial += Time.deltaTime;
-        if (reativarArmaduraInicial >= reativarArmaduraMax && armadura==true && intervaloDeColisao==true)
+        if (reativarArmaduraInicial >= reativarArmaduraMax && armadura==false && intervaloDeColisao==true)
         {
             reativarArmaduraInicial = 0;
             
@@ -47,9 +45,7 @@ public class CascudoArmadura : MonoBehaviour
         }
 
 
-        //if(Time.time>= reativarArmaduraInicialsegunda + reativarArmaduraMaxsegunda && armadura == false && intervaloDeColisao==false)
-        //{
-        //reativarArmaduraInicialsegunda = Time.time;
+       
         reativarArmaduraInicialsegunda += Time.deltaTime;
         if(reativarArmaduraInicialsegunda>=reativarArmaduraMaxsegunda && armadura==false && intervaloDeColisao == false)
         {
