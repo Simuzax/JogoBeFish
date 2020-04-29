@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HabilidadesGeraisPlayer : MonoBehaviour  
 {
-    [SerializeField]
-    AudioSource audioSource;
+    //[SerializeField]
+    //AudioSource audioSource;
 
-    [SerializeField]
-    AudioClip somCausarDano;
+    //[SerializeField]
+    //AudioClip somCausarDano;
 
     [SerializeField]
     TempoParaComer tempoParaComer;
@@ -37,11 +37,11 @@ public class HabilidadesGeraisPlayer : MonoBehaviour
     {
         interface_ref.HP -= dano;
     }
-    public void SomPlay(AudioClip Som)
+    /*public void SomPlay(AudioClip Som)
     {
         audioSource.clip = Som;
         audioSource.Play();
-    }
+    }*/
 
     
 }

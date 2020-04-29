@@ -6,7 +6,7 @@ public class Movimentacao : MonoBehaviour
 {
     float speed = 15f;
 
-    private Rigidbody m_Rigidbody;
+    Rigidbody m_Rigidbody;
 
     private void Awake()
     {

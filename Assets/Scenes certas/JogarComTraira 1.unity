@@ -298,6 +298,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69848175}
   m_CullTransparentMesh: 0
+--- !u!1 &131638396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 131638397}
+  m_Layer: 0
+  m_Name: objectPoolTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &131638397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131638396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 86.900024, y: 666.7, z: 25.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &143949982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5298,6 +5328,20 @@ PrefabInstance:
       propertyPath: spawnarGhost_ref
       value: 
       objectReference: {fileID: 274100613}
+    - target: {fileID: 1236094315, guid: 2e055670cd892ef47846fba21a934158, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 822688688606798684, guid: 2e055670cd892ef47846fba21a934158,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 822688688606798685, guid: 2e055670cd892ef47846fba21a934158,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e055670cd892ef47846fba21a934158, type: 3}
 --- !u!1001 &1306128074542387220
@@ -6355,6 +6399,11 @@ PrefabInstance:
       propertyPath: LinhaDeSpawn
       value: 
       objectReference: {fileID: 8836040619736986877}
+    - target: {fileID: 8869712004098888223, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: objectPoolTransform
+      value: 
+      objectReference: {fileID: 131638397}
     - target: {fileID: 8869712004098888223, guid: 9fa33022dea8129479f30880e48ef33e,
         type: 3}
       propertyPath: Camera

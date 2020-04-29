@@ -28,7 +28,7 @@ public class InimigoControler : MonoBehaviour
 
         //if (interface_ref.hp <= 0)                                             
         //{                                                                             //vetor e array é a mesma coisa? 
-            GameObject[] inimigosArray = spawnInimigo_ref.ListInimigosVivos.ToArray();   //aqui deve-se transformar a lista pq fica mais facil de percorer o vetor
+            GameObject[] inimigosArray = spawnInimigo_ref.ListObjetosObstaculos.ToArray();   //aqui deve-se transformar a lista pq fica mais facil de percorer o vetor
 
             Debug.Log("Tamanho do vetor: " + inimigosArray.Length);
                                                                                                    

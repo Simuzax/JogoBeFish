@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class HabilidadesGeraisInimigo : MonoBehaviour
 {
-    AudioSource audioSource;
-    AudioClip somCausarDano;
-    AudioClip somTomarDano;
+    //AudioSource audioSource;
+    //AudioClip somCausarDano;
+    //AudioClip somTomarDano;
 
     Interface interface_ref;
 
@@ -62,9 +62,9 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
 
 
     }
-    public void SomPlay(AudioClip Som)
+    /*public void SomPlay(AudioClip Som)
     {
         audioSource.clip = Som;
         audioSource.Play();
-    }
+    }*/
 }

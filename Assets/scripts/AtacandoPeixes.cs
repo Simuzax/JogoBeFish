@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Linq;
 
 public class AtacandoPeixes : MonoBehaviour
 {
@@ -24,7 +27,7 @@ public class AtacandoPeixes : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -35,5 +38,5 @@ public class AtacandoPeixes : MonoBehaviour
 
            
         }
-    }
+    }*/
 }

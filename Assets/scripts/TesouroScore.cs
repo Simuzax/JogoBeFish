@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class TesouroScore : MonoBehaviour
 {
-    //public static TesouroScore instance;
+    public static TesouroScore instance;
     public TextMeshProUGUI text;
     int score;
     // Start is called before the first frame update
     void Start()
     {
-        /*if (instance == null)
+        if (instance == null)
         {
             instance = this;
-        }*/
+        }
     }
 
 

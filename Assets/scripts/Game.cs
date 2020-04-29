@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -32,8 +31,8 @@ public class Game : MonoBehaviour
     public int Contagem;          
     
 
-    public AudioSource audioSource;
-    public AudioClip SomDeColisao;
+    //public AudioSource audioSource;
+    //public AudioClip SomDeColisao;
 
     public GameObject[] inimigosPrefab;
 
@@ -80,11 +79,11 @@ public class Game : MonoBehaviour
         Vector2 position = player_ref.transform.position;
 
     }
-    public void somPlay(AudioClip som)
+    /*public void somPlay(AudioClip som)
     {
         audioSource.clip = som;
         audioSource.Play();
-    }
+    }*/
    
    
 

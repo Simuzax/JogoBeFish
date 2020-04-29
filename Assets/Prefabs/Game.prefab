@@ -132,6 +132,9 @@ MonoBehaviour:
     type: 3}
   redeDePescaPrefab: {fileID: 423874680622120533, guid: f1820dd7859c53b4a9b2d946295a9a8a,
     type: 3}
+  spawnarInimigoInicial: 0
+  spawnarInimigoFinal: 3
+  objectPoolTransform: {fileID: 0}
   spawnarIscaInicial: 0
   spawnarIscaMax: 5
   spawnarTubaraoInicial: 0
@@ -152,7 +155,7 @@ MonoBehaviour:
   novoValor: 1
   antigoValor: 0
   ListInimigos: []
-  ListInimigosVivos: []
+  ListObjetosObstaculos: []
 --- !u!114 &8869712004098888419
 MonoBehaviour:
   m_ObjectHideFlags: 0

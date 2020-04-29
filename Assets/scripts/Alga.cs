@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Linq;
@@ -23,13 +22,13 @@ public class Alga : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
             GuardarOuDestruir(gameObject);
         }
-    }
+    }*/
     public void GuardarOuDestruir(GameObject gameObject)
     {
         if(ListAlgas.Count > 0)

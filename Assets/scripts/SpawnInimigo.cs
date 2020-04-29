@@ -1,14 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using System.Linq;
+
 
 public class SpawnInimigo : MonoBehaviour
-{
-    
+{    
     public Transform LinhaDeSpawn;
 
     public GameObject tubaraoPrefab;
@@ -16,82 +12,151 @@ public class SpawnInimigo : MonoBehaviour
     public GameObject redeDePescaPrefab;
 
     [SerializeField]
-    private float spawnarIscaInicial;
+    private float spawnarInimigoInicial;
 
+    [SerializeField]
+    private float spawnarInimigoFinal;
+  
+						 
+	[SerializeField]
+	private Transform objectPoolTransform = null;		//Transform que possui relação de parentesco com os objetos intanciados
+                                                      //para que serve o null nesta parte?                                              
+	/*              
+	Organizar melhor essas variáveis, documentar, e avaliar a necessidade
+	*/
+
+	[SerializeField]
+    private float spawnarIscaInicial;
     [SerializeField]
     private float spawnarIscaMax;
-
     [SerializeField]
     private float spawnarTubaraoInicial;
-
     [SerializeField]
     private float spawnarTubaraoMax;
-
     [SerializeField]
     private float spawnarRedePescaInicial;
-
     [SerializeField]
     private float spawnarRedePescaMax;
-
     [SerializeField]
     float distanceEnemyFromPlayer;
-
     [SerializeField]
     private Transform Camera;
-
     [SerializeField]
     private float acelerarIscaSpawninicial;
-
     [SerializeField]
     private float acelerarIscaSpawnMax;
-
     [SerializeField]
     private float desacelerarIscaSpawnInicial;
-
     [SerializeField]
     private float desacelerarIscaSpawnMax;
-
     [SerializeField]
     private float reacelerarIscaSpawnInicial;
-
     [SerializeField]
     private float reacelerarIscaSpawnMax;
-
     [SerializeField]
     private float maisIscas;
-
     [SerializeField]
     private float menosIscas;
-
     [SerializeField]
     private float maisIscas2;
-
 
     public bool novoValor=true;
     public bool antigoValor=false;
 
+    public List<Obstaculo> ListInimigos = new List<Obstaculo>();
     
 
+    //public const int tamanhoPool = 6;  //Inteiro constante que diz o tamanho do array da object pool    //por que constante?
 
-    public List<Obstaculo> ListInimigos = new List<Obstaculo>();
-    public List<GameObject> ListInimigosVivos = new List<GameObject>();
-   
-
-    // Update is called once per frame
-    void Update()
+    
+	public List<GameObject>ListObjetosObstaculos = new List<GameObject>();                 //Vetor que armazena os obstaculos instanciados
+                                                   //aqui quando se diz pool se refere ao array e object se refere ao tipo do array que é de GameObject?
+    private void Start() 
+	{
+		
+		
+	}
+    private void Update()
     {
-
-        
-
-
-         
-
+        spawnarInimigoInicial += Time.deltaTime;
+        if (spawnarInimigoInicial >= spawnarInimigoFinal)
+        {
            
-            
-        
-        
+            spawnarInimigoInicial = 0;
 
-       
+            //Criar uma variável temporária que irá receber um Game Object da pool , aqui quando fala em pool se refere a função GetFromPool? por que chama-la de pool? 
+            var inimigo = GetFromPool();
+            //Se o valor da variável não for nulo...
+
+
+            if (inimigo != null)    //por que o null nessa parte?, a var inimigo não recebeu o retorno da função GetFromPool? 
+            {
+                //Posicionar o obstáculo na cena
+                SpawnObstaculo(inimigo);
+            }
+            //Se for nulo...
+            else
+                //Mostrar uma mensagem de alerta no console
+                //OBS.: Isso NÃO PODE acontecer, esse debug só tem o propósito de teste
+                Debug.LogWarning("Não tem objetos disponíveis na pool.");
+        }
+
+        
+    }
+
+    private void SpawnObstaculo(GameObject obstaculo)
+	{
+		//Posiciona o game object na linha de spawn
+		obstaculo.transform.position = LinhaDeSpawn.position;
+		//Ativa o game object na hierarquia
+		obstaculo.SetActive(true);
+	}
+
+	private GameObject GetFromPool()// o objetivo desta função é achar objetos desativados? //por que?
+	{
+        //Variável indexadora (conta as repetições)
+
+        //Sinalizador para indicar caso uma condição tenha sido atingida
+        //bool flag = false;
+        //Referência para um game object do array inicializada como nula
+
+        var obstaculo = Instantiate(iscaPrefab);
+        //Resetar a posição do game object
+        obstaculo.transform.position = Vector3.zero;
+        //Desativar o game object instanciado
+        obstaculo.SetActive(false);
+        //Definir a referência de transform "objectPoolTransform" como o pai deste objeto
+        obstaculo.transform.SetParent(objectPoolTransform); //por que transformar o objeto obstaculo em filho do objectPoolTransform? para a hierarchy ficar mais organizada
+                                                            //Atribuir o game object em uma posição do vetor
+        ListObjetosObstaculos.Add(obstaculo);
+
+        GameObject obstaculoNulo = null; // aqui se coloca o obstaculo igual a null para ele guardar objetos desativados?
+		//Enquanto o contador não tiver o mesmo valor do tamanho do vetor
+		//E, o sinalizador for falso...
+        GameObject[] ObjetosObstaculos = ListObjetosObstaculos.ToArray();
+
+        for (int i = 0; i < ObjetosObstaculos.Length; i++) // por que usar while em vez de for aqui?
+		{
+			//Se o objeto correspondente ao indexador estiver (des)//??ativo na hierarquia...
+			if (!ListObjetosObstaculos[i].activeInHierarchy /*&& flag == false*/)
+			{
+				//Alterar o valor do sinalizador
+				//flag = true;
+				//Atribuir este objeto na referência
+				obstaculoNulo = ListObjetosObstaculos[i];			
+			}
+			//Adicionar um(1) ao valor do indexador
+			
+		}
+		//Retornar a referência do game object
+		return obstaculoNulo; 		
+	}
+
+
+	/*
+	// Update is called once per frame
+	void Update()
+    {
          if(Time.time>= acelerarIscaSpawninicial + acelerarIscaSpawnMax && novoValor==true && antigoValor == false)
          {
             acelerarIscaSpawninicial = Time.time;
@@ -100,26 +165,18 @@ public class SpawnInimigo : MonoBehaviour
             spawnarIscaMax -= maisIscas;
 
             antigoValor = true;
-         }
-            
+         }      
 
-        
-        
+        if(Time.time>=desacelerarIscaSpawnInicial+desacelerarIscaSpawnMax && novoValor==true && antigoValor == true)
+        {
+			desacelerarIscaSpawnInicial = Time.time;
 
-         if(Time.time>=desacelerarIscaSpawnInicial+desacelerarIscaSpawnMax && novoValor==true && antigoValor == true)
-         {
-            desacelerarIscaSpawnInicial = Time.time;
+			spawnarIscaInicial += menosIscas;
+			spawnarIscaMax += menosIscas;
 
-            spawnarIscaInicial += menosIscas;
-            spawnarIscaMax += menosIscas;
-
-            novoValor = false;
-            antigoValor = false;
-        }
-            
-
-        
-      
+			novoValor = false;
+			antigoValor = false;
+		}      
 
         if(Time.time>=reacelerarIscaSpawnInicial+reacelerarIscaSpawnMax && novoValor==false && antigoValor == true)
         {
@@ -132,7 +189,6 @@ public class SpawnInimigo : MonoBehaviour
             antigoValor = true;
         }
 
-
         spawnarIscaInicial += Time.deltaTime;
         if (spawnarIscaInicial>=spawnarIscaMax)
         {
@@ -144,9 +200,6 @@ public class SpawnInimigo : MonoBehaviour
             SpawnarInimigos<Isca>(1, Random.Range(-1, 5), position);
         }
 
-
-
-
         spawnarTubaraoInicial += Time.deltaTime;
         if(spawnarTubaraoInicial>=spawnarTubaraoMax)
         {
@@ -154,11 +207,8 @@ public class SpawnInimigo : MonoBehaviour
 
             Vector2 position = LinhaDeSpawn.transform.position;
             
-            SpawnarInimigos<Tubarao>(1, Random.Range(-1, 5), position);
-
-            
+            SpawnarInimigos<Tubarao>(1, Random.Range(-1, 5), position);            
         }
-
         
         spawnarRedePescaInicial += Time.deltaTime;
         if(spawnarRedePescaInicial>=spawnarRedePescaMax)
@@ -174,17 +224,18 @@ public class SpawnInimigo : MonoBehaviour
             
         }
     }
-    public void SpawnarInimigos<Y>(int quantidadeIinimigos, float heightMax, Vector2 Position)
-    {
-       
-                                                                          
+	*/
+    /*public void SpawnarInimigos<Y>(int quantidadeIinimigos, float heightMax, Vector2 Position)
+    {                                                                           
         Position.y = heightMax;
 
         Obstaculo[] inimigosArray = ListInimigos.ToArray();                                                
 
         for (int i = 0; i < inimigosArray.Length; i++)
         {
-            if (typeof(Y) == typeof(Isca))
+			Debug.LogWarning("SpawnInimigo");
+
+			if (typeof(Y) == typeof(Isca))
             {
                 GameObject isca = Instantiate(iscaPrefab, Position, Quaternion.identity);
                 var script = isca.GetComponent<Isca>();
@@ -261,10 +312,10 @@ public class SpawnInimigo : MonoBehaviour
             //{
 
             //}
-        }            
-    }
+        
 
-    public void AdicionarOuDestruir(Obstaculo obstaculo)                                         
+
+    /* public void AdicionarOuDestruir(Obstaculo obstaculo)                                         
     {       
         if (ListInimigos.Count > 0)
         {
@@ -274,5 +325,5 @@ public class SpawnInimigo : MonoBehaviour
         {
             Destroy(obstaculo);
         }
-    }
+    }*/
 }
