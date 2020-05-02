@@ -155,7 +155,8 @@ MonoBehaviour:
   novoValor: 1
   antigoValor: 0
   ListInimigos: []
-  ListObjetosObstaculos: []
+  ListInimigosVivos: []
+  objetosObstaculos: []
 --- !u!114 &8869712004098888419
 MonoBehaviour:
   m_ObjectHideFlags: 0

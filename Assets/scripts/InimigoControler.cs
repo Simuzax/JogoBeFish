@@ -28,17 +28,17 @@ public class InimigoControler : MonoBehaviour
 
         //if (interface_ref.hp <= 0)                                             
         //{                                                                             //vetor e array é a mesma coisa? 
-            GameObject[] inimigosArray = spawnInimigo_ref.ListObjetosObstaculos.ToArray();   //aqui deve-se transformar a lista pq fica mais facil de percorer o vetor
+                                                                                            //aqui deve-se transformar a lista pq fica mais facil de percorer o vetor
 
-            Debug.Log("Tamanho do vetor: " + inimigosArray.Length);
+            Debug.Log("Tamanho do vetor: " + spawnInimigo_ref.objetosObstaculos.Length);
                                                                                                    
-            if (inimigosArray.Length > 0) // verifica se tem objetos no array                      
+            if (spawnInimigo_ref.objetosObstaculos.Length > 0) // verifica se tem objetos no array                      
             {
-                for(int i = 0; i < inimigosArray.Length; i++)  //o i é um contador                          //aqui vai rodar cada objeto na lista
+                for(int i = 0; i < spawnInimigo_ref.objetosObstaculos.Length; i++)  //o i é um contador                          //aqui vai rodar cada objeto na lista
                 {                                                                             
                     Debug.Log("Valor de i: " + i);
 
-                    inimigosArray[i].GetComponent<HabilidadesGeraisInimigo>().enabled=false; //aqui no caso todos os da ListInimigosVivos tem essa classe?// 
+                    spawnInimigo_ref.objetosObstaculos[i].GetComponent<HabilidadesGeraisInimigo>().enabled=false; //aqui no caso todos os da ListInimigosVivos tem essa classe?// 
                 }
             }
         //}
