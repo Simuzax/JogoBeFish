@@ -1,43 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using System.Linq;
 
-public class Alga : MonoBehaviour
+public class Alga : Obstaculo
 {
-    
-    
-   
+    SpawnarAlga spawnarAlga_ref;
 
-    public List<GameObject> ListAlgas = new List<GameObject>();
-
-    
-
-    // Start is called before the first frame update
-
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        spawnarAlga_ref = GameObject.Find("Game").GetComponent<SpawnarAlga>();
+
+        tipo = TipoObstaculo.Alga;
     }
-    /*private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("ColisorDeTras"))
+        if (collision.gameObject.GetComponent("ColisorDeTras"))
         {
-            GuardarOuDestruir(gameObject);
-        }
-    }*/
-    public void GuardarOuDestruir(GameObject gameObject)
-    {
-        if(ListAlgas.Count > 0)
-        {
-            ListAlgas.Add(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
+            StartCoroutine("ReutilizarAlga");
         }
     }
- }
+    IEnumerator ReutilizarAlga()
+    {
+        yield return new WaitForSeconds(3);
+
+        transform.position = spawnarAlga_ref.PosicaoAlga();
+
+    }
+
+
+
+
+
+
+
+}

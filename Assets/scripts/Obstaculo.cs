@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum TipoObstaculo
 {
-	TUBARAO, ISCA, REDE
+	TUBARAO, ISCA, REDE, Alga
 };
 
 public class Obstaculo : MonoBehaviour
@@ -17,4 +17,5 @@ public class Obstaculo : MonoBehaviour
 	{
 		Debug.Log(gameObject.name + " colidiu com " + collision.name);
 	}*/
+    
 }

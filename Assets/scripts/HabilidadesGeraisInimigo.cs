@@ -9,32 +9,21 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     //AudioClip somCausarDano;
     //AudioClip somTomarDano;
 
-    Interface interface_ref;
-
    
     HabilidadesGeraisPlayer habilidadesGeraisPlayer_ref;
-    
-     
-     
-    
     public int strength; 
 
-    
-
-    
     public float speed;
 
     [SerializeField]
     private Vector2 direction;
 
-    
-
     // Start is called before the first frame update
     void Awake()
     {
 
-        habilidadesGeraisPlayer_ref = GameObject.Find("Cascudo").GetComponent<HabilidadesGeraisPlayer>();
-        interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>(); 
+        habilidadesGeraisPlayer_ref = GameObject.Find("piranhaA").GetComponent<HabilidadesGeraisPlayer>();
+        
         
     }
 
@@ -45,11 +34,7 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     }
     public void Mover()
     {
-       
-        
-          transform.Translate(speed * direction * Time.deltaTime);
-        
-       
+       transform.Translate(speed * direction * Time.deltaTime);
         
     }
 

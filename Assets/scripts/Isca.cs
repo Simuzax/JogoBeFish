@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Isca : Obstaculo
 {
-    SpawnInimigo spawnInimigo_ref; 
+     
     
 	private void Awake()
 	{
-		//spawnInimigo = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnInimigo>();
-        spawnInimigo_ref = GameObject.Find("Game").GetComponent<SpawnInimigo>();
+        
+        spawnInimigo = GameObject.Find("Game").GetComponent<SpawnInimigo>();
         
         
 		tipo = TipoObstaculo.ISCA;
@@ -20,20 +20,31 @@ public class Isca : Obstaculo
         if (collision.gameObject.CompareTag ("ColisorDeTras"))
         {
             StartCoroutine("Reposicionador");
+            
            
         }
     }
     
     IEnumerator Reposicionador()
     {
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(2);
 
-        transform.position = spawnInimigo_ref.LinhaDeSpawn.position;
-        MudarPosicao(Random.Range(1, 3), transform.position);
+        transform.position = NovaPosicao();
+        
+        
     }
-    public void MudarPosicao(float alturaMax, Vector2 Position)
+    public Vector2 NovaPosicao()
     {
-        Position.y = alturaMax;
-       
+        Vector2 posicaoAleatoria;
+
+        float EixoX = spawnInimigo.LinhaDeSpawn.position.x;
+        float EixoY = Random.Range(4.0f, 14.0f);
+
+        posicaoAleatoria = new Vector2(EixoX, EixoY);
+        
+
+        return posicaoAleatoria;
     }
+
+   
 }

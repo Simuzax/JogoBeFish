@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 6529201835023719420}
   - component: {fileID: 6529201835023719421}
   - component: {fileID: 6529201835023719394}
-  - component: {fileID: 786831702}
-  - component: {fileID: 2216336838010557371}
   - component: {fileID: 2118416376}
+  - component: {fileID: 227584112860850632}
+  - component: {fileID: 2779333713546652546}
   m_Layer: 0
   m_Name: IscaDePeixe
-  m_TagString: Untagged
+  m_TagString: Isca
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,34 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3c5ac5f764d3a4184b1bfdbd02f26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LinhaDeSpawn: {fileID: 0}
---- !u!114 &786831702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6529201835023719392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d2729d00cb87c4bbb1bd6a495eb9a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2216336838010557371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6529201835023719392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dab785f1ded7af49ae6dd302ab4a748, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  strength: 8
-  speed: 0
-  direction: {x: -1, y: 0}
 --- !u!114 &2118416376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,3 +231,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8511493baf086f48bf5932eb5ab1c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &227584112860850632
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529201835023719392}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &2779333713546652546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529201835023719392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dab785f1ded7af49ae6dd302ab4a748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 6
+  speed: 5
+  direction: {x: -1, y: 0}

@@ -8,72 +8,72 @@ using System.Linq;
 public class SpawnarAlga : MonoBehaviour
 {
 
-    Alga alga;
+    public GameObject algaPrefab;
+
+    public GameObject[] objetosObstaculosAlga;
+
+    public const int tamanhoPool=1;
 
     [SerializeField]
-    int distanciaAlgaColisorFrente;
+    private Transform objectPoolTransform = null;
 
-    public GameObject AlgaPrefab;
-
-    [SerializeField]
-    private Transform ColisorDaFrente_ref;
-
-    //[SerializeField]
-    private float SpawnarAlgaInicial;
-
-    [SerializeField]
-    private float SpawnarAlgaFinal;
-
-    // Start is called before the first frame update
-
-    private void Awake()
+    private void Start()
     {
-        alga = GameObject.Find("Alga").GetComponent<Alga>();  
+        objetosObstaculosAlga = new GameObject[tamanhoPool];
+
+        for(int i=0; i < objetosObstaculosAlga.Length; i++)
+        {
+            var alga = Instantiate(algaPrefab);
+            alga.transform.position = Vector3.zero;
+            alga.SetActive(false);
+            alga.transform.SetParent(objectPoolTransform);
+            objetosObstaculosAlga[i] = alga;
+
+            StartCoroutine("ReposicionarAlga");
+        }
+    }
+    public GameObject GetFromAlga()
+    {
+        GameObject obstaculoAlga = null;
+        int i = 0;
+
+        while( i < objetosObstaculosAlga.Length)
+        {
+            if (!objetosObstaculosAlga[i].activeInHierarchy)
+            {
+                obstaculoAlga = objetosObstaculosAlga[i];
+            }
+            i++;
+        }
+        return obstaculoAlga;
+    }
+    public Vector2 PosicaoAlga()
+    {
+        Vector2 posicaoAlga;
+
+        float EixoX = 6f;
+        float EixoY = -3f;
+
+        posicaoAlga = new Vector2(EixoX, EixoY);
+
+        return posicaoAlga;
+    }
+    public void SpawnadorAlga(GameObject alga)
+    {
+        alga.transform.position = PosicaoAlga();
+        alga.SetActive(true);
+    }
+    IEnumerator ReposicionarAlga()
+    {
+        yield return new WaitForSeconds(3);
+
+        var objetoAlga = GetFromAlga();
+
+        if(objetoAlga != null)
+        {
+            SpawnadorAlga(objetoAlga);
+        }
     }
 
-
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        SpawnarAlgaInicial += Time.deltaTime;
-        if (SpawnarAlgaInicial >= SpawnarAlgaFinal)
-        {
-            spawnarAlga();
-            SpawnarAlgaInicial = 0;
-            
-        }
-       
-            
-            
-        
-    }
-    public void spawnarAlga()
-    {
-        Vector2 inipos = ColisorDaFrente_ref.transform.position;
-        Vector2 position = inipos;
-        position.x += distanciaAlgaColisorFrente;
-        position.y += -7.9f;
-
-        if (alga.ListAlgas.OfType<Alga>().Any())
-        {
-            int lugar = alga.ListAlgas.FindLastIndex(x => x.GetType() == typeof(Alga));
-            GameObject Alga = alga.ListAlgas[lugar];
-            alga.ListAlgas.RemoveAt(lugar);
-
-            Alga.transform.position = position;
-            Alga.SetActive(true);
-        }
-        else
-        {
-            GameObject go = Instantiate(AlgaPrefab, position, Quaternion.identity);
-            alga.ListAlgas.Add(this.gameObject);
-        }
-
-        
-    }  
+    
 }

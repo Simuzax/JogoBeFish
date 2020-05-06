@@ -25,6 +25,7 @@ TagManager:
   - Inimigo2
   - LinhaDeSpawnTesouro
   - LinhaDeSpawnInimigo
+  - Isca
   layers:
   - Default
   - TransparentFX

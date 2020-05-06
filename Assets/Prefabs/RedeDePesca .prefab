@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 423874680622120530}
   - component: {fileID: 423874680622120529}
   - component: {fileID: 423874680622120528}
-  - component: {fileID: 423874680622120534}
   - component: {fileID: 423874680622120535}
   - component: {fileID: 4672173782442110534}
+  - component: {fileID: 783233247068342960}
   m_Layer: 0
   m_Name: 'RedeDePesca '
   m_TagString: RedeDepesca
@@ -206,18 +206,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &423874680622120534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423874680622120533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 618525954fb27cd4eb383f3b006b7acf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &423874680622120535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,5 +231,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength: 0
-  speed: 3
+  speed: 5
   direction: {x: -1, y: 0}
+--- !u!114 &783233247068342960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423874680622120533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afdc6191b013fe34998cda2212b5bfb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
