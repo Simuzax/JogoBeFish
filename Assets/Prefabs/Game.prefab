@@ -158,6 +158,7 @@ MonoBehaviour:
   ListInimigosVivos: []
   objetosObstaculosIsca: []
   objetosObstaculosRede: []
+  objetoObstaculoTubarao: []
 --- !u!114 &8869712004098888419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,11 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b54de1a52c73ea43a5ed6eb94edda8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaAlgaColisorFrente: 3
-  AlgaPrefab: {fileID: 4907969511451680819, guid: 17dcd87d14e4ce04cae55d88622d8232,
+  LinhaSpawnAlga: {fileID: 0}
+  algaPrefab: {fileID: 4907969511451680819, guid: 17dcd87d14e4ce04cae55d88622d8232,
     type: 3}
-  ColisorDaFrente_ref: {fileID: 0}
-  SpawnarAlgaFinal: 7
+  objetosObstaculosAlga: []
+  objectPoolTransform: {fileID: 0}
 --- !u!114 &8869712004098888423
 MonoBehaviour:
   m_ObjectHideFlags: 0

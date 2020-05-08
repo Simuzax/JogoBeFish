@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4258262793946715503}
   - component: {fileID: 4258262793946715502}
   m_Layer: 0
-  m_Name: bolha sprite
+  m_Name: BolhaSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

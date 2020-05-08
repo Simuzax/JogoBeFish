@@ -243,5 +243,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength: 6
-  speed: 3
-  direction: {x: 0, y: 0}
+  speed: 8
+  direction: {x: -1, y: 0}

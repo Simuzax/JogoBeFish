@@ -10,10 +10,7 @@ public class Rede : Obstaculo
 
         tipo = TipoObstaculo.REDE;
     }
-    /*private void Start()
-    {
-        //StartCoroutine("RedeObstaculo");
-    }*/
+   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,31 +21,10 @@ public class Rede : Obstaculo
     }
     IEnumerator Reutilizar()
     {
-        yield return new WaitForSeconds(3);
-        transform.position = MudarPosicao();
+        yield return new WaitForSeconds(2);
+        transform.position = spawnInimigo.NovaPosicao(4.0f, 14.0f);
     }
 
-    public Vector2 MudarPosicao()
-    {
-        Vector2 reposicionar;
-
-        float eixoX = spawnInimigo.LinhaDeSpawn.position.x;
-        float eixoY = Random.Range(4.0f, 14.0f);
-
-        reposicionar = new Vector2(eixoX, eixoY);
-
-        return reposicionar;
-    }
-    /*IEnumerator RedeObstaculo()
-    {
-        yield return new WaitForSeconds(3);
-
-        var inimigo2 = spawnInimigo.GetFromRede();
-
-
-        if(inimigo2 != null)
-        {
-            spawnInimigo.SpawnObstaculo(inimigo2, 8.0f, 14.0f);
-        }
-    }*/
+    
+    
 }

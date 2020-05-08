@@ -8,7 +8,7 @@ public class SpawnInimigo : MonoBehaviour
 {
     public Transform LinhaDeSpawn;
 
-    
+
 
     public GameObject tubaraoPrefab;
     public GameObject iscaPrefab;
@@ -71,17 +71,18 @@ public class SpawnInimigo : MonoBehaviour
 
     public const int tamanhoPool = 1;  //Inteiro constante que diz o tamanho do array da object pool    //por que constante?
 
-    
+
     public GameObject[] objetosObstaculosIsca;                 //Vetor que armazena os obstaculos instanciados
     public GameObject[] objetosObstaculosRede;                                                       //aqui quando se diz pool se refere ao array e object se refere ao tipo do array que é de GameObject?
+    public GameObject[] objetoObstaculoTubarao;
 
-    
 
 
-    private void Start() //posso colocar o que esta abaixo num update? 
+    public void Start() //posso colocar o que esta abaixo num update? 
     {
         objetosObstaculosIsca = new GameObject[tamanhoPool]; //pq definir o valor do vetor como 6? 
         objetosObstaculosRede = new GameObject[tamanhoPool];
+        objetoObstaculoTubarao = new GameObject[tamanhoPool]; 
         for (int i = 0; i < tamanhoPool; i++)
         {
             //Criando uma referência para o objeto instanciado
@@ -96,7 +97,7 @@ public class SpawnInimigo : MonoBehaviour
             objetosObstaculosIsca[i] = obstaculo;
             StartCoroutine("IscaObstaculo");
 
-            
+
             var obstaculo2 = Instantiate(redeDePescaPrefab);
             obstaculo2.transform.position = Vector3.zero;
             obstaculo2.SetActive(false);
@@ -104,13 +105,16 @@ public class SpawnInimigo : MonoBehaviour
 
             objetosObstaculosRede[i] = obstaculo2;
             StartCoroutine("RedeObstaculo");
-            /*var inimigo2 = GetFromRede();
 
+            var obstaculo3 = Instantiate(tubaraoPrefab);
+            obstaculo3.transform.position = Vector3.zero;
+            obstaculo3.SetActive(false);
+            obstaculo3.transform.SetParent(objectPoolTransform);
 
-            if (inimigo2 != null)
-            {
-                SpawnObstaculo(inimigo2, 8.0f, 10.0f);
-            }*/
+            objetoObstaculoTubarao[i] = obstaculo3;
+            StartCoroutine("TubaraoObstaculo");
+            
+            
 
 
 
@@ -120,7 +124,7 @@ public class SpawnInimigo : MonoBehaviour
         }
 
     }
-   
+
     public void SpawnObstaculo(GameObject obstaculo, float valorMinimo, float valorMaximo)
     {
         //Posiciona o game object na linha de spawn
@@ -129,7 +133,7 @@ public class SpawnInimigo : MonoBehaviour
         obstaculo.SetActive(true);
     }
 
-    private GameObject GetFromIsca()// o objetivo desta função é achar objetos desativados? //por que?
+    public GameObject GetFromIsca()// o objetivo desta função é achar objetos desativados? //por que?
     {
         //Variável indexadora (conta as repetições)
         int i = 0;
@@ -160,7 +164,7 @@ public class SpawnInimigo : MonoBehaviour
         int i = 0;
         GameObject obstaculo2 = null;
 
-        while(i < objetosObstaculosRede.Length)
+        while (i < objetosObstaculosRede.Length)
         {
             if (!objetosObstaculosRede[i].activeInHierarchy)
             {
@@ -172,7 +176,22 @@ public class SpawnInimigo : MonoBehaviour
 
 
     }
-    
+    public GameObject GetFromTubarao()
+    {
+        int i = 0;
+        GameObject obstaculo3 = null;
+
+        while(i < objetoObstaculoTubarao.Length)
+        {
+            if (!objetoObstaculoTubarao[i].activeInHierarchy)
+            {
+                obstaculo3 = objetoObstaculoTubarao[i];
+            }
+            i++;
+        }
+        return obstaculo3;
+    }
+
     public Vector2 NovaPosicao(float valorMinimo, float valorMaximo)
     {
         Vector2 posicaoAleatoria;
@@ -193,32 +212,40 @@ public class SpawnInimigo : MonoBehaviour
         //Se o valor da variável não for nulo...
         if (inimigo != null)
         {
-            SpawnObstaculo(inimigo, 8.0f, 10.0f);
+            SpawnObstaculo(inimigo, 4.0f, 14.0f);
         }
         else
             //Mostrar uma mensagem de alerta no console
             //OBS.: Isso NÃO PODE acontecer, esse debug só tem o propósito de teste
-            Debug.LogWarning("Não tem objetos disponíveis na pool."); 
+            Debug.LogWarning("Não tem objetos disponíveis na pool.");
     }
     IEnumerator RedeObstaculo()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         var inimigo2 = GetFromRede();
 
-
-        if(inimigo2 != null)
+        if (inimigo2 != null)
         {
-            SpawnObstaculo(inimigo2, 8.0f, 14.0f);
+            SpawnObstaculo(inimigo2, 4.0f, 14.0f);
         }
-       
+
     }
+    IEnumerator TubaraoObstaculo()
+    {
+        yield return new WaitForSeconds(0.5f);
 
+        var inimigo3 = GetFromTubarao();
 
-
-    /*
+        if (inimigo3 != null)
+        {
+            SpawnObstaculo(inimigo3, 1.0f, 7.0f);
+        }
+    }
+}
+    
 	// Update is called once per frame
-	void Update()
+	/*void Update()
     {
          if(Time.time>= acelerarIscaSpawninicial + acelerarIscaSpawnMax && novoValor==true && antigoValor == false)
          {
@@ -389,4 +416,4 @@ public class SpawnInimigo : MonoBehaviour
             Destroy(obstaculo);
         }
     }*/
-}
+

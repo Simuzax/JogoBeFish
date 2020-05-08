@@ -6,6 +6,8 @@ public class Alga : Obstaculo
 {
     SpawnarAlga spawnarAlga_ref;
 
+    
+
     private void Awake()
     {
         spawnarAlga_ref = GameObject.Find("Game").GetComponent<SpawnarAlga>();
@@ -15,18 +17,19 @@ public class Alga : Obstaculo
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent("ColisorDeTras"))
+        if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
             StartCoroutine("ReutilizarAlga");
         }
     }
     IEnumerator ReutilizarAlga()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
 
         transform.position = spawnarAlga_ref.PosicaoAlga();
 
     }
+    
 
 
 

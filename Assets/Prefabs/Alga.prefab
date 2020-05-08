@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4653562892533093454}
   - component: {fileID: 1364824622952506459}
   - component: {fileID: 652553517415796028}
+  - component: {fileID: 6001330263505879826}
   m_Layer: 0
-  m_Name: Alga A
+  m_Name: Alga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,12 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26d3b6283befd44785fc7d795d37b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaAlgaColisorFrente: 2
-  alga: {fileID: 1364824622952506459}
-  AlgaPrefab: {fileID: 0}
-  ColisorDaFrente: {fileID: 0}
-  SpawnarAlgaInicial: 1
-  SpawnarAlgaFinal: 4
 --- !u!61 &652553517415796028
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,3 +140,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 2.5}
   m_EdgeRadius: 0
+--- !u!114 &6001330263505879826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907969511451680819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb6dd1960337d94b983f4d7ce80dc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  direction: {x: -1, y: 0}

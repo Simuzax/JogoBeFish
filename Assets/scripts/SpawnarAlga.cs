@@ -7,6 +7,7 @@ using System.Linq;
 
 public class SpawnarAlga : MonoBehaviour
 {
+    public Transform LinhaSpawnAlga;
 
     public GameObject algaPrefab;
 
@@ -51,8 +52,8 @@ public class SpawnarAlga : MonoBehaviour
     {
         Vector2 posicaoAlga;
 
-        float EixoX = 6f;
-        float EixoY = -3f;
+        float EixoX = LinhaSpawnAlga.position.x;
+        float EixoY = 2.9f;
 
         posicaoAlga = new Vector2(EixoX, EixoY);
 
@@ -65,7 +66,7 @@ public class SpawnarAlga : MonoBehaviour
     }
     IEnumerator ReposicionarAlga()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
 
         var objetoAlga = GetFromAlga();
 
