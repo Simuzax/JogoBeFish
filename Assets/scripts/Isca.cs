@@ -30,7 +30,7 @@ public class Isca : Obstaculo
     {
         yield return new WaitForSeconds(2);
 
-        transform.position = spawnInimigo.NovaPosicao(4.0f, 14.0f);
+        transform.position = spawnInimigo.NovaPosicao(7.0f, 15.0f);
         
         
     }

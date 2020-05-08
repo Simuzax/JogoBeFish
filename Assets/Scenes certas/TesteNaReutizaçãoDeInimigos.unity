@@ -742,18 +742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef24d00bc9fb1546956ddcd3cfb678d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &274100612 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8869712004098888422, guid: 9fa33022dea8129479f30880e48ef33e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8869712003825099618}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49da69b04144f0648a84a8763f80d8bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &274100613 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8869712004098888423, guid: 9fa33022dea8129479f30880e48ef33e,
@@ -5323,7 +5311,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tempoParaComer
       value: 
-      objectReference: {fileID: 274100612}
+      objectReference: {fileID: 0}
     - target: {fileID: 822688688606798680, guid: 2e055670cd892ef47846fba21a934158,
         type: 3}
       propertyPath: sliderHp
@@ -5465,7 +5453,7 @@ PrefabInstance:
     - target: {fileID: 470428423, guid: 3c42c64700cdd1d4e975372a67b0d2f2, type: 3}
       propertyPath: tempoParaComer
       value: 
-      objectReference: {fileID: 274100612}
+      objectReference: {fileID: 0}
     - target: {fileID: 470428424, guid: 3c42c64700cdd1d4e975372a67b0d2f2, type: 3}
       propertyPath: sliderHp
       value: 
@@ -6134,7 +6122,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tempoParaComer
       value: 
-      objectReference: {fileID: 274100612}
+      objectReference: {fileID: 0}
     - target: {fileID: 8365788415942785429, guid: 8a4962b395e8754468330ec4737bec81,
         type: 3}
       propertyPath: sliderHp
@@ -6254,6 +6242,11 @@ PrefabInstance:
       propertyPath: displayContagem
       value: 
       objectReference: {fileID: 876514932}
+    - target: {fileID: 8869712004098888422, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8869712004098888423, guid: 9fa33022dea8129479f30880e48ef33e,
         type: 3}
       propertyPath: spectre
@@ -6264,6 +6257,11 @@ PrefabInstance:
       propertyPath: Player_
       value: 
       objectReference: {fileID: 263779886}
+    - target: {fileID: 8869712004098888423, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8869712004098888220, guid: 9fa33022dea8129479f30880e48ef33e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6324,6 +6322,11 @@ PrefabInstance:
       propertyPath: habilidadesGeraisPlayer
       value: 
       objectReference: {fileID: 1286013352}
+    - target: {fileID: 8869712004098888417, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8869712004098888420, guid: 9fa33022dea8129479f30880e48ef33e,
         type: 3}
       propertyPath: player
@@ -6359,6 +6362,11 @@ PrefabInstance:
       propertyPath: Peixe
       value: 
       objectReference: {fileID: 1340118625946965253}
+    - target: {fileID: 8869712004098888419, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8869712004098888416, guid: 9fa33022dea8129479f30880e48ef33e,
         type: 3}
       propertyPath: LinhaSpawnAlga
@@ -6374,5 +6382,13 @@ PrefabInstance:
       propertyPath: linhaSpawnTesouro
       value: 
       objectReference: {fileID: 1106889121}
-    m_RemovedComponents: []
+    - target: {fileID: 8869712004098888421, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8869712004098888420, guid: 9fa33022dea8129479f30880e48ef33e, type: 3}
+    - {fileID: 8869712004098888422, guid: 9fa33022dea8129479f30880e48ef33e, type: 3}
+    - {fileID: 8869712004098888417, guid: 9fa33022dea8129479f30880e48ef33e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9fa33022dea8129479f30880e48ef33e, type: 3}

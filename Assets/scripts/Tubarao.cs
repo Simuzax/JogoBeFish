@@ -22,7 +22,7 @@ public class Tubarao : Obstaculo
     IEnumerator Reutilizar()
     {
         yield return new WaitForSeconds(0.5f);
-        transform.position = spawnInimigo.NovaPosicao(1.0f, 7.0f);
+        transform.position = spawnInimigo.NovaPosicao(7.0f, 15.0f);
     }
    
 }

@@ -14,12 +14,7 @@ public class SpawnInimigo : MonoBehaviour
     public GameObject iscaPrefab;
     public GameObject redeDePescaPrefab;
 
-    [SerializeField]
-    private float spawnarInimigoInicial;
-
-    [SerializeField]
-    private float spawnarInimigoFinal;
-
+  
 
     [SerializeField]
     private Transform objectPoolTransform = null;       //Transform que possui relação de parentesco com os objetos intanciados
@@ -28,46 +23,12 @@ public class SpawnInimigo : MonoBehaviour
                                                         Organizar melhor essas variáveis, documentar, e avaliar a necessidade
                                                         */
 
-    [SerializeField]
-    private float spawnarIscaInicial;
-    [SerializeField]
-    private float spawnarIscaMax;
-    [SerializeField]
-    private float spawnarTubaraoInicial;
-    [SerializeField]
-    private float spawnarTubaraoMax;
-    [SerializeField]
-    private float spawnarRedePescaInicial;
-    [SerializeField]
-    private float spawnarRedePescaMax;
-    [SerializeField]
-    float distanceEnemyFromPlayer;
-    [SerializeField]
-    private Transform Camera;
-    [SerializeField]
-    private float acelerarIscaSpawninicial;
-    [SerializeField]
-    private float acelerarIscaSpawnMax;
-    [SerializeField]
-    private float desacelerarIscaSpawnInicial;
-    [SerializeField]
-    private float desacelerarIscaSpawnMax;
-    [SerializeField]
-    private float reacelerarIscaSpawnInicial;
-    [SerializeField]
-    private float reacelerarIscaSpawnMax;
-    [SerializeField]
-    private float maisIscas;
-    [SerializeField]
-    private float menosIscas;
-    [SerializeField]
-    private float maisIscas2;
+    
 
-    public bool novoValor = true;
-    public bool antigoValor = false;
+   
 
     public List<Obstaculo> ListInimigos = new List<Obstaculo>();
-    public List<GameObject> ListInimigosVivos = new List<GameObject>();
+
 
     public const int tamanhoPool = 1;  //Inteiro constante que diz o tamanho do array da object pool    //por que constante?
 
@@ -212,7 +173,7 @@ public class SpawnInimigo : MonoBehaviour
         //Se o valor da variável não for nulo...
         if (inimigo != null)
         {
-            SpawnObstaculo(inimigo, 4.0f, 14.0f);
+            SpawnObstaculo(inimigo, 7.0f, 15.0f);
         }
         else
             //Mostrar uma mensagem de alerta no console
@@ -227,7 +188,7 @@ public class SpawnInimigo : MonoBehaviour
 
         if (inimigo2 != null)
         {
-            SpawnObstaculo(inimigo2, 4.0f, 14.0f);
+            SpawnObstaculo(inimigo2, 7.0f, 15.0f);
         }
 
     }
@@ -239,7 +200,7 @@ public class SpawnInimigo : MonoBehaviour
 
         if (inimigo3 != null)
         {
-            SpawnObstaculo(inimigo3, 1.0f, 7.0f);
+            SpawnObstaculo(inimigo3, 7.0f, 15.0f);
         }
     }
 }
