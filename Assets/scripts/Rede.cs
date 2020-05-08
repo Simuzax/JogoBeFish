@@ -16,14 +16,23 @@ public class Rede : Obstaculo
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
-            StartCoroutine("Reutilizar"); 
+            //StartCoroutine("Reutilizar");
+            var obstaculo2 = spawnInimigo.GetFromRede();
+            
+            if(obstaculo2 != null)
+            {
+                obstaculo2.SetActive(false);
+            }
+
         }
     }
-    IEnumerator Reutilizar()
+    /*IEnumerator Reutilizar()
     {
         yield return new WaitForSeconds(2);
         transform.position = spawnInimigo.NovaPosicao(7.0f, 15.0f);
-    }
+
+        
+    }*/
 
     
     

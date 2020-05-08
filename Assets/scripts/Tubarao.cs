@@ -16,13 +16,30 @@ public class Tubarao : Obstaculo
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
-            StartCoroutine("Reutilizar");
+            //StartCoroutine("Reutilizar");
+            var obstaculo3 = spawnInimigo.GetFromTubarao();
+
+            if (obstaculo3 != null)
+            {
+                obstaculo3.SetActive(false);
+            }
+
         }
     }
-    IEnumerator Reutilizar()
+    /*IEnumerator Reutilizar()
     {
         yield return new WaitForSeconds(0.5f);
+
+        var obstaculo3 = spawnInimigo.GetFromTubarao();
+
+        if(obstaculo3 != null)
+        {
+            obstaculo3.SetActive(false);
+        }
+
         transform.position = spawnInimigo.NovaPosicao(7.0f, 15.0f);
-    }
+
+        
+    }*/
    
 }

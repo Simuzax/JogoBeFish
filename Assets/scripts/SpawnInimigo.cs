@@ -56,7 +56,7 @@ public class SpawnInimigo : MonoBehaviour
             obstaculo.transform.SetParent(objectPoolTransform); //por que transformar o objeto obstaculo em filho do objectPoolTransform? para a hierarchy ficar mais organizada
                                                                 //Atribuir o game object em uma posição do vetor
             objetosObstaculosIsca[i] = obstaculo;
-            StartCoroutine("IscaObstaculo");
+            //StartCoroutine("IscaObstaculo");
 
 
             var obstaculo2 = Instantiate(redeDePescaPrefab);
@@ -65,7 +65,7 @@ public class SpawnInimigo : MonoBehaviour
             obstaculo2.transform.SetParent(objectPoolTransform);
 
             objetosObstaculosRede[i] = obstaculo2;
-            StartCoroutine("RedeObstaculo");
+            //StartCoroutine("RedeObstaculo");
 
             var obstaculo3 = Instantiate(tubaraoPrefab);
             obstaculo3.transform.position = Vector3.zero;
@@ -73,7 +73,7 @@ public class SpawnInimigo : MonoBehaviour
             obstaculo3.transform.SetParent(objectPoolTransform);
 
             objetoObstaculoTubarao[i] = obstaculo3;
-            StartCoroutine("TubaraoObstaculo");
+            //StartCoroutine("TubaraoObstaculo");
             
             
 
@@ -164,6 +164,7 @@ public class SpawnInimigo : MonoBehaviour
 
 
         return posicaoAleatoria;
+        
     }
     IEnumerator IscaObstaculo()
     {
@@ -173,12 +174,12 @@ public class SpawnInimigo : MonoBehaviour
         //Se o valor da variável não for nulo...
         if (inimigo != null)
         {
-            SpawnObstaculo(inimigo, 7.0f, 15.0f);
+            SpawnObstaculo(inimigo, 1.0f, 5.0f);
         }
-        else
+        /*else
             //Mostrar uma mensagem de alerta no console
             //OBS.: Isso NÃO PODE acontecer, esse debug só tem o propósito de teste
-            Debug.LogWarning("Não tem objetos disponíveis na pool.");
+            Debug.LogWarning("Não tem objetos disponíveis na pool.");*/
     }
     IEnumerator RedeObstaculo()
     {
@@ -188,7 +189,7 @@ public class SpawnInimigo : MonoBehaviour
 
         if (inimigo2 != null)
         {
-            SpawnObstaculo(inimigo2, 7.0f, 15.0f);
+            SpawnObstaculo(inimigo2, 1.0f, 5.0f);
         }
 
     }
@@ -200,7 +201,16 @@ public class SpawnInimigo : MonoBehaviour
 
         if (inimigo3 != null)
         {
-            SpawnObstaculo(inimigo3, 7.0f, 15.0f);
+            SpawnObstaculo(inimigo3, 1.0f, 5.0f);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("ColisorDeTras"))
+        {
+            StartCoroutine("IscaObstaculo");
+            StartCoroutine("RedeObstaculo");
+            StartCoroutine("TubaraoObstaculo");
         }
     }
 }

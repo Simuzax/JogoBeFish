@@ -9,9 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8869712004098888220}
-  - component: {fileID: 8869712004098888417}
-  - component: {fileID: 8869712004098888422}
-  - component: {fileID: 8869712004098888420}
   - component: {fileID: 8869712004098888221}
   - component: {fileID: 8869712004098888418}
   - component: {fileID: 8869712004098888223}
@@ -40,50 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8869712004098888417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8869712004098888222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50afbac1171d57e4eb8f003380dc330c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  habilidadesGeraisPlayer: {fileID: 0}
---- !u!114 &8869712004098888422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8869712004098888222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49da69b04144f0648a84a8763f80d8bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Contagem: 10
-  displayContagem: {fileID: 0}
---- !u!114 &8869712004098888420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8869712004098888222}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2200fe54917e3b45a5fe96c64606770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanciaComidaPlayer: 2
-  player: {fileID: 0}
-  nivelDoChao: 2
-  comidaPrefab: {fileID: 0}
-  timerSpawnComidaMax: 3
 --- !u!114 &8869712004098888221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,30 +85,8 @@ MonoBehaviour:
     type: 3}
   redeDePescaPrefab: {fileID: 423874680622120533, guid: f1820dd7859c53b4a9b2d946295a9a8a,
     type: 3}
-  spawnarInimigoInicial: 0
-  spawnarInimigoFinal: 3
   objectPoolTransform: {fileID: 0}
-  spawnarIscaInicial: 0
-  spawnarIscaMax: 5
-  spawnarTubaraoInicial: 0
-  spawnarTubaraoMax: 7
-  spawnarRedePescaInicial: 0
-  spawnarRedePescaMax: 4
-  distanceEnemyFromPlayer: 4
-  Camera: {fileID: 0}
-  acelerarIscaSpawninicial: 10
-  acelerarIscaSpawnMax: 10
-  desacelerarIscaSpawnInicial: 6
-  desacelerarIscaSpawnMax: 6
-  reacelerarIscaSpawnInicial: 10
-  reacelerarIscaSpawnMax: 10
-  maisIscas: 4.5
-  menosIscas: 3
-  maisIscas2: 3
-  novoValor: 1
-  antigoValor: 0
   ListInimigos: []
-  ListInimigosVivos: []
   objetosObstaculosIsca: []
   objetosObstaculosRede: []
   objetoObstaculoTubarao: []
@@ -166,7 +97,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8869712004098888222}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cee5b3107aa895a43bfeb318cbdf1631, type: 3}
   m_Name: 
@@ -226,7 +157,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8869712004098888222}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fbefae66d3c0544290a8e10a660025b, type: 3}
   m_Name: 
