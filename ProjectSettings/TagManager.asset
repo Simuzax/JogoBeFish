@@ -27,6 +27,7 @@ TagManager:
   - LinhaDeSpawnInimigo
   - Isca
   - LinhaSpawnAlga
+  - SegundoColisorDeTras
   layers:
   - Default
   - TransparentFX

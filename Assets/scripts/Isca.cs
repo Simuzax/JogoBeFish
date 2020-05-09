@@ -19,16 +19,17 @@ public class Isca : Obstaculo
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
-            //StartCoroutine("Reposicionador");
-            var obstaculo1 = spawnInimigo.GetFromIsca();
+            gameObject.SetActive(false);
+            /*var obstaculo1 = spawnInimigo.GetFromIsca();
 
             if(obstaculo1 != null)
             {
+                
                 obstaculo1.SetActive(false);
             }
-            
-            
-           
+            //StartCoroutine("Reposicionador");*/
+
+
         }
     }
     
@@ -37,10 +38,6 @@ public class Isca : Obstaculo
         yield return new WaitForSeconds(2);
 
         transform.position = spawnInimigo.NovaPosicao(7.0f, 15.0f);
-
-        
-        
-        
     }*/
     
 
