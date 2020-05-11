@@ -28,6 +28,7 @@ TagManager:
   - Isca
   - LinhaSpawnAlga
   - SegundoColisorDeTras
+  - Piranha
   layers:
   - Default
   - TransparentFX
@@ -151,4 +152,7 @@ TagManager:
     locked: 0
   - name: SpawnTesouro
     uniqueID: 3274162667
+    locked: 0
+  - name: Piranha
+    uniqueID: 1696252021
     locked: 0

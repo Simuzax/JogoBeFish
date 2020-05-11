@@ -22,7 +22,7 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     void Awake()
     {
 
-        habilidadesGeraisPlayer_ref = GameObject.Find("piranhaA").GetComponent<HabilidadesGeraisPlayer>();
+        habilidadesGeraisPlayer_ref = GameObject.Find("Piranha").GetComponent<HabilidadesGeraisPlayer>();
         
         
     }

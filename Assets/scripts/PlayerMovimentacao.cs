@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerMovimentacao : MonoBehaviour
 {
-    
 
-  
 
+
+    Animator animator;
     public Rigidbody2D rigidbody2D_;
     public int speed;
-    public Animator animator;
+     
     public SpawnarGhost spawnarGhost_ref;
     
 
@@ -32,7 +32,11 @@ public class PlayerMovimentacao : MonoBehaviour
     }
 
     // Update is called once per frame
-    
+    void Update()
+    {
+        
+    }
+
     private void FixedUpdate()
     {
 
@@ -40,6 +44,15 @@ public class PlayerMovimentacao : MonoBehaviour
         
             Vector2 Position = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             rigidbody2D_.velocity = Position * speed;
+
+            if (Position.x > 0 || Position.x < 0 || Position.y > 0 || Position.y < 0)
+            {
+               animator.SetBool("Walking", true);
+            }
+            else
+            {
+               animator.SetBool("Walking", false);
+            }
 
 
 
@@ -56,25 +69,9 @@ public class PlayerMovimentacao : MonoBehaviour
 
 
 
-            /*if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.LeftArrow)) || (Input.GetKey(KeyCode.UpArrow)) || (Input.GetKey(KeyCode.DownArrow)))
-            {
-                 spawnarGhost_ref.makeGhost = true;
-            }
-            else
-            {
-                 spawnarGhost_ref.makeGhost = false;
-            }*/
+           
 
-
-
-            if (Position.x > 0 || Position.x < 0 || Position.y > 0 || Position.y < 0)
-            {
-                animator.SetBool("Walking", true);
-            }
-            else
-            {
-                animator.SetBool("Walking", false);
-            }
+            
         
         
     }

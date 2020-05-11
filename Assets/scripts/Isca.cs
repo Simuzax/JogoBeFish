@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Isca : Obstaculo
 {
-     
+    
     
 	private void Awake()
 	{
@@ -19,15 +19,18 @@ public class Isca : Obstaculo
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
-            gameObject.SetActive(false);
-            /*var obstaculo1 = spawnInimigo.GetFromIsca();
+            //gameObject.SetActive(false);
+
+            spawnInimigo.valorObjeto = 2;
+       
+            var obstaculo1 = spawnInimigo.GetFromIsca();
 
             if(obstaculo1 != null)
             {
                 
                 obstaculo1.SetActive(false);
             }
-            //StartCoroutine("Reposicionador");*/
+            //StartCoroutine("Reposicionador");
 
 
         }

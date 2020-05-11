@@ -10,8 +10,9 @@ public enum TipoObstaculo
 public class Obstaculo : MonoBehaviour
 {
 	protected SpawnInimigo spawnInimigo;
+    
 
-	public TipoObstaculo tipo { get; protected set; }
+    public TipoObstaculo tipo { get; protected set; }
 
 	/*private void OnTriggerEnter2D(Collider2D collision)
 	{

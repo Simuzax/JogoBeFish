@@ -8,7 +8,7 @@ public class SpawnInimigo : MonoBehaviour
 {
     public Transform LinhaDeSpawn;
 
-
+    public int valorObjeto = 0;
 
     public GameObject tubaraoPrefab;
     public GameObject iscaPrefab;
@@ -23,11 +23,21 @@ public class SpawnInimigo : MonoBehaviour
                                                         Organizar melhor essas variáveis, documentar, e avaliar a necessidade
                                                         */
 
+    [SerializeField]
+    private float spawnarTubaraoInicial;
+    [SerializeField]
+    private float spawnarTubaraoMax;
+
+    [SerializeField]
+    private float spawnarIscaInicial;
+    [SerializeField]
+    private float spawnarIscaMax;
+
+    public float spawnarRedeInicial;
     
+    public float spawnarRedeMax;
 
-   
 
-    public List<Obstaculo> ListInimigos = new List<Obstaculo>();
 
 
     public const int tamanhoPool = 1;  //Inteiro constante que diz o tamanho do array da object pool    //por que constante?
@@ -76,18 +86,60 @@ public class SpawnInimigo : MonoBehaviour
             objetoObstaculoTubarao[i] = obstaculo3;
             StartCoroutine("TubaraoObstaculo");
             
-
-
-
-
-
-
-
-
-
-
         }
 
+    }
+    void Update()
+    {
+        if (valorObjeto == 1)
+        {
+            spawnarTubaraoInicial += Time.deltaTime;
+            if(spawnarTubaraoInicial >= spawnarTubaraoMax)
+            {
+                
+                var Inimigo1 = GetFromTubarao();
+
+                if(Inimigo1 != null)
+                {
+                    SpawnObstaculo(Inimigo1, 4.0f, 14.0f);
+                }
+                spawnarTubaraoInicial = 0;
+                valorObjeto = 0;
+            }
+
+        }
+        if (valorObjeto == 2)
+        {
+            spawnarIscaInicial += Time.deltaTime;
+            if(spawnarIscaInicial >= spawnarIscaMax)
+            {
+                var inimigo2 = GetFromIsca();
+
+                if(inimigo2 != null)
+                {
+                    SpawnObstaculo(inimigo2, 4.0f, 14.0f);
+                }
+                spawnarIscaInicial = 0;
+                valorObjeto = 0;
+            }
+        }
+        if (valorObjeto == 3)
+        {
+            spawnarRedeInicial += Time.deltaTime;
+
+            if (spawnarRedeInicial >= spawnarRedeMax)
+            {
+                var inimigo3 = GetFromRede();
+
+                if(inimigo3 != null)
+                {
+                    SpawnObstaculo(inimigo3, 4.0f, 14.0f);
+                }
+                spawnarRedeInicial = 0;
+                valorObjeto = 0;
+            }
+        }
+            
     }
 
     public void SpawnObstaculo(GameObject obstaculo, float valorMinimo, float valorMaximo)
@@ -96,6 +148,19 @@ public class SpawnInimigo : MonoBehaviour
         obstaculo.transform.position = NovaPosicao(valorMinimo, valorMaximo);
         //Ativa o game object na hierarquia
         obstaculo.SetActive(true);
+    }
+    public Vector2 NovaPosicao(float valorMinimo, float valorMaximo)
+    {
+        Vector2 posicaoAleatoria;
+
+        float EixoX = LinhaDeSpawn.position.x;
+        float EixoY = Random.Range(valorMinimo, valorMaximo);                       //Random.Range(4.0f, 14.0f); //na nova posição da rede no eixoY os valores do random.range poderiam ser outros
+
+        posicaoAleatoria = new Vector2(EixoX, EixoY);
+
+
+        return posicaoAleatoria;
+
     }
 
     public GameObject GetFromIsca()// o objetivo desta função é achar objetos desativados? //por que?
@@ -157,19 +222,7 @@ public class SpawnInimigo : MonoBehaviour
         return obstaculo3;
     }
 
-    public Vector2 NovaPosicao(float valorMinimo, float valorMaximo)
-    {
-        Vector2 posicaoAleatoria;
-
-        float EixoX = LinhaDeSpawn.position.x;
-        float EixoY = Random.Range(valorMinimo, valorMaximo);                       //Random.Range(4.0f, 14.0f); //na nova posição da rede no eixoY os valores do random.range poderiam ser outros
-
-        posicaoAleatoria = new Vector2(EixoX, EixoY);
-
-
-        return posicaoAleatoria;
-        
-    }
+    
     IEnumerator IscaObstaculo()
     {
         yield return new WaitForSeconds(2);
@@ -197,8 +250,8 @@ public class SpawnInimigo : MonoBehaviour
         }
 
     }
-    
-    
+
+
     IEnumerator TubaraoObstaculo()
     {
         yield return new WaitForSeconds(0.5f);
@@ -210,20 +263,7 @@ public class SpawnInimigo : MonoBehaviour
             SpawnObstaculo(inimigo3, 4.0f, 14.0f);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("ColisorDeTras"))
-        {
-            StopCoroutine("IscaObstaculo");
-            StartCoroutine("IscaObstaculo");
-            StopCoroutine("RedeObstaculo");
-            StartCoroutine("RedeObstaculo");
-            StopCoroutine("TubaraoObstaculo");
-            StartCoroutine("TubaraoObstaculo");
-
-
-        }
-    }
+    
 }
     
 	// Update is called once per frame
