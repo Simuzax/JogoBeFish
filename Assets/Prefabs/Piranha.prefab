@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1831134540100688578}
   - component: {fileID: 4274228690908764150}
   - component: {fileID: 1753558959}
+  - component: {fileID: 4344544564084512848}
   m_Layer: 0
   m_Name: Piranha
   m_TagString: Player
@@ -219,6 +220,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1753558959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465963832934782424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78f17052b925c348a4ee920c7bbb4fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4344544564084512848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
