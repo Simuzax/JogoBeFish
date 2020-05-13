@@ -16,8 +16,10 @@ public class Rede : Obstaculo
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
+            Debug.Log("RedeAcerta");
 
             spawnInimigo.valorObjeto = 3;
+            spawnInimigo.StopCoroutine("RedeObstaculo");
 
             //gameObject.SetActive(false);
             var obstaculo2 = spawnInimigo.GetFromRede();

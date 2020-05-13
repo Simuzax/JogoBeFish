@@ -2,17 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrendendoPeixes : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    RedePesca rede_ref;
-
-    
-
-    private void Awake()
-    {
-        rede_ref = GetComponent<RedePesca>();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +15,4 @@ public class PrendendoPeixes : MonoBehaviour
     {
         
     }
-    
-  
-
 }

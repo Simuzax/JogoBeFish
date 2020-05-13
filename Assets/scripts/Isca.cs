@@ -21,8 +21,11 @@ public class Isca : Obstaculo
         {
             //gameObject.SetActive(false);
 
+            Debug.Log("IscaAcerta");
+
             spawnInimigo.valorObjeto = 2;
-       
+            spawnInimigo.StopCoroutine("IscaObstaculo");
+
             var obstaculo1 = spawnInimigo.GetFromIsca();
 
             if(obstaculo1 != null)

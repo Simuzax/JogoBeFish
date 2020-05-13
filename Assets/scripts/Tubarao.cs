@@ -17,10 +17,10 @@ public class Tubarao : Obstaculo
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
 
-            
+            Debug.Log("tubaraoAcerta");
 
-             
-            
+            spawnInimigo.StopCoroutine("TubaraoObstaculo");
+
             var obstaculo3 = spawnInimigo.GetFromTubarao();
 
             if (obstaculo3 != null)
@@ -29,6 +29,8 @@ public class Tubarao : Obstaculo
                 obstaculo3.SetActive(false);
             }
             spawnInimigo.valorObjeto = 1;
+            
+
 
             //StartCoroutine("Reutilizar");
         }

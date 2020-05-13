@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SlowPlayer : MonoBehaviour
 {
-    Interface interface_ref;
     
-    PlayerMovimentacao playerMovimentacao_ref;
+
+    HabilidadesGeraisPlayer habilidadesGeraisPlayer_ref;
 
     public bool devagar = false;
 
@@ -24,7 +24,7 @@ public class SlowPlayer : MonoBehaviour
 
     void Awake()
     {
-        playerMovimentacao_ref = GetComponent<PlayerMovimentacao>();
+        habilidadesGeraisPlayer_ref = GetComponent<HabilidadesGeraisPlayer>();
         
 
     }
@@ -45,37 +45,22 @@ public class SlowPlayer : MonoBehaviour
             {
 
                 devagar = false;
-                playerMovimentacao_ref.speed += recuperacao;
+                habilidadesGeraisPlayer_ref.speed += recuperacao;
 
                 velocidadeLentaInicial = 0;
             }
         }
     }
 
- /* public void lentidao()
-    {
-
-        desacelerar(perder);
-        //if (devagar == false)
-        //{
-
-        //}
-
-    }
-
-    public void desacelerar(int prender)
-    {
-        playerMovimentacao_ref.speed -= prender;
-        devagar = true;
-    } */
+ 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("RedeDepesca"))
         {
-           if(playerMovimentacao_ref.speed>=6)
+           if(habilidadesGeraisPlayer_ref.speed>=6)
            {
-               playerMovimentacao_ref.speed -= perder;
+                habilidadesGeraisPlayer_ref.speed -= perder;
                devagar = true;
            }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public Player Personagem;
+    //public Player Personagem;
 
 
     public Interface interface_ref;

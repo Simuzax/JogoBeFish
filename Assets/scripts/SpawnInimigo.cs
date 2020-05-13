@@ -9,6 +9,7 @@ public class SpawnInimigo : MonoBehaviour
     public Transform LinhaDeSpawn;
 
     public int valorObjeto = 0;
+    
 
     public GameObject tubaraoPrefab;
     public GameObject iscaPrefab;
@@ -33,9 +34,11 @@ public class SpawnInimigo : MonoBehaviour
     [SerializeField]
     private float spawnarIscaMax;
 
-    public float spawnarRedeInicial;
+    [SerializeField]
+    private float spawnarRedeInicial;
     
-    public float spawnarRedeMax;
+    [SerializeField]
+    private float spawnarRedeMax;
 
 
 
@@ -68,6 +71,7 @@ public class SpawnInimigo : MonoBehaviour
             objetosObstaculosIsca[i] = obstaculo;
             StartCoroutine("IscaObstaculo");
             
+            
 
             var obstaculo2 = Instantiate(redeDePescaPrefab);
             obstaculo2.transform.position = Vector3.zero;
@@ -76,6 +80,7 @@ public class SpawnInimigo : MonoBehaviour
 
             objetosObstaculosRede[i] = obstaculo2;
             StartCoroutine("RedeObstaculo");
+            
             
 
             var obstaculo3 = Instantiate(tubaraoPrefab);
@@ -86,6 +91,7 @@ public class SpawnInimigo : MonoBehaviour
             objetoObstaculoTubarao[i] = obstaculo3;
             StartCoroutine("TubaraoObstaculo");
             
+
         }
 
     }
@@ -93,6 +99,7 @@ public class SpawnInimigo : MonoBehaviour
     {
         if (valorObjeto == 1)
         {
+           
             spawnarTubaraoInicial += Time.deltaTime;
             if(spawnarTubaraoInicial >= spawnarTubaraoMax)
             {
@@ -102,6 +109,7 @@ public class SpawnInimigo : MonoBehaviour
                 if(Inimigo1 != null)
                 {
                     SpawnObstaculo(Inimigo1, 4.0f, 14.0f);
+
                 }
                 spawnarTubaraoInicial = 0;
                 valorObjeto = 0;
@@ -141,6 +149,7 @@ public class SpawnInimigo : MonoBehaviour
         }
             
     }
+   
 
     public void SpawnObstaculo(GameObject obstaculo, float valorMinimo, float valorMaximo)
     {
