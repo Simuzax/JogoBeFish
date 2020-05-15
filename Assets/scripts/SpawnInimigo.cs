@@ -8,8 +8,9 @@ public class SpawnInimigo : MonoBehaviour
 {
     public Transform LinhaDeSpawn;
 
-    public int valorObjeto = 0;
-    
+    public bool contarTempo = false;
+
+
 
     public GameObject tubaraoPrefab;
     public GameObject iscaPrefab;
@@ -24,21 +25,6 @@ public class SpawnInimigo : MonoBehaviour
                                                         Organizar melhor essas variáveis, documentar, e avaliar a necessidade
                                                         */
 
-    [SerializeField]
-    private float spawnarTubaraoInicial;
-    [SerializeField]
-    private float spawnarTubaraoMax;
-
-    [SerializeField]
-    private float spawnarIscaInicial;
-    [SerializeField]
-    private float spawnarIscaMax;
-
-    [SerializeField]
-    private float spawnarRedeInicial;
-    
-    [SerializeField]
-    private float spawnarRedeMax;
 
 
 
@@ -50,6 +36,7 @@ public class SpawnInimigo : MonoBehaviour
     public GameObject[] objetosObstaculosRede;                                                       //aqui quando se diz pool se refere ao array e object se refere ao tipo do array que é de GameObject?
     public GameObject[] objetoObstaculoTubarao;
 
+    public GameObject[] arrayObstaculo;
 
 
     public void Start() //posso colocar o que esta abaixo num update? 
@@ -95,60 +82,7 @@ public class SpawnInimigo : MonoBehaviour
         }
 
     }
-    void Update()
-    {
-        if (valorObjeto == 1)
-        {
-           
-            spawnarTubaraoInicial += Time.deltaTime;
-            if(spawnarTubaraoInicial >= spawnarTubaraoMax)
-            {
-                
-                var Inimigo1 = GetFromTubarao();
-
-                if(Inimigo1 != null)
-                {
-                    SpawnObstaculo(Inimigo1, 4.0f, 14.0f);
-
-                }
-                spawnarTubaraoInicial = 0;
-                valorObjeto = 0;
-            }
-
-        }
-        if (valorObjeto == 2)
-        {
-            spawnarIscaInicial += Time.deltaTime;
-            if(spawnarIscaInicial >= spawnarIscaMax)
-            {
-                var inimigo2 = GetFromIsca();
-
-                if(inimigo2 != null)
-                {
-                    SpawnObstaculo(inimigo2, 4.0f, 14.0f);
-                }
-                spawnarIscaInicial = 0;
-                valorObjeto = 0;
-            }
-        }
-        if (valorObjeto == 3)
-        {
-            spawnarRedeInicial += Time.deltaTime;
-
-            if (spawnarRedeInicial >= spawnarRedeMax)
-            {
-                var inimigo3 = GetFromRede();
-
-                if(inimigo3 != null)
-                {
-                    SpawnObstaculo(inimigo3, 4.0f, 14.0f);
-                }
-                spawnarRedeInicial = 0;
-                valorObjeto = 0;
-            }
-        }
-            
-    }
+  
    
 
     public void SpawnObstaculo(GameObject obstaculo, float valorMinimo, float valorMaximo)
@@ -272,179 +206,39 @@ public class SpawnInimigo : MonoBehaviour
             SpawnObstaculo(inimigo3, 4.0f, 14.0f);
         }
     }
+
+
+    public void Reutilizacao(float tempoLimite, float valorMinimo, float valorMaximo)
+    {
+        var obstaculo3 = GetFromTubarao();
+
+        if (obstaculo3 != null)
+        {
+
+            obstaculo3.SetActive(false);
+        }
+
+          StartCoroutine(IniciarContagem(tempoLimite,obstaculo3, valorMinimo, valorMaximo));
+    }
+    IEnumerator IniciarContagem(float tempoLimite, GameObject inimigo,float valorMinimo,float valorMaximo)
+    {
+        contarTempo = true;
+        float tempo = 0;
+
+        while(tempo < tempoLimite)
+        {
+            tempo += Time.deltaTime;
+
+            yield return null;
+        }
+
+        SpawnObstaculo(inimigo, valorMinimo, valorMaximo);
+        contarTempo = false;
+    }
+
+   
     
 }
     
-	// Update is called once per frame
-	/*void Update()
-    {
-         if(Time.time>= acelerarIscaSpawninicial + acelerarIscaSpawnMax && novoValor==true && antigoValor == false)
-         {
-            acelerarIscaSpawninicial = Time.time;
-
-            spawnarIscaInicial -= maisIscas;
-            spawnarIscaMax -= maisIscas;
-
-            antigoValor = true;
-         }      
-
-        if(Time.time>=desacelerarIscaSpawnInicial+desacelerarIscaSpawnMax && novoValor==true && antigoValor == true)
-        {
-			desacelerarIscaSpawnInicial = Time.time;
-
-			spawnarIscaInicial += menosIscas;
-			spawnarIscaMax += menosIscas;
-
-			novoValor = false;
-			antigoValor = false;
-		}      
-
-        if(Time.time>=reacelerarIscaSpawnInicial+reacelerarIscaSpawnMax && novoValor==false && antigoValor == true)
-        {
-            reacelerarIscaSpawnInicial = Time.time;
-
-            spawnarIscaInicial -= maisIscas2;
-            spawnarIscaMax -= maisIscas2;
-
-            novoValor = true;
-            antigoValor = true;
-        }
-
-        spawnarIscaInicial += Time.deltaTime;
-        if (spawnarIscaInicial>=spawnarIscaMax)
-        {
-            spawnarIscaInicial = 0;
-
-            Vector2 position = LinhaDeSpawn.transform.position;
-
-
-            SpawnarInimigos<Isca>(1, Random.Range(-1, 5), position);
-        }
-
-        spawnarTubaraoInicial += Time.deltaTime;
-        if(spawnarTubaraoInicial>=spawnarTubaraoMax)
-        {
-            spawnarTubaraoInicial = 0;
-
-            Vector2 position = LinhaDeSpawn.transform.position;
-            
-            SpawnarInimigos<Tubarao>(1, Random.Range(-1, 5), position);            
-        }
-        
-        spawnarRedePescaInicial += Time.deltaTime;
-        if(spawnarRedePescaInicial>=spawnarRedePescaMax)
-        {
-            spawnarRedePescaInicial = 0;
-
-            Vector2 position = LinhaDeSpawn.transform.position;
-            
-          
-            
-            SpawnarInimigos<RedePesca>(1, Random.Range(-1, 5), position);
-
-            
-        }
-    }
-	*/
-    /*public void SpawnarInimigos<Y>(int quantidadeIinimigos, float heightMax, Vector2 Position)
-    {                                                                           
-        Position.y = heightMax;
-
-        Obstaculo[] inimigosArray = ListInimigos.ToArray();                                                
-
-        for (int i = 0; i < inimigosArray.Length; i++)
-        {
-			Debug.LogWarning("SpawnInimigo");
-
-			if (typeof(Y) == typeof(Isca))
-            {
-                GameObject isca = Instantiate(iscaPrefab, Position, Quaternion.identity);
-                var script = isca.GetComponent<Isca>();
-
-                ListInimigos.Add(script);
-                //AdicionarOuDestruir(script);
-            }
-            if (typeof(Y) == typeof(Tubarao))
-            {
-                Tubarao tubarao = Instantiate(tubaraoPrefab, Position, Quaternion.identity).GetComponent<Tubarao>();
-                var script = tubarao.GetComponent<Tubarao>();
-
-                ListInimigos.Add(script);
-                //AdicionarOuDestruir(tubarao);
-            }
-            if (typeof(Y) == typeof(RedePesca))
-            {
-                RedePesca rede = Instantiate(redeDePescaPrefab, Position, Quaternion.identity).GetComponent<RedePesca>();
-                var script = rede.GetComponent<RedePesca>();
-
-                ListInimigos.Add(script);
-                //AdicionarOuDestruir(rede);
-            }
-
-            /*if (ListInimigos.Count > 0)
-            {
-                if (typeof(Y) == typeof(Isca))
-                {
-                    if (ListInimigos.OfType<Isca>().Any())
-                    {
-                        int posicao = ListInimigos.FindLastIndex(x => x.GetType() == typeof(Isca));
-
-                        Obstaculo Isca = ListInimigos[posicao];
-
-                        ListInimigos.RemoveAt(posicao);
-
-                        Isca.transform.position = position;
-
-						Isca.gameObject.SetActive(true);
-                    }
-                }
-                else if (typeof(Y) == typeof(RedePesca))
-                {
-                    if (ListInimigos.OfType<RedePesca>().Any())
-                    {
-                        int possicao = ListInimigos.FindLastIndex(x => x.GetType() == typeof(RedePesca));
-
-                        Obstaculo RedePesca = ListInimigos[possicao];
-
-                        ListInimigos.RemoveAt(possicao);
-
-                        RedePesca.transform.position = position;
-
-						RedePesca.gameObject.SetActive(true);
-                    }
-                }
-                else if (typeof(Y) == typeof(Tubarao))
-                {
-                    if (ListInimigos.OfType<Tubarao>().Any())
-                    {
-                        int possicao = ListInimigos.FindLastIndex(x => x.GetType() == typeof(Tubarao));
-
-                        Obstaculo tubarao = ListInimigos[possicao];
-
-                        ListInimigos.RemoveAt(possicao);
-
-                        tubarao.transform.position = position;
-
-						tubarao.gameObject.SetActive(true);
-                    }
-                }
-            }*/
-    //else
-    //{
-
-    //}
-
-
-
-    /* public void AdicionarOuDestruir(Obstaculo obstaculo)                                         
-    {       
-        if (ListInimigos.Count > 0)
-        {
-            ListInimigos.Add(obstaculo);
-        }
-        else
-        {
-            Destroy(obstaculo);
-        }
-    }*/
+	
 

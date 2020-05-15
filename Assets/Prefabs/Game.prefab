@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LinhaDeSpawn: {fileID: 0}
-  valorObjeto: 0
+  contarTempo: 0
   tubaraoPrefab: {fileID: 7130763391869936519, guid: 35b448ffd27f06042b39d7ec9463d22e,
     type: 3}
   iscaPrefab: {fileID: 6529201835023719392, guid: 7f0f3df4788a92b409554d43020ae2ee,
@@ -55,15 +55,10 @@ MonoBehaviour:
   redeDePescaPrefab: {fileID: 423874680622120533, guid: f1820dd7859c53b4a9b2d946295a9a8a,
     type: 3}
   objectPoolTransform: {fileID: 0}
-  spawnarTubaraoInicial: 1
-  spawnarTubaraoMax: 0.5
-  spawnarIscaInicial: 0
-  spawnarIscaMax: 2
-  spawnarRedeInicial: 0
-  spawnarRedeMax: 1.5
   objetosObstaculosIsca: []
   objetosObstaculosRede: []
   objetoObstaculoTubarao: []
+  arrayObstaculo: []
 --- !u!114 &8869712004098888419
 MonoBehaviour:
   m_ObjectHideFlags: 0

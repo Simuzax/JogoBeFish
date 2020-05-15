@@ -18,28 +18,16 @@ public class Rede : Obstaculo
         {
             Debug.Log("RedeAcerta");
 
-            spawnInimigo.valorObjeto = 3;
-            spawnInimigo.StopCoroutine("RedeObstaculo");
 
-            //gameObject.SetActive(false);
-            var obstaculo2 = spawnInimigo.GetFromRede();
-            
-            if(obstaculo2 != null)
+            if (contarTempo == false)
             {
-                
-                obstaculo2.SetActive(false);
+
             }
-            //StartCoroutine("Reutilizar");
+
         }
     }
-    /*IEnumerator Reutilizar()
-    {
-        yield return new WaitForSeconds(2);
-        transform.position = spawnInimigo.NovaPosicao(7.0f, 15.0f);
-
-        
-    }*/
-
     
-    
+
+
+
 }

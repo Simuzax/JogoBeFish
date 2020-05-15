@@ -10,7 +10,12 @@ public enum TipoObstaculo
 public class Obstaculo : MonoBehaviour
 {
 	protected SpawnInimigo spawnInimigo;
-    
+
+    public float tempoLim;
+    public float VariacaoMin;
+    public float VariacaoMax;
+
+    public bool contarTempo = false;
 
     public TipoObstaculo tipo { get; protected set; }
 

@@ -232,3 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afdc6191b013fe34998cda2212b5bfb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tempoLim: 1
+  VariacaoMin: 4
+  VariacaoMax: 10
+  contarTempo: 0

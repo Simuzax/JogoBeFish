@@ -19,33 +19,21 @@ public class Isca : Obstaculo
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
-            //gameObject.SetActive(false);
+            
 
             Debug.Log("IscaAcerta");
 
-            spawnInimigo.valorObjeto = 2;
-            spawnInimigo.StopCoroutine("IscaObstaculo");
 
-            var obstaculo1 = spawnInimigo.GetFromIsca();
-
-            if(obstaculo1 != null)
+            if (contarTempo == false)
             {
-                
-                obstaculo1.SetActive(false);
-            }
-            //StartCoroutine("Reposicionador");
+
+            }  
 
 
         }
     }
-    
-    /*IEnumerator Reposicionador()
-    {
-        yield return new WaitForSeconds(2);
-
-        transform.position = spawnInimigo.NovaPosicao(7.0f, 15.0f);
-    }*/
-    
-
    
+
+
+
 }

@@ -4676,6 +4676,10 @@ PrefabInstance:
       propertyPath: sliderHp
       value: 
       objectReference: {fileID: 1520658208}
+    - target: {fileID: 199106963, guid: d205922ac8186e949b55a25e460cea41, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d205922ac8186e949b55a25e460cea41, type: 3}
 --- !u!1001 &5341233893707874544
@@ -4927,6 +4931,11 @@ PrefabInstance:
       propertyPath: spectre
       value: 
       objectReference: {fileID: 179116854}
+    - target: {fileID: 8869712004098888423, guid: 9fa33022dea8129479f30880e48ef33e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8869712004098888220, guid: 9fa33022dea8129479f30880e48ef33e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4992,11 +5001,6 @@ PrefabInstance:
       propertyPath: objectPoolTransform
       value: 
       objectReference: {fileID: 131638397}
-    - target: {fileID: 8869712004098888419, guid: 9fa33022dea8129479f30880e48ef33e,
-        type: 3}
-      propertyPath: bolhas
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8869712004098888416, guid: 9fa33022dea8129479f30880e48ef33e,
         type: 3}
       propertyPath: LinhaSpawnAlga

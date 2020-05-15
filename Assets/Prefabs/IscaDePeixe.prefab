@@ -218,6 +218,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3c5ac5f764d3a4184b1bfdbd02f26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tempoLim: 1
+  VariacaoMin: 4
+  VariacaoMax: 10
+  contarTempo: 0
 --- !u!114 &2118416376
 MonoBehaviour:
   m_ObjectHideFlags: 0
