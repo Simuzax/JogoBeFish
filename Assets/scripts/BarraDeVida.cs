@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class Interface : MonoBehaviour
+public class BarraDeVida : MonoBehaviour
 {
+    LevelManager levelManager_ref;
+
     public event Action OnPlayerDeath;
    
     public Slider sliderHp;
@@ -30,10 +32,14 @@ public class Interface : MonoBehaviour
             if (hp <= 0)
             {
                 hp = 0;
+
+                levelManager_ref.LoadScene("GameOver");
+
                 if (OnPlayerDeath != null)//aqui garante que tem algo dentro
                 {
                     Debug.Log("acertou");
                     OnPlayerDeath();
+                    
                 }
 
                 if (sliderHp && sliderHp != null)
@@ -66,16 +72,8 @@ public class Interface : MonoBehaviour
 
         }
     }
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        levelManager_ref = GameObject.Find("LevelManagement").GetComponent<LevelManager>();
     }
 }

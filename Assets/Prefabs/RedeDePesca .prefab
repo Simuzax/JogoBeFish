@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 423874680622120530}
   - component: {fileID: 423874680622120529}
   - component: {fileID: 423874680622120528}
-  - component: {fileID: 4672173782442110534}
   - component: {fileID: 783233247068342960}
+  - component: {fileID: 6017735382859827415}
   m_Layer: 0
   m_Name: 'RedeDePesca '
   m_TagString: RedeDepesca
@@ -205,21 +205,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4672173782442110534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423874680622120533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dab785f1ded7af49ae6dd302ab4a748, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  strength: 0
-  speed: 5
-  direction: {x: -1, y: 0}
 --- !u!114 &783233247068342960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,3 +221,20 @@ MonoBehaviour:
   VariacaoMin: 4
   VariacaoMax: 10
   contarTempo: 0
+--- !u!114 &6017735382859827415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423874680622120533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dab785f1ded7af49ae6dd302ab4a748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  piranha: {fileID: 0}
+  cascudo: {fileID: 0}
+  strength: 0
+  speed: 6
+  direction: {x: -1, y: 0}

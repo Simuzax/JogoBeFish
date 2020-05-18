@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum TipoObstaculo
 {
-	TUBARAO, ISCA, REDE, Alga
+	TUBARAO, ISCA, REDE, Alga, Tesouro
 };
 
 public class Obstaculo : MonoBehaviour

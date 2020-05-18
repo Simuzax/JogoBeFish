@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
     //public Player Personagem;
 
 
-    public Interface interface_ref;
+    BarraDeVida barraDeVida_ref;
     public SpawnInimigo spawnInimigo_ref;
     public SpawnarAlga spawnarAlga_ref;
     public SpawnarGhost spawnarGhost_ref;
@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>();
+        barraDeVida_ref = GameObject.Find("Game").GetComponent<BarraDeVida>();
         spawnInimigo_ref = GetComponent<SpawnInimigo>();
         spawnarAlga_ref = GetComponent<SpawnarAlga>();
         spawnarGhost_ref = GetComponent<SpawnarGhost>();
@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     }
     public void DesabilitarControlesGame()
     {
-        if (interface_ref.hp <= 0)
+        if (barraDeVida_ref.hp <= 0)
         {
             spawnInimigo_ref.enabled = false;
             spawnarAlga_ref.enabled = false;

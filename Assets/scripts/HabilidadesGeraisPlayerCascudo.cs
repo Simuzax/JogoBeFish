@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HabilidadesGeraisPlayer : MonoBehaviour
-{ 
+public class HabilidadesGeraisPlayerCascudo : MonoBehaviour
+{
     Animator animator;
     Rigidbody2D rigidbody2D_;
     public int speed;
@@ -23,7 +23,7 @@ public class HabilidadesGeraisPlayer : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -52,6 +52,4 @@ public class HabilidadesGeraisPlayer : MonoBehaviour
         audioSource.clip = Som;
         audioSource.Play();
     }*/
-
-    
 }

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6529201835023719420}
   - component: {fileID: 6529201835023719421}
   - component: {fileID: 6529201835023719394}
-  - component: {fileID: 2118416376}
-  - component: {fileID: 2779333713546652546}
+  - component: {fileID: 7409058422773081955}
+  - component: {fileID: 14538011396818692}
   m_Layer: 0
   m_Name: IscaDePeixe
   m_TagString: Isca
@@ -222,19 +222,7 @@ MonoBehaviour:
   VariacaoMin: 4
   VariacaoMax: 10
   contarTempo: 0
---- !u!114 &2118416376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6529201835023719392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8511493baf086f48bf5932eb5ab1c71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2779333713546652546
+--- !u!114 &7409058422773081955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,6 +234,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dab785f1ded7af49ae6dd302ab4a748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 7
-  speed: 7
+  piranha: {fileID: 0}
+  cascudo: {fileID: 0}
+  strength: 8
+  speed: 8
   direction: {x: -1, y: 0}
+--- !u!114 &14538011396818692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529201835023719392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8511493baf086f48bf5932eb5ab1c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -29,6 +29,10 @@ TagManager:
   - LinhaSpawnAlga
   - SegundoColisorDeTras
   - Piranha
+  - GameOver
+  - Panel
+  - MainMenu
+  - OptionsMenu
   layers:
   - Default
   - TransparentFX

@@ -19,10 +19,8 @@ public class Rede : Obstaculo
             Debug.Log("RedeAcerta");
 
 
-            if (contarTempo == false)
-            {
-
-            }
+            spawnInimigo.Reutilizacao3(1.0f, 4.0f, 14.0f);
+            gameObject.SetActive(false);
 
         }
     }

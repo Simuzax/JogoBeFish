@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8869712004098888419}
   - component: {fileID: 8869712004098888416}
   - component: {fileID: 8869712004098888423}
+  - component: {fileID: 619282334}
+  - component: {fileID: 655777581613686797}
   m_Layer: 0
   m_Name: Game
   m_TagString: Game
@@ -119,3 +121,35 @@ MonoBehaviour:
   ghostDelay: 1.1
   ghostDelaySeconds: 1
   makeGhost: 0
+--- !u!114 &619282334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbefae66d3c0544290a8e10a660025b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contarTempo: 0
+  LinhaSpawnTesouro: {fileID: 0}
+  TesouroPrefab: {fileID: 5695527276316066547, guid: f874475a84f97cc499957c911d93f089,
+    type: 3}
+  objectPoolTransform: {fileID: 0}
+--- !u!114 &655777581613686797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e199b15330039d4fafd39d2d3719c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderHp: {fileID: 0}
+  HPMax: 50
+  hp: 50

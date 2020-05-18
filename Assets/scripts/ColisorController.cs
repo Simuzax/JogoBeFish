@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ColisorController : MonoBehaviour
 {
-   
 
 
-    public Interface interface_ref;
+
+    BarraDeVida barraDeVida_ref;
     public MovimentacaoColisores movimentacaoColisores_ref;
     // Start is called before the first frame update
     private void Awake()
     {
-        interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>();
+        barraDeVida_ref = GameObject.Find("Game").GetComponent<BarraDeVida>();
         movimentacaoColisores_ref = GameObject.Find("ColisorDetras").GetComponent<MovimentacaoColisores>();
     }
 
@@ -23,7 +23,7 @@ public class ColisorController : MonoBehaviour
     }
     public void DesabilitarControlesColisores()
     {
-        if (interface_ref.hp <= 0)
+        if (barraDeVida_ref.hp <= 0)
         {
             movimentacaoColisores_ref.enabled = false;
         }
