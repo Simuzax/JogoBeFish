@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8869712004098888419}
   - component: {fileID: 8869712004098888416}
   - component: {fileID: 8869712004098888423}
-  - component: {fileID: 8869712004098888421}
+  - component: {fileID: 619282334}
+  - component: {fileID: 655777581613686797}
   m_Layer: 0
   m_Name: Game
   m_TagString: Game
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LinhaDeSpawn: {fileID: 0}
-  valorObjeto: 0
+  contarTempo: 0
   tubaraoPrefab: {fileID: 7130763391869936519, guid: 35b448ffd27f06042b39d7ec9463d22e,
     type: 3}
   iscaPrefab: {fileID: 6529201835023719392, guid: 7f0f3df4788a92b409554d43020ae2ee,
@@ -56,15 +57,10 @@ MonoBehaviour:
   redeDePescaPrefab: {fileID: 423874680622120533, guid: f1820dd7859c53b4a9b2d946295a9a8a,
     type: 3}
   objectPoolTransform: {fileID: 0}
-  spawnarTubaraoInicial: 0
-  spawnarTubaraoMax: 2
-  spawnarIscaInicial: 0
-  spawnarIscaMax: 3
-  spawnarRedeInicial: 0
-  spawnarRedeMax: 3
   objetosObstaculosIsca: []
   objetosObstaculosRede: []
   objetoObstaculoTubarao: []
+  arrayObstaculo: []
 --- !u!114 &8869712004098888419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,22 +121,35 @@ MonoBehaviour:
   ghostDelay: 1.1
   ghostDelaySeconds: 1
   makeGhost: 0
---- !u!114 &8869712004098888421
+--- !u!114 &619282334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8869712004098888222}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fbefae66d3c0544290a8e10a660025b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 822688687111050687, guid: 2e055670cd892ef47846fba21a934158, type: 3}
-  linhaSpawnTesouro: {fileID: 0}
+  contarTempo: 0
+  LinhaSpawnTesouro: {fileID: 0}
   TesouroPrefab: {fileID: 5695527276316066547, guid: f874475a84f97cc499957c911d93f089,
     type: 3}
-  ListTesouros: []
-  spawnarTesouroInicial: 0
-  spawnarTesouroMax: 3
+  objectPoolTransform: {fileID: 0}
+--- !u!114 &655777581613686797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869712004098888222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e199b15330039d4fafd39d2d3719c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderHp: {fileID: 0}
+  HPMax: 50
+  hp: 50

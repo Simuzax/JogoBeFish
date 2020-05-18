@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class HabilidadesGeraisInimigo : MonoBehaviour
 {
     //AudioSource audioSource;
@@ -11,6 +12,11 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
 
    
     HabilidadesGeraisPlayer habilidadesGeraisPlayer_ref;
+
+    public Piranha piranha;
+    public Cascudo cascudo;
+    
+
     public int strength; 
 
     public float speed;
@@ -22,7 +28,27 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     void Awake()
     {
 
-        habilidadesGeraisPlayer_ref = GameObject.Find("Piranha").GetComponent<HabilidadesGeraisPlayer>();
+        //if (piranha.gameObject.activeInHierarchy==true)
+        //{
+            habilidadesGeraisPlayer_ref = GameObject.Find("Piranha").GetComponent<HabilidadesGeraisPlayer>();
+        //}
+
+        
+        
+            
+        
+        //{
+            //habilidadesGeraisPlayer_ref = GameObject.Find("Piranha").GetComponent<HabilidadesGeraisPlayer>();
+        //}
+        //if (cascudo.gameObject.activeInHierarchy == true)
+        //{
+            //habilidadesGeraisPlayer_ref = GameObject.Find("Cascudo").GetComponent<HabilidadesGeraisPlayer>();
+        //}
+    
+
+        
+
+        
         
         
     }
@@ -44,9 +70,11 @@ public class HabilidadesGeraisInimigo : MonoBehaviour
     public void CausarDano(Player alvo)
     {
         habilidadesGeraisPlayer_ref.TomarDano(strength);
+        
 
 
     }
+   
     /*public void SomPlay(AudioClip Som)
     {
         audioSource.clip = Som;

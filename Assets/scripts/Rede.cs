@@ -16,28 +16,16 @@ public class Rede : Obstaculo
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
+            Debug.Log("RedeAcerta");
 
-            spawnInimigo.valorObjeto = 3;
 
-            //gameObject.SetActive(false);
-            var obstaculo2 = spawnInimigo.GetFromRede();
-            
-            if(obstaculo2 != null)
-            {
-                
-                obstaculo2.SetActive(false);
-            }
-            //StartCoroutine("Reutilizar");
+            spawnInimigo.Reutilizacao3(1.0f, 4.0f, 14.0f);
+            gameObject.SetActive(false);
+
         }
     }
-    /*IEnumerator Reutilizar()
-    {
-        yield return new WaitForSeconds(2);
-        transform.position = spawnInimigo.NovaPosicao(7.0f, 15.0f);
-
-        
-    }*/
-
     
-    
+
+
+
 }

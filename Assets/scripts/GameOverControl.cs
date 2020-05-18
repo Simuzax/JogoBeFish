@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class GameOverControl : MonoBehaviour
 {
-    
 
 
-    public Interface interface_ref;
+
+    BarraDeVida barraDeVida_ref;
     public SpriteRenderer spriteRenderer_ref;
 
 
     private void Awake()
     {
-        interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>();
+        barraDeVida_ref = GameObject.Find("Game").GetComponent<BarraDeVida>();
         spriteRenderer_ref = GameObject.Find("GameOver").GetComponent<SpriteRenderer>();
     }
 
@@ -23,7 +23,7 @@ public class GameOverControl : MonoBehaviour
     }
     public void AtivarControlesGameOver()
     {
-        if (interface_ref.hp <= 0)
+        if (barraDeVida_ref.hp <= 0)
         {
             spriteRenderer_ref.enabled = true;
         }

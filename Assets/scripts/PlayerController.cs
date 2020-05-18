@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public HabilidadesGeraisPlayer Personagem;
   
 
-    public Interface interface_ref;
+    BarraDeVida barraDeVida_ref;
     public PlayerMovimentacao playerMovimentacao;
     
 
@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        
-        interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>();
+
+        barraDeVida_ref = GameObject.Find("Game").GetComponent<BarraDeVida>();
         playerMovimentacao = GameObject.Find("Cascudo").GetComponent<PlayerMovimentacao>();
 
     }
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     public void DesabilitarControles()
     {
-        if (interface_ref.hp<=0)
+        if (barraDeVida_ref.hp<=0)
         {
             playerMovimentacao.enabled = false;
             

@@ -6,107 +6,111 @@ using System.Linq;
 
 public class SpawnarTesouro : MonoBehaviour
 {
-    [SerializeField]
-    private Transform Player;
+    public bool contarTempo = false;
 
-    [SerializeField]
-    private Transform linhaSpawnTesouro;
+    public Transform LinhaSpawnTesouro;
 
-    
+    GameObject[] objetosObstaculosTesouro;
 
     public GameObject TesouroPrefab;
 
-    public List<GameObject> ListTesouros = new List<GameObject>();
+    private const int tamanhoPool = 3;
+
+   
 
     [SerializeField]
-    private float spawnarTesouroInicial;
+    private Transform objectPoolTransform = null;
 
-    [SerializeField]
-    private float spawnarTesouroMax;
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
+        objetosObstaculosTesouro = new GameObject[tamanhoPool];
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-        spawnarTesouroInicial += Time.deltaTime;
-        if (spawnarTesouroInicial >= spawnarTesouroMax)
+        for(int i=0; i < objetosObstaculosTesouro.Length; i++)
         {
-            spawnarTesouroInicial = 0;
+            var obstaculo = Instantiate(TesouroPrefab);
+            obstaculo.transform.position = Vector2.zero;
+            obstaculo.SetActive(false);
+            objetosObstaculosTesouro[i] = obstaculo;
 
-            Vector2 inipos = Player.transform.position;
-            Vector2 Position = inipos;
-
-
-            //Vector2 inipos2 = linhaSpawnTesouro.transform.position;
-            //Vector2 Position2 = inipos2;
-
-
-
-
-            SpawnTesouro(1, Random.Range(18, 24), Random.Range(-1, 5), Position /*Position2*/);
+            obstaculo.transform.SetParent(objectPoolTransform);
         }
-
-            
-        
-
+        StartCoroutine("ReposicionarTesouro");
     }
-    public void SpawnTesouro(int quantidadeTesouro, float distanciaPlayerSpawnTesouro, float alturaMax, Vector2 PlayerPos /*Vector2 LinhaSpawnTesouroPos*/)                                                           
+    public GameObject GetFromTesouro()
     {
-        Vector2 Position = PlayerPos;
-        Position.x += distanciaPlayerSpawnTesouro;
-        Position.y += alturaMax;
+        GameObject Tesouro = null;
+        int i = 0;
 
-
-        //Vector2 Position2 = LinhaSpawnTesouroPos;
-        //Position2.y += alturaMax;
-        
-       
-
-        
-
-        for(int i=0; i < quantidadeTesouro; i++)
+        while(i < objetosObstaculosTesouro.Length)
         {
-            if (ListTesouros.Count > 0)
+            if (!objetosObstaculosTesouro[i].activeInHierarchy)
             {
-                if (ListTesouros.OfType<Tesouro>().Any())
-                {
-                    int Lugar = ListTesouros.FindLastIndex(x => x.GetType() == typeof(Tesouro));
-                    GameObject Tesouro = ListTesouros[Lugar];
-                    ListTesouros.RemoveAt(Lugar);
-
-                    Tesouro.transform.position = Position;
-                    
-                    Tesouro.SetActive(true);
-                }
+                Tesouro = objetosObstaculosTesouro[i];
             }
-            else
-            {
-                Tesouro GameObject = Instantiate(TesouroPrefab, Position, Quaternion.identity).GetComponent<Tesouro>();
-                adicionarOuDestruirTesouro(this.gameObject);
-            }
+            i++; //se coloca o i++ aqui em baixo por que é assim q o while funciona? 
         }
-
-        
-    } 
-    public void adicionarOuDestruirTesouro(GameObject gameObject)
+        return Tesouro;
+    }
+    public void SpawnTesouro(GameObject tesouro, float minimo, float maximo)
     {
-        if (ListTesouros.Count > 0)
+        tesouro.transform.position = PosicaoTesouro(minimo, maximo);
+        tesouro.SetActive(true);
+    }
+
+
+    public Vector2 PosicaoTesouro(float minimo,float maximo)
+    {
+        Vector2 reposicionamento;
+
+        float eixoX = LinhaSpawnTesouro.position.x;
+        float eixoY = Random.Range(minimo, maximo);
+
+        reposicionamento = new Vector2(eixoX, eixoY);
+
+        return reposicionamento;
+    }
+    IEnumerator ReposicionarTesouro()
+    {
+        yield return new WaitForSeconds(2);
+
+        var tesouro = GetFromTesouro();
+
+        if(tesouro != null)
         {
-            ListTesouros.Add(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
+            SpawnTesouro(tesouro, 2.0f, 17.0f);
         }
     }
+    public void reutilizarTesouro(float tempoTotal, float maximo,float minimo)
+    {
+        var tesouro = GetFromTesouro();
+
+        if (tesouro != null)
+        {
+            StartCoroutine(Contagem(tempoTotal, tesouro, maximo, minimo));
+        }
+    }
+
+    IEnumerator Contagem(float TempoTotal,GameObject tesouro, float maximo, float minimo)
+    {
+        
+        contarTempo = true; // aqui é obrigado usar a buleana contarTempo? não vejo a necessidade, sendo que não é utilizada com if  
+        float tempo = 0;
+
+        while (tempo < TempoTotal)
+        {
+            tempo += Time.deltaTime;
+            yield return null;
+        }
+        SpawnTesouro(tesouro, maximo, minimo);
+        contarTempo = false;
+    }
+    
+
+    
+
+
+
+
+
 
 }

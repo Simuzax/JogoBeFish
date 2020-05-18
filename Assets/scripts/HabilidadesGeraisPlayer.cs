@@ -2,13 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HabilidadesGeraisPlayer : MonoBehaviour  
-{
-    //[SerializeField]
-    //AudioSource audioSource;
-
-    //[SerializeField]
-    //AudioClip somCausarDano;
+public class HabilidadesGeraisPlayer : MonoBehaviour
+{ 
     Animator animator;
     Rigidbody2D rigidbody2D_;
     public int speed;
@@ -17,11 +12,11 @@ public class HabilidadesGeraisPlayer : MonoBehaviour
 
 
 
-    Interface interface_ref;
+    BarraDeVida barraDeVida_ref;
     // Start is called before the first frame update
     void Awake()
     {
-        interface_ref = GetComponent<Interface>();
+        barraDeVida_ref = GameObject.Find("Game").GetComponent<BarraDeVida>();
         animator = GetComponent<Animator>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         //spawnarGhost_ref = GetComponent<SpawnarGhost>();
@@ -50,7 +45,7 @@ public class HabilidadesGeraisPlayer : MonoBehaviour
 
     public void TomarDano(int dano)
     {
-        interface_ref.HP -= dano;
+        barraDeVida_ref.HP -= dano;
     }
     /*public void SomPlay(AudioClip Som)
     {

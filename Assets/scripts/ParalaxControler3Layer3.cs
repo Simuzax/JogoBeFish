@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ParalaxControler3Layer3 : MonoBehaviour
 {
-    Interface interface_ref;
+    BarraDeVida barraDeVida_ref;
     Parallax parallax_ref;
 
     private void Awake()
     {
-        interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>();
+        barraDeVida_ref = GameObject.Find("Game").GetComponent<BarraDeVida>();
         parallax_ref = GameObject.Find("3Layer3").GetComponent<Parallax>();
     }
 
@@ -20,7 +20,7 @@ public class ParalaxControler3Layer3 : MonoBehaviour
     }
     public void DesativarParallax3Layer3()
     {
-        if (interface_ref.hp <= 0)
+        if (barraDeVida_ref.hp <= 0)
         {
             parallax_ref.enabled = false;
         }

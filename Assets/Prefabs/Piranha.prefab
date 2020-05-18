@@ -16,9 +16,12 @@ GameObject:
   - component: {fileID: 4235339801784837792}
   - component: {fileID: 534324181416423585}
   - component: {fileID: 1831134540100688578}
+  - component: {fileID: 4274228690908764150}
+  - component: {fileID: 1753558959}
+  - component: {fileID: 199106963}
   m_Layer: 0
   m_Name: Piranha
-  m_TagString: Piranha
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,6 +200,50 @@ MonoBehaviour:
   velocidadeLentaMax: 4
   recuperacao: 3
   perder: 3
+--- !u!95 &4274228690908764150
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465963832934782424}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f96e3b1062bda124db75cd1b414dfe3b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1753558959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465963832934782424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78f17052b925c348a4ee920c7bbb4fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &199106963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465963832934782424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b18d3e53fcd344d95c859b2087b25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempo: 2
 --- !u!1001 &1689938857060245311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -266,15 +313,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 636683689854655948, guid: 59de2c8a58a385f4a9faf76f2778b46f,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.19350012
-      objectReference: {fileID: 0}
-    - target: {fileID: 636683689854655948, guid: 59de2c8a58a385f4a9faf76f2778b46f,
-        type: 3}
       propertyPath: m_LocalScale.x
       value: 0.69762266
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 636683689854655948, guid: 59de2c8a58a385f4a9faf76f2778b46f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.19350012
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1306128075069505997, guid: 59de2c8a58a385f4a9faf76f2778b46f, type: 3}
+    - {fileID: 1306128075069505996, guid: 59de2c8a58a385f4a9faf76f2778b46f, type: 3}
+    - {fileID: 636683689854655950, guid: 59de2c8a58a385f4a9faf76f2778b46f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 59de2c8a58a385f4a9faf76f2778b46f, type: 3}
 --- !u!4 &2280556571847475955 stripped
 Transform:

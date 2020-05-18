@@ -1,12 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Tubarao : Obstaculo
-{
-    
-
-	private void Awake()
+{  
+    private void Awake()
 	{
         spawnInimigo = GameObject.Find("Game").GetComponent<SpawnInimigo>();
 
@@ -16,29 +13,11 @@ public class Tubarao : Obstaculo
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
+            Debug.Log("tubaraoAcerta");
 
-            
+			spawnInimigo.Reutilizacao(0.5f, 4.0f, 14.0f);
 
-             
-            
-            var obstaculo3 = spawnInimigo.GetFromTubarao();
-
-            if (obstaculo3 != null)
-            {
-                
-                obstaculo3.SetActive(false);
-            }
-            spawnInimigo.valorObjeto = 1;
-
-            //StartCoroutine("Reutilizar");
-        }
+			gameObject.SetActive(false);
+		}
     }
-    /*IEnumerator Reutilizar()
-    {
-        yield return new WaitForSeconds(0.5f);
-        transform.position = spawnInimigo.NovaPosicao(7.0f, 15.0f);
-        
-    }*/
- 
-
 }

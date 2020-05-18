@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7891198803849640157}
   - component: {fileID: 7891198803849640158}
-  - component: {fileID: 7891198803849640156}
   m_Layer: 0
   m_Name: GameOver
   m_TagString: Untagged
@@ -80,22 +79,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7891198803849640156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7891198803849640159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3543a68312148f46badcdcf8fd59135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Interface_ref: {fileID: 0}
-  PlayerMovimentacao_ref: {fileID: 0}
-  CameraComLimites_ref: {fileID: 0}
-  SpawnInimigo_ref: {fileID: 0}
-  SpawnarAlga_ref: {fileID: 0}
-  spawnarGameOver_ref: {fileID: 0}
-  habilidadesGeraisInimigo_ref: {fileID: 0}

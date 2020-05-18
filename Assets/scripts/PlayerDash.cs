@@ -10,7 +10,7 @@ public class PlayerDash : MonoBehaviour
 
     SpawnarBolhas spawnarBolha;
 
-    EfeitoCorridaPlayer efeitoCorridaPlayer;
+    //EfeitoCorridaPlayer efeitoCorridaPlayer;
 
     Rigidbody2D righ;
     public int dashSpeed;
@@ -32,7 +32,7 @@ public class PlayerDash : MonoBehaviour
     {
         spawnarBolha = GetComponent<SpawnarBolhas>();
         righ = GetComponent<Rigidbody2D>();
-        efeitoCorridaPlayer = GetComponent<EfeitoCorridaPlayer>();
+        //efeitoCorridaPlayer = GetComponent<EfeitoCorridaPlayer>();
         
 
     }

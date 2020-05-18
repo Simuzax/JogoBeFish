@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class InimigoControler : MonoBehaviour
 {
-   
-    public Interface interface_ref;
+
+    BarraDeVida barraDeVida_ref;
     //public HabilidadesGeraisInimigo habilidadesGeraisInimigo_ref;
     SpawnInimigo spawnInimigo_ref;
 
     private void Awake()
     {
         spawnInimigo_ref = GetComponent<SpawnInimigo>();
-        interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>();  
+        barraDeVida_ref = GameObject.Find("Game").GetComponent<BarraDeVida>();  
         //habilidadesGeraisInimigo_ref = GameObject.Find("Tubarao").GetComponent<HabilidadesGeraisInimigo>();
     }
 
     private void Start()
     {
-        interface_ref.OnPlayerDeath += DesativarControleInimigo; //aqui ja esta adicionado a função desde o começo do jogo 
+        barraDeVida_ref.OnPlayerDeath += DesativarControleInimigo; //aqui ja esta adicionado a função desde o começo do jogo 
     }
     
     //Essa função é chamada quando o evento "OnPlayerDeath()" é disparado, no Script Interface
@@ -46,7 +46,7 @@ public class InimigoControler : MonoBehaviour
 
     private void OnDisable()
     {
-        interface_ref.OnPlayerDeath -= DesativarControleInimigo; //em que parte esta função é acionada? 
+        barraDeVida_ref.OnPlayerDeath -= DesativarControleInimigo; //em que parte esta função é acionada? 
     }
 
 }

@@ -4,13 +4,18 @@ using UnityEngine;
 
 public enum TipoObstaculo
 {
-	TUBARAO, ISCA, REDE, Alga
+	TUBARAO, ISCA, REDE, Alga, Tesouro
 };
 
 public class Obstaculo : MonoBehaviour
 {
 	protected SpawnInimigo spawnInimigo;
-    
+
+    public float tempoLim;
+    public float VariacaoMin;
+    public float VariacaoMax;
+
+    public bool contarTempo = false;
 
     public TipoObstaculo tipo { get; protected set; }
 

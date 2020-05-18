@@ -11,38 +11,21 @@ public class Isca : Obstaculo
 	{
         
         spawnInimigo = GameObject.Find("Game").GetComponent<SpawnInimigo>();
-        
-        
-		tipo = TipoObstaculo.ISCA;
+        tipo = TipoObstaculo.ISCA;
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
-            //gameObject.SetActive(false);
+            Debug.Log("IscaAcerta");
 
-            spawnInimigo.valorObjeto = 2;
-       
-            var obstaculo1 = spawnInimigo.GetFromIsca();
-
-            if(obstaculo1 != null)
-            {
-                
-                obstaculo1.SetActive(false);
-            }
-            //StartCoroutine("Reposicionador");
-
+            spawnInimigo.Reutilizacao2(1.0f, 4.0f, 14.0f);
+            gameObject.SetActive(false);
 
         }
     }
-    
-    /*IEnumerator Reposicionador()
-    {
-        yield return new WaitForSeconds(2);
-
-        transform.position = spawnInimigo.NovaPosicao(7.0f, 15.0f);
-    }*/
-    
-
    
+
+
+
 }

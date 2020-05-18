@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-   
 
 
-    public Interface interface_ref;
+
+    BarraDeVida barraDeVida_ref;
     public cameraMove cameraMove_ref;
 
     private void Awake()
     {
-        interface_ref = GameObject.Find("Cascudo").GetComponent<Interface>();
+        barraDeVida_ref = GameObject.Find("Game").GetComponent<BarraDeVida>();
         cameraMove_ref = GameObject.Find("MainCamera").GetComponent<cameraMove>(); 
     }
 
@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
     }
     public void DesabilitarControlesCamera()
     {
-        if (interface_ref.hp <= 0)
+        if (barraDeVida_ref.hp <= 0)
         {
             cameraMove_ref.enabled = false;
         }

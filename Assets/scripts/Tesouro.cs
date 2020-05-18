@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tesouro : MonoBehaviour
+public class Tesouro : Obstaculo
 {
     public int TesouroValor = 1;
 
@@ -27,6 +27,8 @@ public class Tesouro : MonoBehaviour
     }
     private void Awake()
     {
+
+        tipo = TipoObstaculo.Tesouro;
         spawnarTesouro_ref = GameObject.Find("Game").GetComponent<SpawnarTesouro>();
         tesouroScore_ref = GameObject.Find("TesouroScore").GetComponent<TesouroScore>();
     }
@@ -34,13 +36,20 @@ public class Tesouro : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ColisorDeTras"))
         {
-            spawnarTesouro_ref.adicionarOuDestruirTesouro(gameObject);
+            spawnarTesouro_ref.reutilizarTesouro(1.0f, 2.0f, 17.0f);
+            gameObject.SetActive(false);
 
         }
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Piranha"))
         {
-            Debug.Log("ColidiuTesouro");
-            spawnarTesouro_ref.adicionarOuDestruirTesouro(gameObject);
+            spawnarTesouro_ref.reutilizarTesouro(1.0f, 2.0f, 17.0f);
+            gameObject.SetActive(false);
+            tesouroScore_ref.mudarScore(TesouroValor);
+        }
+        if (collision.gameObject.CompareTag("Cascudo"))
+        {
+            spawnarTesouro_ref.reutilizarTesouro(1.0f, 2.0f, 17.0f);
+            gameObject.SetActive(false);
             tesouroScore_ref.mudarScore(TesouroValor);
         }
 
